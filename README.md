@@ -2,28 +2,12 @@
 
 **Community skills for better UiPath automation**
 
-UiPath Boost is an open community catalog of 34 Agent Skills that help teams design, deliver, test, operate, and explain UiPath automations with greater discipline.
-
-The official UiPath skills are excellent at understanding current UiPath products: they author XAML and coded workflows, build agents and Maestro projects, operate the platform, validate artifacts, troubleshoot failures, and manage solution lifecycles. Real delivery teams also need repeatable ways to clarify requirements, preserve decisions, refine tasks, protect source control, prove regression coverage, assess release readiness, and transfer knowledge. Those complementary engineering practices are why this project exists.
+UiPath Boost gives you 34 Agent Skills for planning, designing, testing, releasing, operating, and explaining UiPath automations. Install the full catalog once, then use `uipath-project-router` to choose the smallest correct workflow for each job.
 
 > [!IMPORTANT]
-> UiPath Boost is an independent community project maintained by [1aifanatic](https://github.com/1aifanatic). It is not an official UiPath product or official UiPath skill catalog. Official UiPath skills remain the source of truth for product commands, schemas, validation, deployment, tenant operations, and current platform behavior.
+> UiPath Boost is an independent community project maintained by [1aifanatic](https://github.com/1aifanatic). It is not an official UiPath product or skill catalog. Official UiPath skills remain the source of truth for product commands, schemas, validation, deployment, tenant operations, and current platform behavior.
 
-## The boundary in one sentence
-
-> Official UiPath skills build and operate UiPath products. UiPath Boost skills improve the engineering process before, after, and around that product work.
-
-| Official UiPath skills own | UiPath Boost skills add |
-|---|---|
-| Product-specific authoring | Discovery discipline and durable decisions |
-| Current CLI commands and schemas | Delivery controls and project continuity |
-| Artifact validation and review | Architecture exploration and safe change plans |
-| Platform, identity, policy, and test operations | Regression evidence and requirement traceability |
-| Troubleshooting and deployment | Release, observability, and security readiness |
-
-UiPath Boost skills deliberately stop when the next outcome belongs to an official UiPath owner.
-
-## Quick start
+## Start here: install the full catalog
 
 ### 1. Install the official UiPath skills
 
@@ -32,153 +16,198 @@ npm install -g @uipath/cli
 uip skills install
 ```
 
-### 2. Inspect this catalog
+### 2. Install all 34 UiPath Boost skills
+
+> [!TIP]
+> **Recommended:** Install the complete catalog globally. You will not need to return later and install skills one at a time.
 
 ```bash
-npx skills add 1aifanatic/uipath-boost --list
+npx skills add 1aifanatic/uipath-boost --skill '*' --agent codex --global --yes
 ```
 
-### 3. Install the Project Router
+That single command:
 
-Project-local installation is the default:
+- Installs all 34 skills.
+- Makes them available across your projects.
+- Gives the Project Router every available workflow to choose from.
+- Avoids repeated installation whenever your work moves from discovery to development, testing, release, or support.
 
-```bash
-npx skills add 1aifanatic/uipath-boost --skill uipath-project-router --agent codex --yes
-```
+Installing the catalog does **not** run every skill, deploy an automation, or change your UiPath tenant. It only makes the skill instructions available to your agent.
 
-Add `--global` to make the skill available across projects:
+Using another coding agent? Replace `codex` with a supported agent such as `claude-code` or `cursor`.
 
-```bash
-npx skills add 1aifanatic/uipath-boost --skill uipath-project-router --agent codex --global --yes
-```
-
-Replace `codex` with another agent supported by the open [`skills` CLI](https://github.com/vercel-labs/skills), such as `claude-code` or `cursor`.
-
-### 4. Ask the router for the smallest correct workflow
+### 3. Tell the router what you need
 
 ```text
 Use uipath-project-router.
 
 I need to <describe the UiPath outcome>.
 My available inputs are <repository, PDD, SDD, report, error, or evidence>.
-Tell me the smallest correct sequence of official and UiPath Boost skills.
+Tell me the smallest correct sequence of official UiPath and UiPath Boost skills.
 Do not modify files or platform resources while routing.
 ```
 
-## Installation choices
+You do not need to memorize all 34 skill names. Describe your goal and let the router select the right starting point.
 
-### Install one skill
+## Why install everything at once?
+
+| Benefit | What it means for you |
+|---|---|
+| One simple setup | Run one installation command instead of managing 34 separate installations. |
+| Better routing | The router can choose from the complete catalog. |
+| End-to-end coverage | Move from discovery through delivery, testing, release, and support without stopping to install another skill. |
+| Consistent teams | Developers, testers, architects, and support teams can use the same skill set. |
+| No automatic platform changes | Installed skills remain instructions until your agent invokes one for a relevant task. |
+
+## Why UiPath Boost exists
+
+Official UiPath skills are responsible for current UiPath product behavior. They author and validate product artifacts, operate the platform, troubleshoot failures, and manage product lifecycles.
+
+UiPath Boost adds repeatable engineering practices around that product work: requirements discovery, decision records, task refinement, architecture exploration, regression evidence, source-control safety, release readiness, observability, security assessment, and knowledge transfer.
+
+> Official UiPath skills build and operate UiPath products. UiPath Boost improves the engineering process before, after, and around that work.
+
+| Official UiPath skills own | UiPath Boost adds |
+|---|---|
+| Product commands, schemas, and authoring | Discovery, decisions, and delivery continuity |
+| Artifact validation, testing, and troubleshooting | Architecture options, regression evidence, and traceability |
+| Tenant operations, governance, and deployment | Release readiness, observability, security, and handoffs |
+
+UiPath Boost stops when the next action belongs to an official UiPath skill.
+
+## Prefer a smaller installation?
+
+First inspect the catalog:
+
+```bash
+npx skills add 1aifanatic/uipath-boost --list
+```
+
+Install only the Project Router:
+
+```bash
+npx skills add 1aifanatic/uipath-boost --skill uipath-project-router --agent codex --global --yes
+```
+
+Install one specific skill:
 
 ```bash
 npx skills add 1aifanatic/uipath-boost --skill uipath-regression-harness --agent codex --global --yes
 ```
 
-### Install the full catalog
+Omit `--global` when you want the installation limited to the current project.
 
-```bash
-npx skills add 1aifanatic/uipath-boost --skill '*' --agent codex --global --yes
-```
+## Branded npm installer
 
-### Use the branded installer
-
-After the npm package is released:
+The standard GitHub installation above works now. After the `uipath-boost` package is published to npm, these shorter commands will also be available:
 
 ```bash
 npx uipath-boost list
-npx uipath-boost install --starter --agent codex --global --yes
 npx uipath-boost install --all --agent codex --global --yes
 ```
 
-For a permanent command:
-
-```bash
-npm install -g uipath-boost
-uipath-boost list
-uipath-boost install --starter --agent codex --global --yes
-```
-
-## Recommended starter set
-
-The branded `--starter` option installs these five skills:
-
-| Skill | Why start here |
-|---|---|
-| `uipath-project-router` | Selects the smallest official and UiPath Boost workflow without performing specialist work |
-| `uipath-discovery-with-docs` | Preserves business language, evidence, assumptions, and decisions across sessions |
-| `uipath-task-refinement` | Converts an approved planner backlog into session-sized, verifiable work items |
-| `uipath-regression-harness` | Turns a confirmed defect into durable red/green evidence |
-| `uipath-release-readiness` | Produces an evidence-backed Ready, Conditionally Ready, or Not Ready verdict |
-
 ## What is included
 
-### Control plane and continuity
+<details>
+<summary><strong>View all 34 skills by category</strong></summary>
 
-`uipath-project-router`, `uipath-delivery-control-plane`, `uipath-project-handoff`, `uipath-project-knowledge-base`
+### Routing and project continuity
+
+- `uipath-project-router`
+- `uipath-delivery-control-plane`
+- `uipath-project-handoff`
+- `uipath-project-knowledge-base`
 
 ### Discovery and decision-making
 
-`uipath-discovery-interview`, `uipath-discovery-with-docs`, `uipath-work-intake-triage`, `uipath-program-wayfinder`, `uipath-research-note`, `uipath-process-domain-modeling`, `uipath-workflow-spec-workspace`, `uipath-stakeholder-questionnaire`
+- `uipath-discovery-interview`
+- `uipath-discovery-with-docs`
+- `uipath-work-intake-triage`
+- `uipath-program-wayfinder`
+- `uipath-research-note`
+- `uipath-process-domain-modeling`
+- `uipath-workflow-spec-workspace`
+- `uipath-stakeholder-questionnaire`
 
 ### Design and architecture
 
-`uipath-component-design`, `uipath-architecture-deepening`, `uipath-project-boundaries`, `uipath-prototype`, `uipath-safe-refactor-plan`
+- `uipath-component-design`
+- `uipath-architecture-deepening`
+- `uipath-project-boundaries`
+- `uipath-prototype`
+- `uipath-safe-refactor-plan`
 
 ### Build, test, and change quality
 
-`uipath-task-refinement`, `uipath-test-driven-automation`, `uipath-regression-harness`, `uipath-requirement-traceability`, `uipath-source-control-conflicts`, `uipath-uat-session`, `uipath-quality-gates-setup`, `uipath-pattern-migration`, `uipath-source-control-guardrails`
+- `uipath-task-refinement`
+- `uipath-test-driven-automation`
+- `uipath-regression-harness`
+- `uipath-requirement-traceability`
+- `uipath-source-control-conflicts`
+- `uipath-uat-session`
+- `uipath-quality-gates-setup`
+- `uipath-pattern-migration`
+- `uipath-source-control-guardrails`
 
 ### Release, operations, and governance
 
-`uipath-release-readiness`, `uipath-observability-design`, `uipath-solution-security-assessment`, `uipath-runbook-wizard`
+- `uipath-release-readiness`
+- `uipath-observability-design`
+- `uipath-solution-security-assessment`
+- `uipath-runbook-wizard`
 
-### Enablement and communication
+### Learning and communication
 
-`uipath-learning-workspace`, `uipath-training-lab-scaffolder`, `uipath-solution-storytelling`, `uipath-skill-authoring-guide`
+- `uipath-learning-workspace`
+- `uipath-training-lab-scaffolder`
+- `uipath-solution-storytelling`
+- `uipath-skill-authoring-guide`
 
-## Example workflows
+</details>
+
+## Common routes
 
 ### New automation
 
 ```text
 UiPath Boost discovery
-→ official uipath-planner
-→ optional UiPath Boost task refinement
-→ official artifact owner
-→ official uipath-review
-→ UiPath Boost release readiness
+-> official uipath-planner
+-> optional UiPath Boost task refinement
+-> official artifact owner
+-> official uipath-review
+-> UiPath Boost release readiness
 ```
 
 ### Production defect
 
 ```text
 Official uipath-troubleshoot
-→ UiPath Boost regression harness
-→ official artifact owner applies the fix
-→ official review and testing
+-> UiPath Boost regression harness
+-> official artifact owner applies the fix
+-> official review and testing
 ```
 
 ### Pre-production release
 
 ```text
 Official review and test evidence
-→ UiPath Boost security assessment and traceability
-→ UiPath Boost release-readiness verdict
-→ official deployment owner, with explicit authorization
+-> UiPath Boost security assessment and traceability
+-> UiPath Boost release-readiness verdict
+-> official deployment owner with explicit authorization
 ```
 
-## Safety model
+## Safety
 
-Agent Skills can influence tools and command execution. Review the source before installation and use the same care you would apply to automation code.
+Agent Skills can influence tools and command execution. Review skill instructions as carefully as automation code.
 
 - Product-changing actions stay with official UiPath skills.
 - Deployment, activation, deletion, identity, policy, and production changes require explicit authority.
-- Mutating helper scripts should be used only after reviewing their scope and dry-run output.
+- Review mutating helper scripts and their scope before running them.
 - Never place credentials, customer data, tenant secrets, or personal information in skill files.
-- Validation claims are limited to the fixtures and environments actually tested.
 
 See [SECURITY.md](SECURITY.md) for reporting and review expectations.
 
-## Development and validation
+## Development
 
 Requirements: Node.js 22.20 or newer.
 
@@ -189,24 +218,18 @@ npm test
 npm pack --dry-run
 ```
 
-The validation suite checks all 34 skill packages, matching names, required metadata, internal links, and retired conflicting skills. The CLI tests cover interactive, starter, selected-skill, and full-catalog installation argument construction.
+The validation suite checks all 34 skill packages, metadata, internal links, and retired conflicting skills. Installer tests cover interactive, selected-skill, starter, and full-catalog installation arguments.
 
-## Documentation
+## Learn more
 
 - [Strategy and publishing plan](docs/STRATEGY-AND-PUBLISHING-PLAN.md)
 - [Contribution guide](CONTRIBUTING.md)
 - [Security policy](SECURITY.md)
 - [Official UiPath skills](https://github.com/UiPath/skills)
-- [skills.sh documentation](https://www.skills.sh/docs)
+- [Agent Skills CLI documentation](https://skills.sh/docs)
 
-## Contributing upstream
+## Status and license
 
-This repository is an incubator for complementary engineering practices. Mature, broadly useful, UiPath-specific capabilities may be proposed to the official `UiPath/skills` repository one at a time. If an implementation is accepted upstream, the official version becomes canonical and the duplicate here should be removed or redirected.
+UiPath Boost is currently a pilot release. Structural validation and installer tests pass, but not every skill has been exercised against every UiPath product, tenant configuration, license, operating system, or future CLI version.
 
-## Status
-
-The catalog is currently a pilot release. Structural validation and installer tests pass, but not every skill has been exercised against every UiPath product, tenant configuration, license, operating system, or future CLI version.
-
-## License
-
-MIT. See [LICENSE](LICENSE).
+Licensed under the MIT License. See [LICENSE](LICENSE).
