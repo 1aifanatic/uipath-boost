@@ -1,0 +1,3 @@
+interface:
+  display_name: "UiPath Workflow Spec Workspace"
+  short_description: "Maintain a stateful workspace for discovering and specifying recurring business workflows that may become UiPath automat"

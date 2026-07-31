@@ -1,0 +1,3 @@
+interface:
+  display_name: "UiPath Project Handoff"
+  short_description: "Compact the current UiPath project context into a safe handoff for a fresh session, another agent, or another team membe"

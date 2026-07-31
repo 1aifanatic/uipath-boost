@@ -1,0 +1,52 @@
+{
+  "name": "uipath-engineering-companion",
+  "version": "0.1.0",
+  "description": "Community agent skills for better UiPath automation engineering.",
+  "type": "module",
+  "bin": {
+    "uipath-companion": "bin/uipath-companion.mjs",
+    "uipath-engineering-companion": "bin/uipath-companion.mjs"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "skills/",
+    "docs/",
+    "README.md",
+    "LICENSE",
+    "SECURITY.md"
+  ],
+  "scripts": {
+    "validate": "node scripts/validate-catalog.mjs",
+    "test": "node --test",
+    "prepack": "npm run validate && npm test"
+  },
+  "dependencies": {
+    "skills": "1.5.21"
+  },
+  "engines": {
+    "node": ">=22.20.0"
+  },
+  "keywords": [
+    "uipath",
+    "agent-skills",
+    "automation",
+    "rpa",
+    "codex",
+    "claude",
+    "cursor",
+    "skills-sh"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1aifanatic/uipath-engineering-companion.git"
+  },
+  "homepage": "https://github.com/1aifanatic/uipath-engineering-companion#readme",
+  "bugs": {
+    "url": "https://github.com/1aifanatic/uipath-engineering-companion/issues"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}

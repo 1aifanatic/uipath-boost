@@ -1,0 +1,3 @@
+interface:
+  display_name: "UiPath Release Readiness"
+  short_description: "Aggregate authoritative build, review, test, security, operational, governance, deployment, and support evidence into a "

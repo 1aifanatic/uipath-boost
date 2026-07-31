@@ -1,0 +1,3 @@
+interface:
+  display_name: "UiPath Source Control Conflicts"
+  short_description: "Resolve an in-progress source-control merge or rebase conflict involving UiPath project artifacts by recovering the inte"

@@ -1,0 +1,3 @@
+interface:
+  display_name: "UiPath Project Router"
+  short_description: "Route UiPath work only when the user explicitly asks which skill, workflow, or starting point to use"

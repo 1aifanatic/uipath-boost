@@ -1,0 +1,3 @@
+interface:
+  display_name: "UiPath Training Lab Scaffolder"
+  short_description: "Scaffold a consistent UiPath training lab or exercise repository from a curriculum plan"

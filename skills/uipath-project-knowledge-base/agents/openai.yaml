@@ -1,0 +1,3 @@
+interface:
+  display_name: "UiPath Project Knowledge Base"
+  short_description: "Create and maintain a portable linked Markdown knowledge base for a UiPath program or project"

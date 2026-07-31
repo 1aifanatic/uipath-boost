@@ -1,0 +1,3 @@
+interface:
+  display_name: "UiPath Safe Refactor Plan"
+  short_description: "Plan a behavior-preserving UiPath refactor as small, verifiable steps with safety nets and rollback points"

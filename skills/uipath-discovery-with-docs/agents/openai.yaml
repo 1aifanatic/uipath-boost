@@ -1,0 +1,3 @@
+interface:
+  display_name: "UiPath Discovery With Docs"
+  short_description: "Run UiPath discovery while maintaining durable project documentation"

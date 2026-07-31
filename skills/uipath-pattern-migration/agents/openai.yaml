@@ -1,0 +1,3 @@
+interface:
+  display_name: "UiPath Pattern Migration"
+  short_description: "Plan and execute a bounded, reversible migration from one repeated UiPath project pattern to another"

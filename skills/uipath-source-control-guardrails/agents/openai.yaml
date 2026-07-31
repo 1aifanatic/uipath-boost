@@ -1,0 +1,3 @@
+interface:
+  display_name: "UiPath Source Control Guardrails"
+  short_description: "Install command guardrails that prevent an AI coding agent from executing destructive source-control operations and, opt"

@@ -1,0 +1,3 @@
+interface:
+  display_name: "UiPath Prototype"
+  short_description: "Build a deliberately throwaway UiPath-oriented prototype to answer one design question"

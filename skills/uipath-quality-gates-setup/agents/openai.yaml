@@ -1,0 +1,3 @@
+interface:
+  display_name: "UiPath Quality Gates Setup"
+  short_description: "Set up repository and CI quality gates for UiPath projects without inventing unsupported product commands"

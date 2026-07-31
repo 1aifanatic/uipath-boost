@@ -1,0 +1,3 @@
+interface:
+  display_name: "UiPath Task Refinement"
+  short_description: "Refine an existing uipath-planner task list or an explicitly supplied backlog into session-sized, verifiable work items "

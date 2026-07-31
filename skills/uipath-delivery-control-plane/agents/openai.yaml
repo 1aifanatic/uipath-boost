@@ -1,0 +1,3 @@
+interface:
+  display_name: "UiPath Delivery Control Plane"
+  short_description: "Establish durable delivery governance around an already discovered UiPath repository or solution"

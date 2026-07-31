@@ -1,0 +1,3 @@
+interface:
+  display_name: "UiPath Regression Harness"
+  short_description: "Create a fast, deterministic, red-capable reproduction and regression harness for a UiPath defect after the incident, sy"

@@ -1,0 +1,3 @@
+interface:
+  display_name: "UiPath Requirement Traceability"
+  short_description: "Build a requirement-to-implementation-to-test-to-evidence traceability matrix from an approved SDD, official uipath-revi"

@@ -1,0 +1,3 @@
+interface:
+  display_name: "UiPath Program Wayfinder"
+  short_description: "Plan a large, foggy UiPath program that cannot fit in one design session"

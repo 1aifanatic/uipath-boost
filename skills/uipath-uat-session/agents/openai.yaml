@@ -1,0 +1,3 @@
+interface:
+  display_name: "UiPath UAT Session"
+  short_description: "Facilitate a business-language user acceptance testing session and turn observations into reproducible acceptance record"

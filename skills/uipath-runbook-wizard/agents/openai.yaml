@@ -1,0 +1,3 @@
+interface:
+  display_name: "UiPath Runbook Wizard"
+  short_description: "Create an interactive or document-based wizard for a UiPath setup, access, migration, deployment-preparation, or operati"

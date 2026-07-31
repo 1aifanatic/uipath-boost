@@ -1,0 +1,3 @@
+interface:
+  display_name: "UiPath Work Intake Triage"
+  short_description: "Triage raw UiPath defects, enhancement requests, automation ideas, access blockers, technical debt, and external changes"

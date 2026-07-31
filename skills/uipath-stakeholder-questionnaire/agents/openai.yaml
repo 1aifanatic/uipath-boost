@@ -1,0 +1,3 @@
+interface:
+  display_name: "UiPath Stakeholder Questionnaire"
+  short_description: "Create a recipient-specific asynchronous UiPath discovery questionnaire that closes defined information gaps"

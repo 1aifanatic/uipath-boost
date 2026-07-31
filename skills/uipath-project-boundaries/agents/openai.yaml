@@ -1,0 +1,3 @@
+interface:
+  display_name: "UiPath Project Boundaries"
+  short_description: "Define and enforce public entry points and dependency boundaries across a UiPath solution or repository"
