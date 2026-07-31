@@ -16,7 +16,7 @@
     "SECURITY.md"
   ],
   "scripts": {
-    "validate": "node scripts/validate-catalog.mjs",
+    "validate": "node scripts/validate-catalog.mjs && node scripts/validate-skill-guides.mjs",
     "test": "node --test",
     "prepack": "npm run validate && npm test"
   },
