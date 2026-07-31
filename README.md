@@ -108,60 +108,62 @@ npx uipath-boost install --all --agent codex --global --yes
 
 ## What is included
 
+For detailed explanations, before-and-after examples, prompts, completion checks, and official UiPath handoffs, open the **[complete skill guide library](docs/skills/README.md)** or select any skill below.
+
 <details>
 <summary><strong>View all 34 skills by category</strong></summary>
 
 ### Routing and project continuity
 
-- `uipath-project-router`
-- `uipath-delivery-control-plane`
-- `uipath-project-handoff`
-- `uipath-project-knowledge-base`
+- [`uipath-project-router`](docs/skills/uipath-project-router.md)
+- [`uipath-delivery-control-plane`](docs/skills/uipath-delivery-control-plane.md)
+- [`uipath-project-handoff`](docs/skills/uipath-project-handoff.md)
+- [`uipath-project-knowledge-base`](docs/skills/uipath-project-knowledge-base.md)
 
 ### Discovery and decision-making
 
-- `uipath-discovery-interview`
-- `uipath-discovery-with-docs`
-- `uipath-work-intake-triage`
-- `uipath-program-wayfinder`
-- `uipath-research-note`
-- `uipath-process-domain-modeling`
-- `uipath-workflow-spec-workspace`
-- `uipath-stakeholder-questionnaire`
+- [`uipath-discovery-interview`](docs/skills/uipath-discovery-interview.md)
+- [`uipath-discovery-with-docs`](docs/skills/uipath-discovery-with-docs.md)
+- [`uipath-work-intake-triage`](docs/skills/uipath-work-intake-triage.md)
+- [`uipath-program-wayfinder`](docs/skills/uipath-program-wayfinder.md)
+- [`uipath-research-note`](docs/skills/uipath-research-note.md)
+- [`uipath-process-domain-modeling`](docs/skills/uipath-process-domain-modeling.md)
+- [`uipath-workflow-spec-workspace`](docs/skills/uipath-workflow-spec-workspace.md)
+- [`uipath-stakeholder-questionnaire`](docs/skills/uipath-stakeholder-questionnaire.md)
 
 ### Design and architecture
 
-- `uipath-component-design`
-- `uipath-architecture-deepening`
-- `uipath-project-boundaries`
-- `uipath-prototype`
-- `uipath-safe-refactor-plan`
+- [`uipath-component-design`](docs/skills/uipath-component-design.md)
+- [`uipath-architecture-deepening`](docs/skills/uipath-architecture-deepening.md)
+- [`uipath-project-boundaries`](docs/skills/uipath-project-boundaries.md)
+- [`uipath-prototype`](docs/skills/uipath-prototype.md)
+- [`uipath-safe-refactor-plan`](docs/skills/uipath-safe-refactor-plan.md)
 
 ### Build, test, and change quality
 
-- `uipath-task-refinement`
-- `uipath-test-driven-automation`
-- `uipath-regression-harness`
-- `uipath-requirement-traceability`
-- `uipath-source-control-conflicts`
-- `uipath-uat-session`
-- `uipath-quality-gates-setup`
-- `uipath-pattern-migration`
-- `uipath-source-control-guardrails`
+- [`uipath-task-refinement`](docs/skills/uipath-task-refinement.md)
+- [`uipath-test-driven-automation`](docs/skills/uipath-test-driven-automation.md)
+- [`uipath-regression-harness`](docs/skills/uipath-regression-harness.md)
+- [`uipath-requirement-traceability`](docs/skills/uipath-requirement-traceability.md)
+- [`uipath-source-control-conflicts`](docs/skills/uipath-source-control-conflicts.md)
+- [`uipath-uat-session`](docs/skills/uipath-uat-session.md)
+- [`uipath-quality-gates-setup`](docs/skills/uipath-quality-gates-setup.md)
+- [`uipath-pattern-migration`](docs/skills/uipath-pattern-migration.md)
+- [`uipath-source-control-guardrails`](docs/skills/uipath-source-control-guardrails.md)
 
 ### Release, operations, and governance
 
-- `uipath-release-readiness`
-- `uipath-observability-design`
-- `uipath-solution-security-assessment`
-- `uipath-runbook-wizard`
+- [`uipath-release-readiness`](docs/skills/uipath-release-readiness.md)
+- [`uipath-observability-design`](docs/skills/uipath-observability-design.md)
+- [`uipath-solution-security-assessment`](docs/skills/uipath-solution-security-assessment.md)
+- [`uipath-runbook-wizard`](docs/skills/uipath-runbook-wizard.md)
 
 ### Learning and communication
 
-- `uipath-learning-workspace`
-- `uipath-training-lab-scaffolder`
-- `uipath-solution-storytelling`
-- `uipath-skill-authoring-guide`
+- [`uipath-learning-workspace`](docs/skills/uipath-learning-workspace.md)
+- [`uipath-training-lab-scaffolder`](docs/skills/uipath-training-lab-scaffolder.md)
+- [`uipath-solution-storytelling`](docs/skills/uipath-solution-storytelling.md)
+- [`uipath-skill-authoring-guide`](docs/skills/uipath-skill-authoring-guide.md)
 
 </details>
 
