@@ -1,11 +1,10 @@
 {
-  "name": "uipath-engineering-companion",
+  "name": "uipath-boost",
   "version": "0.1.0",
-  "description": "Community agent skills for better UiPath automation engineering.",
+  "description": "Community skills for better UiPath automation.",
   "type": "module",
   "bin": {
-    "uipath-companion": "bin/uipath-companion.mjs",
-    "uipath-engineering-companion": "bin/uipath-companion.mjs"
+    "uipath-boost": "bin/uipath-boost.mjs"
   },
   "files": [
     "bin/",
@@ -39,11 +38,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/1aifanatic/uipath-engineering-companion.git"
+    "url": "git+https://github.com/1aifanatic/uipath-boost.git"
   },
-  "homepage": "https://github.com/1aifanatic/uipath-engineering-companion#readme",
+  "homepage": "https://github.com/1aifanatic/uipath-boost#readme",
   "bugs": {
-    "url": "https://github.com/1aifanatic/uipath-engineering-companion/issues"
+    "url": "https://github.com/1aifanatic/uipath-boost/issues"
   },
   "license": "MIT",
   "publishConfig": {

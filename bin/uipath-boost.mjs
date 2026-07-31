@@ -16,14 +16,14 @@ const packageJson = JSON.parse(
 );
 
 function printHelp() {
-  console.log(`UiPath Engineering Companion ${packageJson.version}
+  console.log(`UiPath Boost ${packageJson.version}
 
-Community agent skills for better UiPath automation engineering.
+Community skills for better UiPath automation.
 
 Usage:
-  uipath-companion list
-  uipath-companion install [options]
-  uipath-companion validate
+  uipath-boost list
+  uipath-boost install [options]
+  uipath-boost validate
 
 Install options:
   -a, --agent <name>    Target an agent; repeat for multiple agents
@@ -38,10 +38,10 @@ Install options:
   -v, --version         Show version
 
 Examples:
-  npx uipath-engineering-companion list
-  npx uipath-engineering-companion install --starter -a codex -g -y
-  npx uipath-engineering-companion install -s uipath-project-router -a codex -g -y
-  npx uipath-engineering-companion install --all -a codex -g -y
+  npx uipath-boost list
+  npx uipath-boost install --starter -a codex -g -y
+  npx uipath-boost install -s uipath-project-router -a codex -g -y
+  npx uipath-boost install --all -a codex -g -y
 
 Starter skills:
   ${STARTER_SKILLS.join("\n  ")}
@@ -50,7 +50,7 @@ Starter skills:
 
 function printCatalog() {
   const catalog = loadCatalog(packageRoot);
-  console.log(`UiPath Engineering Companion: ${catalog.length} skills\n`);
+  console.log(`UiPath Boost: ${catalog.length} skills\n`);
   for (const skill of catalog) {
     console.log(`${skill.name}\n  ${skill.description}\n`);
   }

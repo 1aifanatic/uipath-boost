@@ -1,10 +1,10 @@
-# UiPath Engineering Companion: Strategy and Publishing Plan
+# UiPath Boost: Strategy and Publishing Plan
 
-- **Working brand:** UiPath Engineering Companion
-- **Descriptor:** Community Agent Skills for Better Automation Engineering
-- **Repository:** `1aifanatic/uipath-engineering-companion`
-- **npm package:** `uipath-engineering-companion`
-- **CLI command:** `uipath-companion`
+- **Working brand:** UiPath Boost
+- **Descriptor:** Community Skills for Better UiPath Automation
+- **Repository:** `1aifanatic/uipath-boost`
+- **npm package:** `uipath-boost`
+- **CLI command:** `uipath-boost`
 **Prepared:** July 31, 2026
 
 ## 1. Executive recommendation
@@ -31,7 +31,7 @@ Official skills own current UiPath product behavior, including:
 - Tenant, platform, governance, identity, Test Manager, and Action Center operations.
 - Product review and causal troubleshooting.
 
-### UiPath Engineering Companion skills
+### UiPath Boost skills
 
 This catalog owns complementary engineering disciplines around official product work:
 
@@ -44,13 +44,13 @@ This catalog owns complementary engineering disciplines around official product 
 
 ### Core boundary rule
 
-> Official skills decide and execute current UiPath product behavior. Companion skills create distinct project-engineering artifacts before, after, or around those official operations.
+> Official skills decide and execute current UiPath product behavior. UiPath Boost skills create distinct project-engineering artifacts before, after, or around those official operations.
 
 ## 3. Why the full catalog should remain independent
 
 The official UiPath repository welcomes contributions, but its current contribution model favors self-contained, product-oriented skills with official tests, lifecycle registration, multi-tool compatibility, and maintainer ownership.
 
-Several companion skills intentionally compose with official owners. For example, regression work begins after official troubleshooting, architecture deepening consumes an official review, and task refinement starts from an official planner task list. This is a useful community catalog model, but direct cross-skill composition does not currently match the official repository's self-contained-skill checklist.
+Several UiPath Boost skills intentionally compose with official owners. For example, regression work begins after official troubleshooting, architecture deepening consumes an official review, and task refinement starts from an official planner task list. This is a useful community catalog model, but direct cross-skill composition does not currently match the official repository's self-contained-skill checklist.
 
 The independent repository also provides room for:
 
@@ -84,7 +84,7 @@ The independent repository also provides room for:
 
 ### Possible contributions to existing official skills
 
-| Companion capability | Possible official destination |
+| UiPath Boost capability | Possible official destination |
 |---|---|
 | Test-driven automation practices | `uipath-rpa`, `uipath-agents`, and other artifact owners |
 | UAT facilitation patterns | `uipath-test` |
@@ -109,25 +109,25 @@ The independent repository also provides room for:
 
 ### Recommended brand
 
-**UiPath Engineering Companion**
+**UiPath Boost**
 
-The word *Companion* communicates that the catalog works alongside official UiPath skills. It avoids describing the project as an official distribution and is broad enough to cover discovery, architecture, delivery, testing, operations, and enablement.
+The word *Boost* is short, memorable, and communicates that the catalog improves the engineering practices around official UiPath product work. It is broad enough to cover discovery, architecture, delivery, testing, operations, and enablement without suggesting that the catalog replaces official skills.
 
 ### Required public disclaimer
 
 Use this wording prominently:
 
-> UiPath Engineering Companion is a community project. It is not an official UiPath product or official UiPath skill catalog. Official UiPath skills remain the source of truth for product behavior.
+> UiPath Boost is an independent community project maintained by 1aifanatic. It is not an official UiPath product or official UiPath skill catalog. Official UiPath skills remain the source of truth for product behavior.
 
 ### Naming consistency
 
 | Surface | Name |
 |---|---|
-| Display name | UiPath Engineering Companion |
-| Descriptor | Community Agent Skills for Better Automation Engineering |
-| GitHub repository | `uipath-engineering-companion` |
-| npm package | `uipath-engineering-companion` |
-| CLI executable | `uipath-companion` |
+| Display name | UiPath Boost |
+| Descriptor | Community Skills for Better UiPath Automation |
+| GitHub repository | `uipath-boost` |
+| npm package | `uipath-boost` |
+| CLI executable | `uipath-boost` |
 
 The npm name was unclaimed when checked on July 31, 2026. Recheck immediately before publishing because registry availability can change.
 
@@ -139,17 +139,17 @@ The canonical source is the public GitHub repository with each skill unpacked un
 
 ```powershell
 # Inspect available skills
-npx skills add 1aifanatic/uipath-engineering-companion --list
+npx skills add 1aifanatic/uipath-boost --list
 
 # Install the router for Codex
-npx skills add 1aifanatic/uipath-engineering-companion `
+npx skills add 1aifanatic/uipath-boost `
   --skill uipath-project-router `
   --agent codex `
   --global `
   --yes
 
 # Install every skill
-npx skills add 1aifanatic/uipath-engineering-companion `
+npx skills add 1aifanatic/uipath-boost `
   --skill '*' `
   --agent codex `
   --global `
@@ -168,9 +168,9 @@ Benefits:
 The npm package contains the complete catalog and a small CLI that delegates destination handling to the established `skills` package.
 
 ```powershell
-npx uipath-engineering-companion list
-npx uipath-engineering-companion install --starter --agent codex --global --yes
-npx uipath-engineering-companion install --all --agent codex --global --yes
+npx uipath-boost list
+npx uipath-boost install --starter --agent codex --global --yes
+npx uipath-boost install --all --agent codex --global --yes
 ```
 
 Benefits:
@@ -187,23 +187,23 @@ Publishing to skills.sh makes sense for discovery and social proof. skills.sh in
 Launch sequence:
 
 1. Publish the GitHub repository publicly.
-2. Confirm `npx skills add 1aifanatic/uipath-engineering-companion --list` finds 34 skills.
+2. Confirm `npx skills add 1aifanatic/uipath-boost --list` finds 34 skills.
 3. Perform a clean installation of `uipath-project-router` using the GitHub source.
-4. Check for `https://skills.sh/1aifanatic/uipath-engineering-companion`.
+4. Check for `https://skills.sh/1aifanatic/uipath-boost`.
 5. If it is not indexed after valid public installs, open a listing request in `vercel-labs/skills`.
 6. Add the skills.sh badge only after the page resolves correctly.
 
 ## 7. Repository structure
 
 ```text
-uipath-engineering-companion/
+uipath-boost/
 ├── README.md
 ├── LICENSE
 ├── CONTRIBUTING.md
 ├── SECURITY.md
 ├── package.json
 ├── bin/
-│   └── uipath-companion.mjs
+│   └── uipath-boost.mjs
 ├── src/
 │   ├── catalog.mjs
 │   ├── cli-args.mjs
@@ -261,7 +261,7 @@ Every release should record:
 
 ### Article and video series
 
-1. Official UiPath skills versus companion engineering skills.
+1. Official UiPath skills versus UiPath Boost community skills.
 2. Installing skills and using Project Router.
 3. From automation idea to implementation-ready SDD.
 4. Building reliable automations with quality gates.
@@ -304,7 +304,7 @@ Every article and video should include:
 ### Days 16-30: Distribution
 
 - Verify project-local and global installation on Codex, Claude Code, and Cursor.
-- Publish `uipath-engineering-companion` to npm.
+- Publish `uipath-boost` to npm.
 - Confirm standard GitHub installation through `npx skills`.
 - Confirm skills.sh indexing or file a listing request.
 
@@ -351,12 +351,12 @@ Track outcomes rather than only install counts:
 
 ### npm
 
-- [ ] Recheck `npm view uipath-engineering-companion`.
+- [ ] Recheck `npm view uipath-boost`.
 - [ ] Log in with `npm login` and enable the account's required 2FA workflow.
 - [ ] Run `npm pack --dry-run` and inspect included files.
 - [ ] Test the generated tarball in a clean temporary directory.
 - [ ] Publish with `npm publish --access public`.
-- [ ] Verify `npx uipath-engineering-companion list` from a clean environment.
+- [ ] Verify `npx uipath-boost list` from a clean environment.
 
 ### skills.sh
 
