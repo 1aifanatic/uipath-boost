@@ -1,19 +1,19 @@
-# UiPath Engineering Companion
+# UiPath Boost
 
-**Community agent skills for better automation engineering**
+**Community skills for better UiPath automation**
 
-UiPath Engineering Companion is an open community catalog of 34 Agent Skills that help teams design, deliver, test, operate, and explain UiPath automations with greater discipline.
+UiPath Boost is an open community catalog of 34 Agent Skills that help teams design, deliver, test, operate, and explain UiPath automations with greater discipline.
 
 The official UiPath skills are excellent at understanding current UiPath products: they author XAML and coded workflows, build agents and Maestro projects, operate the platform, validate artifacts, troubleshoot failures, and manage solution lifecycles. Real delivery teams also need repeatable ways to clarify requirements, preserve decisions, refine tasks, protect source control, prove regression coverage, assess release readiness, and transfer knowledge. Those complementary engineering practices are why this project exists.
 
 > [!IMPORTANT]
-> This is a community project maintained by [1aifanatic](https://github.com/1aifanatic). It is not an official UiPath product or official UiPath skill catalog. Official UiPath skills remain the source of truth for product commands, schemas, validation, deployment, tenant operations, and current platform behavior.
+> UiPath Boost is an independent community project maintained by [1aifanatic](https://github.com/1aifanatic). It is not an official UiPath product or official UiPath skill catalog. Official UiPath skills remain the source of truth for product commands, schemas, validation, deployment, tenant operations, and current platform behavior.
 
 ## The boundary in one sentence
 
-> Official UiPath skills build and operate UiPath products. Companion skills improve the engineering process before, after, and around that product work.
+> Official UiPath skills build and operate UiPath products. UiPath Boost skills improve the engineering process before, after, and around that product work.
 
-| Official UiPath skills own | Companion skills add |
+| Official UiPath skills own | UiPath Boost skills add |
 |---|---|
 | Product-specific authoring | Discovery discipline and durable decisions |
 | Current CLI commands and schemas | Delivery controls and project continuity |
@@ -21,7 +21,7 @@ The official UiPath skills are excellent at understanding current UiPath product
 | Platform, identity, policy, and test operations | Regression evidence and requirement traceability |
 | Troubleshooting and deployment | Release, observability, and security readiness |
 
-Companion skills deliberately stop when the next outcome belongs to an official UiPath owner.
+UiPath Boost skills deliberately stop when the next outcome belongs to an official UiPath owner.
 
 ## Quick start
 
@@ -35,7 +35,7 @@ uip skills install
 ### 2. Inspect this catalog
 
 ```bash
-npx skills add 1aifanatic/uipath-engineering-companion --list
+npx skills add 1aifanatic/uipath-boost --list
 ```
 
 ### 3. Install the Project Router
@@ -43,13 +43,13 @@ npx skills add 1aifanatic/uipath-engineering-companion --list
 Project-local installation is the default:
 
 ```bash
-npx skills add 1aifanatic/uipath-engineering-companion --skill uipath-project-router --agent codex --yes
+npx skills add 1aifanatic/uipath-boost --skill uipath-project-router --agent codex --yes
 ```
 
 Add `--global` to make the skill available across projects:
 
 ```bash
-npx skills add 1aifanatic/uipath-engineering-companion --skill uipath-project-router --agent codex --global --yes
+npx skills add 1aifanatic/uipath-boost --skill uipath-project-router --agent codex --global --yes
 ```
 
 Replace `codex` with another agent supported by the open [`skills` CLI](https://github.com/vercel-labs/skills), such as `claude-code` or `cursor`.
@@ -61,7 +61,7 @@ Use uipath-project-router.
 
 I need to <describe the UiPath outcome>.
 My available inputs are <repository, PDD, SDD, report, error, or evidence>.
-Tell me the smallest correct sequence of official and companion skills.
+Tell me the smallest correct sequence of official and UiPath Boost skills.
 Do not modify files or platform resources while routing.
 ```
 
@@ -70,13 +70,13 @@ Do not modify files or platform resources while routing.
 ### Install one skill
 
 ```bash
-npx skills add 1aifanatic/uipath-engineering-companion --skill uipath-regression-harness --agent codex --global --yes
+npx skills add 1aifanatic/uipath-boost --skill uipath-regression-harness --agent codex --global --yes
 ```
 
 ### Install the full catalog
 
 ```bash
-npx skills add 1aifanatic/uipath-engineering-companion --skill '*' --agent codex --global --yes
+npx skills add 1aifanatic/uipath-boost --skill '*' --agent codex --global --yes
 ```
 
 ### Use the branded installer
@@ -84,17 +84,17 @@ npx skills add 1aifanatic/uipath-engineering-companion --skill '*' --agent codex
 After the npm package is released:
 
 ```bash
-npx uipath-engineering-companion list
-npx uipath-engineering-companion install --starter --agent codex --global --yes
-npx uipath-engineering-companion install --all --agent codex --global --yes
+npx uipath-boost list
+npx uipath-boost install --starter --agent codex --global --yes
+npx uipath-boost install --all --agent codex --global --yes
 ```
 
 For a permanent command:
 
 ```bash
-npm install -g uipath-engineering-companion
-uipath-companion list
-uipath-companion install --starter --agent codex --global --yes
+npm install -g uipath-boost
+uipath-boost list
+uipath-boost install --starter --agent codex --global --yes
 ```
 
 ## Recommended starter set
@@ -103,7 +103,7 @@ The branded `--starter` option installs these five skills:
 
 | Skill | Why start here |
 |---|---|
-| `uipath-project-router` | Selects the smallest official and companion workflow without performing specialist work |
+| `uipath-project-router` | Selects the smallest official and UiPath Boost workflow without performing specialist work |
 | `uipath-discovery-with-docs` | Preserves business language, evidence, assumptions, and decisions across sessions |
 | `uipath-task-refinement` | Converts an approved planner backlog into session-sized, verifiable work items |
 | `uipath-regression-harness` | Turns a confirmed defect into durable red/green evidence |
@@ -140,19 +140,19 @@ The branded `--starter` option installs these five skills:
 ### New automation
 
 ```text
-Companion discovery
+UiPath Boost discovery
 → official uipath-planner
-→ optional companion task refinement
+→ optional UiPath Boost task refinement
 → official artifact owner
 → official uipath-review
-→ companion release readiness
+→ UiPath Boost release readiness
 ```
 
 ### Production defect
 
 ```text
 Official uipath-troubleshoot
-→ companion regression harness
+→ UiPath Boost regression harness
 → official artifact owner applies the fix
 → official review and testing
 ```
@@ -161,8 +161,8 @@ Official uipath-troubleshoot
 
 ```text
 Official review and test evidence
-→ companion security assessment and traceability
-→ companion release-readiness verdict
+→ UiPath Boost security assessment and traceability
+→ UiPath Boost release-readiness verdict
 → official deployment owner, with explicit authorization
 ```
 
