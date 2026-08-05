@@ -5,7 +5,7 @@ description: "Create an interactive or document-based wizard for a UiPath setup,
 
 # UiPath Runbook Wizard
 
-Turn a tedious human procedure into precise, current, staged instructions with captured outputs, confirmation gates, idempotent writes, and a closing verification summary.
+Turn steps only a human can perform into a precise Bash, PowerShell, or document-based wizard with confirmation gates, idempotent writes, and a closing verification summary.
 
 **Maturity:** pilot.
 
@@ -13,7 +13,7 @@ Turn a tedious human procedure into precise, current, staged instructions with c
 
 **This custom skill owns:** Turn a tedious human procedure into precise, current, staged instructions with captured outputs, confirmation gates, idempotent writes, and a closing verification summary.
 
-It does not own current UiPath product commands, schemas, artifact validation, live tenant operations, or policy administration unless its instructions explicitly say otherwise.
+Keep current product commands, schemas, artifact validation, live tenant operations, and policy administration with official UiPath skills.
 
 ## Compose With Official UiPath Skills
 
@@ -23,13 +23,11 @@ Use official skills for current product commands and artifact contracts:
 - `uipath-admin`
 - `uipath-solution`
 
-Read [references/official-uipath-skill-map.md](references/official-uipath-skill-map.md) when routing is unclear.
-
 ## Workflow
 
 ### 1. Scope the procedure
 
-Inspect existing configuration, documentation, environment files, pipelines, project context, and official skill guidance. Enumerate every manual stage and value it produces.
+Inspect existing configuration, documentation, environment files, pipelines, project context, and official skill guidance. Separate work the agent can safely perform with available tools from portal clicks, approvals, secret entry, and authority gates that require a human. Enumerate only the human stages and the values they produce.
 
 **Completion criterion:** Each stage has a name, input, output, destination, sensitivity, and owner.
 
@@ -39,31 +37,37 @@ Use official documentation or the applicable official UiPath skill to confirm ex
 
 **Completion criterion:** No click path or command is invented.
 
-### 3. Choose the wizard form
+### 3. Confirm the stages
 
-Use a shell wizard for local, repeatable, low-risk setup; use a Markdown runbook when the procedure spans teams, approvals, or unsupported interactive environments.
+Present the proposed stage list, outputs, sensitivity, and irreversible checkpoints before authoring the artifact. Continue only after the user confirms the scope.
+
+**Completion criterion:** The authorized human stages are confirmed and agent-runnable work is excluded.
+
+### 4. Choose the wizard form
+
+Use Bash for Unix-like or WSL environments, PowerShell for native Windows environments, and Markdown when the procedure spans teams, approvals, or unsupported interactive environments. Start from the matching bundled template.
 
 **Completion criterion:** The format matches where the procedure will actually run.
 
-### 4. Author safe stages
+### 5. Author safe stages
 
 Open or link the required page before requesting a value, hide secrets, write public and secret values only to approved destinations, make reruns idempotent, and confirm before irreversible actions.
 
 **Completion criterion:** A stranger can follow each stage without exposing secrets or guessing.
 
-### 5. Add progress and recovery
+### 6. Add progress and recovery
 
 Show stage count, prerequisites, completion checks, retry guidance, rollback or stop conditions, and the exact artifact or state produced.
 
 **Completion criterion:** The user knows what remains and how to recover from interruption.
 
-### 6. Verify statically
+### 7. Verify statically
 
-Check shell syntax when applicable and trace every captured value to its destination. Do not execute browser, approval, secret, or production-changing stages on the user's behalf.
+Check Bash with `bash -n` and ShellCheck when available; parse PowerShell with its language parser. Trace every captured value to its destination. Leave browser, approval, secret, and production-changing stages for the authorized human run.
 
 **Completion criterion:** The wizard is structurally valid and every declared output is accounted for.
 
-### 7. Hand off
+### 8. Hand off
 
 State how to run or use the wizard, what permissions are required, which stages need explicit human authority, and when to delete or retain it.
 
@@ -82,6 +86,7 @@ State how to run or use the wizard, what permissions are required, which stages 
 - Do not echo secrets or write them to unapproved plaintext files.
 - Do not run irreversible, browser-driven, approval, deployment, or production operations while authoring the wizard.
 - Do not make a one-off script permanent unless the user wants a maintained runbook.
+- Use the matching [Bash](assets/wizard-template.sh) or [PowerShell](assets/wizard-template.ps1) template rather than rebuilding wizard mechanics.
 
 ## Example Requests
 
@@ -91,4 +96,4 @@ State how to run or use the wizard, what permissions are required, which stages 
 
 ## Finish
 
-End with what was completed, the evidence produced, the next official skill or owner, and every unresolved blocker. Never imply that a write, validation, test, deployment, policy change, tenant operation, or runtime action occurred unless it actually ran and its result was observed.
+Report completed work, observed evidence, the next official owner, and every blocker. Mark unobserved actions as pending.

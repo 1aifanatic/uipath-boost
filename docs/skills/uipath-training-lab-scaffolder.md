@@ -6,13 +6,14 @@
 
 | | |
 |---|---|
+| **Invocation** | User-invoked — start it explicitly. |
 | **Purpose** | Generate a consistent, navigable UiPath lab skeleton from an approved curriculum plan. |
 | **Use it when** | Instructors need numbered sections, exercises, problem/solution variants, explainers, fixtures, references, and meaningful README stubs. |
 | **Do not use it for** | Pretending a skeleton is a finished course, creating empty placeholders, or fabricating working UiPath project assets. |
 | **Primary output** | Numbered directory tree, meaningful README stubs, structural validation, and content-authoring backlog. |
 | **Maturity** | Pilot |
 
-## Why this skill exists
+## What it does
 
 Course repositories become inconsistent when every instructor creates folders and instructions manually. Learners then cannot predict where the problem, solution, fixtures, or completion evidence lives. This skill turns a curriculum plan into a deterministic structure while clearly separating scaffolding from the real product assets still to be authored.
 
@@ -26,7 +27,9 @@ A ten-module Agent Builder course has a lesson list but no repository. Folder na
 
 The curriculum becomes numbered section and exercise directories with only the requested variants. Each README states title, objective, purpose, prerequisites, and completion evidence. Project exercises name the official product owner and validation expectations without inventing artifacts. Structural validation checks ordering, duplicates, required variants, non-empty files, links, and plan completeness.
 
-## When to use
+## When to reach for it
+
+Invoke this skill explicitly as `$uipath-training-lab-scaffolder`. UiPath Boost treats it as a deliberate workflow; Codex enforces that policy in `agents/openai.yaml`.
 
 - Starting a workshop, course, bootcamp, or exercise repository.
 - Converting a curriculum plan into repeatable problem and solution folders.
@@ -34,7 +37,7 @@ The curriculum becomes numbered section and exercise directories with only the r
 - Creating fixtures, reference, explainer, or solution variants deliberately.
 - Preparing a repository for later content authors.
 
-## When not to use
+### Use a neighboring skill instead
 
 - The curriculum order, objectives, or expected evidence are undefined.
 - The request is to build complete UiPath projects rather than scaffold structure.
@@ -42,7 +45,7 @@ The curriculum becomes numbered section and exercise directories with only the r
 - Existing exercise numbering would be changed without preserving references and history.
 - Empty placeholder files would be considered sufficient.
 
-## What you need before starting
+## Prerequisites
 
 - Ordered curriculum sections and exercises.
 - Unique IDs, titles, objectives, prerequisites, expected artifacts, and completion evidence.
@@ -89,7 +92,13 @@ learner purpose, and completion evidence. Add official RPA ownership and sample
 data guidance without fabricating projects, then validate the tree and list missing content.
 ```
 
-## How to know it is done
+## Common questions
+
+**Why does the agent not start this automatically?**
+
+This workflow benefits from an intentional human start because it orchestrates a session, changes durable project structure, or makes a cross-work decision. Installation makes it available; it does not run it.
+
+## It's working if
 
 - Every planned exercise has a unique ID, order, and purpose.
 - The directory tree matches the approved plan.
@@ -99,7 +108,11 @@ data guidance without fabricating projects, then validate the tree and list miss
 - Ordering, required variants, duplicates, links, and plan completeness pass validation.
 - Remaining content work is explicitly listed and assigned.
 
-## Official UiPath handoffs
+## Where it fits
+
+This is a **user-invoked orchestration skill** in UiPath Boost. Use [uipath-project-router](uipath-project-router.md) when you need to decide whether it is the right entry point or what should follow it.
+
+## Official UiPath handoff
 
 The official skill for each exercise’s artifact type owns real project creation and validation. The scaffolder creates educational structure and pointers only.
 

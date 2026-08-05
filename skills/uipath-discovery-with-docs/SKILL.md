@@ -1,6 +1,6 @@
 ---
 name: uipath-discovery-with-docs
-description: "Run UiPath discovery while maintaining durable project documentation. Use when the conversation must update a process glossary, evidence index, decision log, assumptions, and architecture decision records as understanding evolves, especially for multi-session discovery or repository-backed projects."
+description: "Use only when the user explicitly asks to run UiPath discovery while maintaining durable project documentation."
 ---
 
 # UiPath Discovery With Docs
@@ -13,7 +13,7 @@ Combine rigorous discovery with immediate documentation so decisions survive con
 
 **This custom skill owns:** Combine rigorous discovery with immediate documentation so decisions survive context windows and later agents use the same business language.
 
-It does not own current UiPath product commands, schemas, artifact validation, live tenant operations, or policy administration unless its instructions explicitly say otherwise.
+Keep current product commands, schemas, artifact validation, live tenant operations, and policy administration with official UiPath skills.
 
 ## Compose With Official UiPath Skills
 
@@ -21,8 +21,6 @@ Use official skills for current product commands and artifact contracts:
 
 - `uipath-automation-discovery`
 - `uipath-planner`
-
-Read [references/official-uipath-skill-map.md](references/official-uipath-skill-map.md) when routing is unclear.
 
 ## Workflow
 
@@ -85,4 +83,4 @@ Create a planner-ready summary and route PDD or SDD work to uipath-planner.
 
 ## Finish
 
-End with what was completed, the evidence produced, the next official skill or owner, and every unresolved blocker. Never imply that a write, validation, test, deployment, policy change, tenant operation, or runtime action occurred unless it actually ran and its result was observed.
+Report completed work, observed evidence, the next official owner, and every blocker. Mark unobserved actions as pending.

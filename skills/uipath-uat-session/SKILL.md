@@ -1,6 +1,6 @@
 ---
 name: uipath-uat-session
-description: "Facilitate a business-language user acceptance testing session and turn observations into reproducible acceptance records and handoffs. Use when business testers are walking through expected behavior and need structured evidence. Do not manage Test Manager resources or reports, operate Action Center tasks, diagnose root cause, or send UiPath product feedback; route those outcomes to the official owners."
+description: "Use only when the user explicitly asks to facilitate UiPath UAT and capture reproducible business acceptance evidence."
 ---
 
 # UiPath UAT Session
@@ -13,7 +13,7 @@ Capture one observation at a time, gather enough evidence to reproduce it, disti
 
 **This custom skill owns:** Capture one observation at a time, gather enough evidence to reproduce it, distinguish defects from requirement gaps or environment issues, and produce focused work items without over-interviewing the tester.
 
-It does not own current UiPath product commands, schemas, artifact validation, live tenant operations, or policy administration unless its instructions explicitly say otherwise.
+Keep current product commands, schemas, artifact validation, live tenant operations, and policy administration with official UiPath skills.
 
 ## Compose With Official UiPath Skills
 
@@ -24,8 +24,6 @@ Use official skills for current product commands and artifact contracts:
 - `uipath-troubleshoot`
 - `uipath-feedback`
 - `uipath-review`
-
-Read [references/official-uipath-skill-map.md](references/official-uipath-skill-map.md) when routing is unclear.
 
 ## Workflow
 
@@ -94,4 +92,4 @@ Report the created record and ask for the next independent observation until the
 
 ## Finish
 
-End with what was completed, the evidence produced, the next official skill or owner, and every unresolved blocker. Never imply that a write, validation, test, deployment, policy change, tenant operation, or runtime action occurred unless it actually ran and its result was observed.
+Report completed work, observed evidence, the next official owner, and every blocker. Mark unobserved actions as pending.

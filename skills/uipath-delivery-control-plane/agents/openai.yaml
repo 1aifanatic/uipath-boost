@@ -1,3 +1,6 @@
 interface:
   display_name: "UiPath Delivery Control Plane"
-  short_description: "Establish durable delivery governance around an already discovered UiPath repository or solution"
+  short_description: "Establish durable UiPath delivery governance"
+  default_prompt: "Use $uipath-delivery-control-plane to establish the project delivery control plane."
+policy:
+  allow_implicit_invocation: false

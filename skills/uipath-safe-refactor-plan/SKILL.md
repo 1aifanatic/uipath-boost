@@ -1,6 +1,6 @@
 ---
 name: uipath-safe-refactor-plan
-description: "Plan a behavior-preserving UiPath refactor as small, verifiable steps with safety nets and rollback points. Use when architecture health or review identifies duplicated logic, oversized workflows, tangled arguments, fragile selectors, weak seams, package migrations, or technical debt that must be improved without changing approved business behavior."
+description: "Plan a behavior-preserving UiPath refactor after an architecture direction is selected. Use when a proven hotspot needs small implementation steps, safety nets, compatibility rules, stop conditions, and rollback points across workflows, packages, queues, selectors, or orchestration artifacts."
 ---
 
 # UiPath Safe Refactor Plan
@@ -13,7 +13,7 @@ Make the structural change easy, then make the easy change, while keeping the au
 
 **This custom skill owns:** Make the structural change easy, then make the easy change, while keeping the automation demonstrably working after every meaningful step.
 
-It does not own current UiPath product commands, schemas, artifact validation, live tenant operations, or policy administration unless its instructions explicitly say otherwise.
+Keep current product commands, schemas, artifact validation, live tenant operations, and policy administration with official UiPath skills.
 
 ## Compose With Official UiPath Skills
 
@@ -29,13 +29,11 @@ Use official skills for current product commands and artifact contracts:
 - `uipath-api-workflow`
 - `uipath-solution`
 
-Read [references/official-uipath-skill-map.md](references/official-uipath-skill-map.md) when routing is unclear.
-
 ## Workflow
 
 ### 1. Establish current behavior
 
-Read the PDD or SDD, acceptance tests, operational evidence, callers, public contracts, ADRs, and current validation results. State what must not change.
+Require a selected direction from an architecture proposal, review finding, incident decision, or user choice. Read the PDD or SDD, acceptance tests, operational evidence, callers, public contracts, ADRs, and current validation results. State what must not change.
 
 **Completion criterion:** The behavioral invariant and refactor boundary are explicit.
 
@@ -89,6 +87,7 @@ Create dependency-ordered work items and route implementation to the owning offi
 - Do not replace a working pattern merely because another pattern is fashionable.
 - Do not use file paths as the only durable description of intent.
 - Do not execute source changes during planning.
+- Route broad architecture surveying to `uipath-architecture-deepening`; this skill sequences an already selected direction.
 
 ## Example Requests
 
@@ -98,4 +97,4 @@ Create dependency-ordered work items and route implementation to the owning offi
 
 ## Finish
 
-End with what was completed, the evidence produced, the next official skill or owner, and every unresolved blocker. Never imply that a write, validation, test, deployment, policy change, tenant operation, or runtime action occurred unless it actually ran and its result was observed.
+Report completed work, observed evidence, the next official owner, and every blocker. Mark unobserved actions as pending.

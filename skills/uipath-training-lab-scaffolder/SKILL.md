@@ -1,6 +1,6 @@
 ---
 name: uipath-training-lab-scaffolder
-description: "Scaffold a consistent UiPath training lab or exercise repository from a curriculum plan. Use when an instructor needs numbered sections, problems, solutions, explainers, fixtures, reference material, meaningful README files, learning objectives, and validation without manually creating repetitive folder structures."
+description: "Use only when the user explicitly asks to scaffold and validate a consistent UiPath training lab from an approved curriculum."
 ---
 
 # UiPath Training Lab Scaffolder
@@ -13,7 +13,7 @@ Create a navigable, non-empty lab skeleton that makes learner tasks, reference i
 
 **This custom skill owns:** Create a navigable, non-empty lab skeleton that makes learner tasks, reference implementations, fixtures, prerequisites, and verification conventions predictable across a course.
 
-It does not own current UiPath product commands, schemas, artifact validation, live tenant operations, or policy administration unless its instructions explicitly say otherwise.
+Keep current product commands, schemas, artifact validation, live tenant operations, and policy administration with official UiPath skills.
 
 ## Workflow
 
@@ -75,4 +75,4 @@ List the exercises that still need real project assets, solutions, diagrams, rec
 
 ## Finish
 
-End with what was completed, the evidence produced, the next official skill or owner, and every unresolved blocker. Never imply that a write, validation, test, deployment, policy change, tenant operation, or runtime action occurred unless it actually ran and its result was observed.
+Report completed work, observed evidence, the next official owner, and every blocker. Mark unobserved actions as pending.

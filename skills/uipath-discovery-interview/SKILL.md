@@ -1,6 +1,6 @@
 ---
 name: uipath-discovery-interview
-description: "Run a rigorous UiPath requirements and process discovery interview. Use to sharpen an automation idea, stress-test a proposed solution, clarify a process before a PDD or SDD, or collect business, process, data, exception, security, volume, SLA, access, and acceptance evidence. Supports one-question and frontier-batch modes."
+description: "Run evidence-based UiPath discovery in frontier rounds. Use to sharpen an automation idea, stress-test a proposed solution, clarify a process before a PDD or SDD, or resolve business, data, exception, security, volume, SLA, access, and acceptance decisions."
 ---
 
 # UiPath Discovery Interview
@@ -13,7 +13,7 @@ Resolve project decisions through evidence-based questions while looking up fact
 
 **This custom skill owns:** Resolve project decisions through evidence-based questions while looking up facts available in artifacts or systems instead of asking the user to remember them.
 
-It does not own current UiPath product commands, schemas, artifact validation, live tenant operations, or policy administration unless its instructions explicitly say otherwise.
+Keep current product commands, schemas, artifact validation, live tenant operations, and policy administration with official UiPath skills.
 
 ## Compose With Official UiPath Skills
 
@@ -22,21 +22,19 @@ Use official skills for current product commands and artifact contracts:
 - `uipath-automation-discovery`
 - `uipath-planner`
 
-Read [references/official-uipath-skill-map.md](references/official-uipath-skill-map.md) when routing is unclear.
-
 ## Workflow
 
-### 1. Set the interview mode
+### 1. Map the decision tree
 
-Use one-question mode for complex or sensitive decisions and frontier-batch mode for independent questions. State the recommendation.
+Separate facts from decisions. Investigate facts from supplied artifacts or safe read-only sources. Put decisions to the accountable human and track their prerequisites.
 
-**Completion criterion:** The mode and target decision are explicit.
+**Completion criterion:** Every open item is classified as an investigable fact or a human decision with prerequisites.
 
-### 2. Build the decision tree
+### 2. Ask the frontier round
 
-Cover outcome, current behavior, actors, trigger, inputs, systems, transaction definition, rules, exceptions, volumes, SLAs, controls, access, target operating model, and acceptance evidence.
+Ask every question whose prerequisites are settled in one numbered round. Use one-question mode only when the user requests it or a sensitive decision requires privacy or focus. Format each question as a short title, the question, and a recommendation on its own line.
 
-**Completion criterion:** Each question depends only on settled answers.
+**Completion criterion:** The round contains every currently answerable decision and no blocked question.
 
 ### 3. Prefer evidence
 
@@ -50,9 +48,9 @@ For each decision, offer a recommended answer with rationale, then let the accou
 
 **Completion criterion:** Every decision has a recommendation and owner.
 
-### 5. Close the frontier
+### 5. Recompute and close the frontier
 
-Continue until no unresolved branch remains, or each open item has an owner, evidence request, and due condition.
+Incorporate the answers, finish independent fact-finding when available, recompute the frontier, and ask the next round. Continue until no unresolved branch remains, or each open item has an owner, evidence request, and due condition.
 
 **Completion criterion:** The project can be handed to uipath-planner without hidden assumptions.
 
@@ -78,4 +76,4 @@ Continue until no unresolved branch remains, or each open item has an owner, evi
 
 ## Finish
 
-End with what was completed, the evidence produced, the next official skill or owner, and every unresolved blocker. Never imply that a write, validation, test, deployment, policy change, tenant operation, or runtime action occurred unless it actually ran and its result was observed.
+Report completed work, observed evidence, the next official owner, and every blocker. Mark unobserved actions as pending.

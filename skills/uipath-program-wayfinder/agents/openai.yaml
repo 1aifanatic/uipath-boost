@@ -1,3 +1,6 @@
 interface:
   display_name: "UiPath Program Wayfinder"
-  short_description: "Plan a large, foggy UiPath program that cannot fit in one design session"
+  short_description: "Map decisions for large, foggy UiPath programs"
+  default_prompt: "Use $uipath-program-wayfinder to chart decision tickets from this destination to a planner-ready handoff."
+policy:
+  allow_implicit_invocation: false

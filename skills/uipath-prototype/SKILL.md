@@ -5,7 +5,7 @@ description: "Build a deliberately throwaway UiPath-oriented prototype to answer
 
 # UiPath Prototype
 
-Increase discussion fidelity with the cheapest safe artifact that can produce a decisive verdict, while keeping prototype code and data out of production by default.
+Increase discussion fidelity with the cheapest safe artifact that produces a decisive verdict. Treat the prototype as primary-source evidence that stays out of main and production.
 
 **Maturity:** core.
 
@@ -13,7 +13,7 @@ Increase discussion fidelity with the cheapest safe artifact that can produce a 
 
 **This custom skill owns:** Increase discussion fidelity with the cheapest safe artifact that can produce a decisive verdict, while keeping prototype code and data out of production by default.
 
-It does not own current UiPath product commands, schemas, artifact validation, live tenant operations, or policy administration unless its instructions explicitly say otherwise.
+Keep current product commands, schemas, artifact validation, live tenant operations, and policy administration with official UiPath skills.
 
 ## Compose With Official UiPath Skills
 
@@ -29,8 +29,6 @@ Use official skills for current product commands and artifact contracts:
 - `uipath-human-in-the-loop`
 - `uipath-ixp`
 
-Read [references/official-uipath-skill-map.md](references/official-uipath-skill-map.md) when routing is unclear.
-
 ## Workflow
 
 ### 1. State one falsifiable question
@@ -41,7 +39,7 @@ Write the exact uncertainty and the observable result that would answer it. Spli
 
 ### 2. Choose the lowest-cost artifact
 
-Select a mock, isolated workflow, coded harness, sample form, disposable flow, extraction experiment, or UI variation that exercises only the uncertain behavior.
+Select a mock, isolated workflow, coded harness, sample form, disposable flow, extraction experiment, or UI variation that exercises only the uncertain behavior. For a logic, state, or human-review question, prefer one self-contained HTML file with no build or server, visible state, free-play controls, and guided scenarios. For a visual question, produce materially different layouts rather than cosmetic variants.
 
 **Completion criterion:** The artifact is smaller than a production slice.
 
@@ -63,11 +61,11 @@ Exercise the minimum normal, edge, and failure cases needed to challenge the pro
 
 **Completion criterion:** The verdict is not based on one convenient example.
 
-### 6. Capture the answer and clean up
+### 6. Preserve the answer and its primary source
 
-Record question, setup, observations, verdict, limitations, and resulting decision. Delete or isolate throwaway artifacts and route validated decisions into planner or implementation work.
+Record the question, setup, observations, verdict, limitations, and resulting decision in the authoritative project record. When source control is available and the user authorizes the write, preserve the runnable prototype on an unmerged `prototype/<name>` branch and place a context pointer in the decision or implementation item. Otherwise save it in an explicitly isolated location and report the retention decision.
 
-**Completion criterion:** The learning survives while accidental production use does not.
+**Completion criterion:** Main contains the decision rather than prototype code, while the evidence remains findable and cannot be mistaken for production.
 
 ## Output Contract
 
@@ -78,7 +76,7 @@ Record question, setup, observations, verdict, limitations, and resulting decisi
 
 ## Guardrails
 
-- Do not harden a prototype into production by gradual accident.
+- Keep the prototype narrow, visibly temporary, and outside main; build production behavior separately.
 - Do not use unrestricted production credentials or live customer data.
 - Do not add broad abstractions, comprehensive error handling, or polish unrelated to the question.
 - Do not claim product feasibility beyond the tested conditions.
@@ -91,4 +89,4 @@ Record question, setup, observations, verdict, limitations, and resulting decisi
 
 ## Finish
 
-End with what was completed, the evidence produced, the next official skill or owner, and every unresolved blocker. Never imply that a write, validation, test, deployment, policy change, tenant operation, or runtime action occurred unless it actually ran and its result was observed.
+Report completed work, observed evidence, the next official owner, and every blocker. Mark unobserved actions as pending.

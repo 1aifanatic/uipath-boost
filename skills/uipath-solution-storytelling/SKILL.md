@@ -13,7 +13,7 @@ Separate exploration from shaping, ground every concept before relying on it, an
 
 **This custom skill owns:** Separate exploration from shaping, ground every concept before relying on it, and build the narrative incrementally so technical credibility and audience comprehension survive editing.
 
-It does not own current UiPath product commands, schemas, artifact validation, live tenant operations, or policy administration unless its instructions explicitly say otherwise.
+Keep current product commands, schemas, artifact validation, live tenant operations, and policy administration with official UiPath skills.
 
 ## Workflow
 
@@ -82,4 +82,4 @@ Check the opening promise, logical dependency order, examples, calls to action, 
 
 ## Finish
 
-End with what was completed, the evidence produced, the next official skill or owner, and every unresolved blocker. Never imply that a write, validation, test, deployment, policy change, tenant operation, or runtime action occurred unless it actually ran and its result was observed.
+Report completed work, observed evidence, the next official owner, and every blocker. Mark unobserved actions as pending.

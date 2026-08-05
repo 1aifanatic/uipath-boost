@@ -6,13 +6,14 @@
 
 | | |
 |---|---|
+| **Invocation** | Model-invoked — start it explicitly or let the agent select it when the request fits. |
 | **Purpose** | Create a portable, linked Markdown knowledge base for durable UiPath project knowledge. |
 | **Use it when** | Decisions, runbooks, research, glossary terms, patterns, and lessons are scattered or duplicated. |
 | **Do not use it for** | Copying full source documents into notes or making one proprietary note application mandatory. |
 | **Primary output** | Knowledge conventions, topic notes, index notes, links, ownership and freshness metadata, and a navigation report. |
 | **Maturity** | Pilot |
 
-## Why this skill exists
+## What it does
 
 Projects accumulate useful knowledge faster than people can find it. The same queue rule may appear in an SDD, issue, chat, runbook, and post-mortem with different wording. New team members cannot tell which statement is current, and operational knowledge disappears when a person leaves.
 
@@ -36,7 +37,9 @@ The project has:
 - Owners, source dates, review triggers, status, and sensitivity labels.
 - A report of broken links, orphan notes, duplicates, and stale content.
 
-## When to use
+## When to reach for it
+
+Invoke this skill as `$uipath-project-knowledge-base`, or let the agent select it automatically when the request matches its defined job.
 
 - Important project knowledge is difficult to discover.
 - The same concept is described in several places.
@@ -45,7 +48,7 @@ The project has:
 - Readers need freshness and ownership signals before trusting a note.
 - You want portable Markdown that can also work with optional wiki-link tools.
 
-## When not to use
+### Use a neighboring skill instead
 
 - You only need a short transfer to the next session; use `uipath-project-handoff`.
 - The project first needs business terms and decisions clarified; use `uipath-process-domain-modeling`.
@@ -53,7 +56,7 @@ The project has:
 - The only navigation method would require one proprietary application.
 - Sensitive production records, credentials, or unrestricted personal data would be stored in the knowledge base.
 
-## What you need before starting
+## Prerequisites
 
 - Access to existing Markdown, SDDs, ADRs, runbooks, reviews, research, post-mortems, diagrams, and issue links.
 - Existing folder and naming conventions worth preserving.
@@ -72,7 +75,7 @@ The project has:
 
 ## How it works
 
-1. **Discover existing knowledge.** Inventory sources and identify overlaps before writing.
+1. **Discover existing knowledge.** Inventory sources and identify overlaps and cached environment facts before writing.
 2. **Define portable conventions.** Keep the system understandable in ordinary Markdown.
 3. **Create focused notes and indexes.** Make every new note reachable from a relevant index.
 4. **Connect dependencies.** Link business concepts through design, build, test, release, and support knowledge.
@@ -84,7 +87,7 @@ The project has:
 
 A queue-processing program has three different retry definitions in an SDD, a support runbook, and a post-mortem. The skill creates one “Queue retry policy” topic note that explains the concept briefly, links to the approved ADR and current runbook, identifies the owner and review trigger, and marks the older post-mortem as historical evidence. Architecture and operations indexes both link to the topic note.
 
-The knowledge base does not rewrite the full SDD or runbook. It makes the authoritative relationship discoverable.
+The knowledge base does not rewrite the full SDD, runbook, configuration, package script, or command help. It caches only reasons, conventions, ownership, traps, lessons, and evidence context that are expensive to rediscover.
 
 ## Example prompt
 
@@ -98,7 +101,13 @@ authoritative sources instead of copying them, and add owner, freshness,
 status, and sensitivity metadata. Finish with a broken-link and orphan report.
 ```
 
-## How to know it is done
+## Common questions
+
+**Will this skill make changes simply because it is model-invoked?**
+
+No. Model invocation only lets the agent load the instructions when the request fits. Source writes, tracker changes, tenant operations, deployments, and other consequential actions still require the authority stated by the request and the owning official skill.
+
+## It's working if
 
 - Every new topic note is reachable from an index.
 - One durable concept has one primary note.
@@ -109,7 +118,11 @@ status, and sensitivity metadata. Finish with a broken-link and orphan report.
 - Navigation works without a proprietary note application.
 - Sensitive information is excluded or access-controlled appropriately.
 
-## Official UiPath handoffs
+## Where it fits
+
+This is a **model-invoked complementary discipline** in UiPath Boost. It may be selected directly by the agent or reached from a user-invoked workflow. Use [uipath-project-router](uipath-project-router.md) when the larger route is unclear.
+
+## Official UiPath handoff
 
 This skill organizes knowledge about official product work but does not replace product owners. Current commands, schemas, validation, tenant behavior, test operations, troubleshooting, and deployment remain with the matching official UiPath skills.
 

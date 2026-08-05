@@ -6,13 +6,14 @@
 
 | | |
 |---|---|
+| **Invocation** | Model-invoked — start it explicitly or let the agent select it when the request fits. |
 | **Purpose** | Implement one observable UiPath business behavior at a time through witnessed red-green evidence. |
 | **Use it when** | A feature, defect, or critical rule needs durable coverage at the same public seam production uses. |
 | **Do not use it for** | Testing private activity arrangement, pre-writing every imagined test, or computing expectations with the same logic under test. |
 | **Primary output** | Confirmed seams, red-green evidence per behavior, durable regression tests, and final validation record. |
 | **Maturity** | Core |
 
-## Why this skill exists
+## What it does
 
 Tests tied to private workflow layout fail during harmless refactoring and may still miss the business outcome. Behavior-first development starts from the highest stable public seam—workflow call, queue transition, API response, agent outcome, Maestro result, or human task—and makes one meaningful example fail before implementation.
 
@@ -26,7 +27,9 @@ A queue retry rule is implemented first and later tested by checking internal va
 
 The team agrees that the public seam is the observable queue transition. An independent acceptance example fails for the correct reason, the official product owner implements only enough to pass it, and the same test becomes durable regression protection. Edge, exception, retry, and idempotency slices are added one at a time according to risk.
 
-## When to use
+## When to reach for it
+
+Invoke this skill as `$uipath-test-driven-automation`, or let the agent select it automatically when the request matches its defined job.
 
 - Implementing a new business behavior.
 - Fixing a defect that must remain fixed.
@@ -35,7 +38,7 @@ The team agrees that the public seam is the observable queue transition. An inde
 - Refactoring should remain safe while internal structure changes.
 - A team needs observed red-green evidence rather than tests added after the fact.
 
-## When not to use
+### Use a neighboring skill instead
 
 - There is no agreed public behavior seam.
 - The test would assert private variables or activity order.
@@ -43,7 +46,7 @@ The team agrees that the public seam is the observable queue transition. An inde
 - The risky integration would be mocked away completely.
 - The team plans a large batch of tests before learning from the first slice.
 
-## What you need before starting
+## Prerequisites
 
 - Approved behavior and acceptance language.
 - Candidate public seam and its official owner.
@@ -82,7 +85,13 @@ and show the intended red result before changing source. Implement only enough
 to make it green, then add exception and idempotency slices and run broader gates.
 ```
 
-## How to know it is done
+## Common questions
+
+**Will this skill make changes simply because it is model-invoked?**
+
+No. Model invocation only lets the agent load the instructions when the request fits. Source writes, tracker changes, tenant operations, deployments, and other consequential actions still require the authority stated by the request and the owning official skill.
+
+## It's working if
 
 - The user confirmed the public seam.
 - Each test describes observable capability rather than implementation layout.
@@ -93,7 +102,11 @@ to make it green, then add exception and idempotency slices and run broader gate
 - Retained tests protect externally meaningful behavior.
 - Broader quality gates have recorded results.
 
-## Official UiPath handoffs
+## Where it fits
+
+This is a **model-invoked complementary discipline** in UiPath Boost. It may be selected directly by the agent or reached from a user-invoked workflow. Use [uipath-project-router](uipath-project-router.md) when the larger route is unclear.
+
+## Official UiPath handoff
 
 Official skills build and run product-specific tests and source changes: `uipath-rpa`, `uipath-agents`, Maestro skills, `uipath-coded-apps`, and `uipath-api-workflow`. `uipath-test` owns Test Manager resources, executions, and reports. This skill supplies the red-green development discipline across those owners.
 

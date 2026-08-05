@@ -6,13 +6,14 @@
 
 | | |
 |---|---|
+| **Invocation** | Model-invoked — start it explicitly or let the agent select it when the request fits. |
 | **Purpose** | Create one precise business vocabulary for a UiPath process and its lifecycle. |
 | **Use it when** | Terms are vague, overloaded, or inconsistent across business, design, testing, dashboards, runbooks, and support. |
 | **Do not use it for** | Turning selectors, class names, file paths, or other implementation identifiers into business terminology. |
 | **Primary output** | Canonical glossary, ambiguity list, lifecycle relationships, justified ADRs, and propagation checklist. |
 | **Maturity** | Core |
 
-## Why this skill exists
+## What it does
 
 Many automation defects begin as language defects. “Transaction” may mean a business case to one person, a queue item to another, and one system update to a third. “Completed” may mean extracted, posted, or acknowledged. If those meanings remain implicit, requirements, tests, dashboards, retries, and support procedures disagree.
 
@@ -28,7 +29,9 @@ The PDD describes one “case” per email, the queue stores one item per attach
 
 The glossary distinguishes `Customer Request`, `Source Email`, `Business Document`, and `Queue Work Item`, explains their cardinality and lifecycles, records aliases to avoid, and provides concrete examples. Tests, dashboards, backlog items, and support documentation receive a checklist of terms to update.
 
-## When to use
+## When to reach for it
+
+Invoke this skill as `$uipath-process-domain-modeling`, or let the agent select it automatically when the request matches its defined job.
 
 - Business and technical teams use the same word for different concepts.
 - Queue semantics and business transaction semantics are being mixed.
@@ -37,7 +40,7 @@ The glossary distinguishes `Customer Request`, `Source Email`, `Business Documen
 - Discovery, design, testing, and support need one glossary.
 - Existing documents contain contradictory definitions.
 
-## When not to use
+### Use a neighboring skill instead
 
 - The vocabulary is already current, canonical, and consistently used.
 - You only need a product schema or code symbol explained.
@@ -45,7 +48,7 @@ The glossary distinguishes `Customer Request`, `Source Email`, `Business Documen
 - You want ADRs for ordinary, reversible terminology choices.
 - You intend to overwrite a well-established term without showing the conflict and owner decision.
 
-## What you need before starting
+## Prerequisites
 
 - Existing `CONTEXT.md`, PDD, SDD, process maps, queue schemas, test cases, ADRs, and representative artifacts.
 - Business owners and technical users of the important terms.
@@ -82,7 +85,13 @@ human-review scenarios. Update one canonical glossary with aliases and examples,
 then produce a propagation checklist. Do not include implementation identifiers.
 ```
 
-## How to know it is done
+## Common questions
+
+**Will this skill make changes simply because it is model-invoked?**
+
+No. Model invocation only lets the agent load the instructions when the request fits. Source writes, tracker changes, tenant operations, deployments, and other consequential actions still require the authority stated by the request and the owning official skill.
+
+## It's working if
 
 - Existing contradictions and missing concepts were listed.
 - Every material ambiguity has a proposed and owned resolution.
@@ -92,7 +101,11 @@ then produce a propagation checklist. Do not include implementation identifiers.
 - ADRs satisfy the hard-to-reverse, surprising, real-trade-off tests.
 - Downstream artifact owners know what language to update.
 
-## Official UiPath handoffs
+## Where it fits
+
+This is a **model-invoked complementary discipline** in UiPath Boost. It may be selected directly by the agent or reached from a user-invoked workflow. Use [uipath-project-router](uipath-project-router.md) when the larger route is unclear.
+
+## Official UiPath handoff
 
 - `uipath-automation-discovery` may use the vocabulary while sizing opportunities.
 - `uipath-planner` consumes the canonical language in the SDD and task plan.

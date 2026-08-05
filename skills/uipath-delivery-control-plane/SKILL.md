@@ -1,6 +1,6 @@
 ---
 name: uipath-delivery-control-plane
-description: "Establish durable delivery governance around an already discovered UiPath repository or solution. Use after the official uipath-project-discovery-agent has produced or refreshed project context, when tracker conventions, environment aliases, decision records, evidence expectations, ownership, approval boundaries, release controls, or handoff rules are missing. Do not use to rediscover UiPath artifact structure, dependencies, entry points, or coding conventions."
+description: "Use only when the user explicitly asks to establish durable delivery governance around an already discovered UiPath repository or solution."
 ---
 
 # UiPath Delivery Control Plane
@@ -13,7 +13,7 @@ Create the project-management and evidence control plane that complements the of
 
 **This custom skill owns:** Create the project-management and evidence control plane that complements the official project-discovery context instead of duplicating it.
 
-It does not own current UiPath product commands, schemas, artifact validation, live tenant operations, or policy administration unless its instructions explicitly say otherwise.
+Keep current product commands, schemas, artifact validation, live tenant operations, and policy administration with official UiPath skills.
 
 ## Compose With Official UiPath Skills
 
@@ -24,8 +24,6 @@ Use official skills for current product commands and artifact contracts:
 - `uipath-platform`
 - `uipath-admin`
 - `uipath-governance`
-
-Read [references/official-uipath-skill-map.md](references/official-uipath-skill-map.md) when routing is unclear.
 
 ## Workflow
 
@@ -81,4 +79,4 @@ Re-read the result, confirm no artifact inventory was duplicated, and walk one e
 
 ## Finish
 
-End with what was completed, the evidence produced, the next official skill or owner, and every unresolved blocker. Never imply that a write, validation, test, deployment, policy change, tenant operation, or runtime action occurred unless it actually ran and its result was observed.
+Report completed work, observed evidence, the next official owner, and every blocker. Mark unobserved actions as pending.

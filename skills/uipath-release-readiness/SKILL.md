@@ -13,7 +13,7 @@ Produce a clear ready, conditionally ready, or not ready verdict from observed e
 
 **This custom skill owns:** Produce a clear ready, conditionally ready, or not ready verdict from observed evidence while keeping deployment and activation as separate explicitly authorized actions.
 
-It does not own current UiPath product commands, schemas, artifact validation, live tenant operations, or policy administration unless its instructions explicitly say otherwise.
+Keep current product commands, schemas, artifact validation, live tenant operations, and policy administration with official UiPath skills.
 
 ## Compose With Official UiPath Skills
 
@@ -27,8 +27,6 @@ Use official skills for current product commands and artifact contracts:
 - `uipath-governance`
 - `uipath-insights`
 - `uipath-troubleshoot`
-
-Read [references/official-uipath-skill-map.md](references/official-uipath-skill-map.md) when routing is unclear.
 
 ## Workflow
 
@@ -98,4 +96,4 @@ State Ready, Conditionally Ready, or Not Ready with conditions, evidence links, 
 
 ## Finish
 
-End with what was completed, the evidence produced, the next official skill or owner, and every unresolved blocker. Never imply that a write, validation, test, deployment, policy change, tenant operation, or runtime action occurred unless it actually ran and its result was observed.
+Report completed work, observed evidence, the next official owner, and every blocker. Mark unobserved actions as pending.

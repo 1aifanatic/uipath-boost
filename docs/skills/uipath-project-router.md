@@ -6,13 +6,14 @@
 
 | | |
 |---|---|
+| **Invocation** | User-invoked — start it explicitly. |
 | **Purpose** | Choose the smallest correct sequence of official UiPath and UiPath Boost skills for a clearly stated outcome. |
 | **Use it when** | You explicitly want help deciding which skill, workflow, or starting point to use. |
 | **Do not use it for** | Performing the actual build, review, test, diagnosis, deployment, or tenant operation. |
 | **Primary output** | A route card naming the first skill, optional next skill, required input, expected artifact, approval boundary, and stop condition. |
 | **Maturity** | Core |
 
-## Why this skill exists
+## What it does
 
 UiPath work can involve official product skills for RPA, agents, Maestro, testing, administration, governance, platform operations, and troubleshooting, plus UiPath Boost skills for the engineering practices around that work. The router prevents users from memorizing the whole catalog or accidentally starting with a skill that does not own their desired outcome.
 
@@ -35,7 +36,9 @@ The user receives a short route such as:
 
 The result is a decision about the workflow—not fabricated product work.
 
-## When to use
+## When to reach for it
+
+Invoke this skill explicitly as `$uipath-project-router`. UiPath Boost treats it as a deliberate workflow; Codex enforces that policy in `agents/openai.yaml`.
 
 - You ask, “Which UiPath skill should I use?”
 - You need the correct flow from a document, repository, error, review report, or release-evidence set.
@@ -43,7 +46,7 @@ The result is a decision about the workflow—not fabricated product work.
 - You want a read-only route before allowing source or platform changes.
 - You need to identify where a UiPath Boost activity must hand control back to an official UiPath owner.
 
-## When not to use
+### Use a neighboring skill instead
 
 - You already know the official product skill and want it to perform the work.
 - You want an SDD or canonical implementation plan; use `uipath-planner`.
@@ -52,7 +55,7 @@ The result is a decision about the workflow—not fabricated product work.
 - You want tenant, identity, governance, testing, or deployment operations; use the matching official skill.
 - You want the router to edit files, run deployments, or change platform state. It never does those things.
 
-## What you need before starting
+## Prerequisites
 
 Provide as much of the following as you know:
 
@@ -81,8 +84,9 @@ A useful route card contains:
 
 1. **Anchor the outcome.** Separate the requested result from the tool or skill name the user may have guessed.
 2. **Apply official ownership first.** Product authoring, commands, schemas, validation, deployment, platform operations, administration, testing, review, and diagnosis remain with official UiPath skills.
-3. **Add one community extension when needed.** Add a UiPath Boost skill only when it creates a separate engineering artifact such as a decision log, regression harness, traceability matrix, handoff, or release verdict.
-4. **Return the route card.** Make the first action executable and stop without doing it.
+3. **Choose the route shape.** Continue in the current context, clear stale context, create a portable handoff, delegate a bounded subtask, or compact the conversation only when that choice materially improves the work.
+4. **Add one community extension when needed.** Add a UiPath Boost skill only when it creates a separate engineering artifact such as a decision log, regression harness, traceability matrix, handoff, or release verdict.
+5. **Return the route card.** Make the first action executable and stop without doing it.
 
 ## Example prompt
 
@@ -96,7 +100,13 @@ Tell me the primary skill, optional next skills, required inputs,
 expected outputs, approval boundaries, and stop conditions.
 ```
 
-## How to know it is done
+## Common questions
+
+**Why does the agent not start this automatically?**
+
+This workflow benefits from an intentional human start because it orchestrates a session, changes durable project structure, or makes a cross-work decision. Installation makes it available; it does not run it.
+
+## It's working if
 
 The routing task is complete when:
 
@@ -108,7 +118,11 @@ The routing task is complete when:
 - The user can invoke the next skill without another routing discussion.
 - No specialist work was performed or implied.
 
-## Official UiPath handoffs
+## Where it fits
+
+This is the **user-invoked front door** to UiPath Boost. Use it when ownership or sequence is unclear; skip it when the correct specialist skill is already obvious.
+
+## Official UiPath handoff
 
 Common official owners include:
 
@@ -117,6 +131,7 @@ Common official owners include:
 - `uipath-review` for read-only artifact and solution review.
 - `uipath-troubleshoot` for causal diagnosis.
 - `uipath-test` for Test Manager operations.
+- `uipath-process-mining` for Process Mining app analysis and process-model work.
 - `uipath-platform`, `uipath-admin`, and `uipath-governance` for live platform responsibilities.
 - `uipath-solution` for packaging, deployment, and activation.
 
@@ -125,5 +140,6 @@ The router may point to these skills, but it never reproduces their commands or 
 ## Related resources
 
 - [Routing table](../../skills/uipath-project-router/references/routing-table.md)
+- [Context and phase boundaries](../../skills/uipath-project-router/references/phase-boundaries.md)
 - [Official UiPath skill composition map](../../skills/uipath-project-router/references/official-uipath-skill-map.md)
 - [UiPath Project Router source](../../skills/uipath-project-router/SKILL.md)

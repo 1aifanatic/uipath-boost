@@ -1,6 +1,6 @@
 ---
 name: uipath-source-control-guardrails
-description: "Install command guardrails that prevent an AI coding agent from executing destructive source-control operations and, optionally, UiPath release-changing commands. Use when a repository needs project-level or user-level safety hooks around push, force operations, destructive resets, cleans, branch deletion, publish, deploy, activate, or resource deletion."
+description: "Use only when the user explicitly asks to install and test command guardrails around destructive Git and UiPath release operations."
 ---
 
 # UiPath Source Control Guardrails
@@ -13,7 +13,7 @@ Make authority boundaries executable so an agent can inspect and edit safely whi
 
 **This custom skill owns:** Make authority boundaries executable so an agent can inspect and edit safely while high-consequence operations remain explicit human decisions.
 
-It does not own current UiPath product commands, schemas, artifact validation, live tenant operations, or policy administration unless its instructions explicitly say otherwise.
+Keep current product commands, schemas, artifact validation, live tenant operations, and policy administration with official UiPath skills.
 
 ## Workflow
 
@@ -25,7 +25,7 @@ Determine project-only or user-level installation, the agent environment, comman
 
 ### 2. Install the hook
 
-Copy the bundled blocker script into the supported hook location and merge its invocation into existing agent settings without replacing unrelated hooks.
+Choose [Bash](scripts/block_dangerous_commands.sh) for Unix-like or WSL hooks and [PowerShell](scripts/block_dangerous_commands.ps1) for native Windows hooks. Copy the matching blocker into the supported hook location and merge its invocation into existing agent settings without replacing unrelated hooks.
 
 **Completion criterion:** The guardrail is executable and connected to the intended command tool.
 
@@ -37,7 +37,7 @@ Keep destructive Git patterns by default. Enable optional UiPath release-command
 
 ### 4. Verify blocked paths
 
-Feed representative destructive commands to the hook and observe a blocked exit and message for each policy class.
+Feed representative destructive commands to the hook on the target shell and observe a blocked exit and message for each policy class.
 
 **Completion criterion:** Every guarded command class has a failing test.
 
@@ -75,4 +75,4 @@ Explain how to run an approved operation manually, temporarily change policy thr
 
 ## Finish
 
-End with what was completed, the evidence produced, the next official skill or owner, and every unresolved blocker. Never imply that a write, validation, test, deployment, policy change, tenant operation, or runtime action occurred unless it actually ran and its result was observed.
+Report completed work, observed evidence, the next official owner, and every blocker. Mark unobserved actions as pending.

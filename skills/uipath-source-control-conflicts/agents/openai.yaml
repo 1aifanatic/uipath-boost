@@ -1,3 +1,4 @@
 interface:
   display_name: "UiPath Source Control Conflicts"
-  short_description: "Resolve an in-progress source-control merge or rebase conflict involving UiPath project artifacts by recovering the inte"
+  short_description: "Resolve UiPath source conflicts by intent"
+  default_prompt: "Use $uipath-source-control-conflicts to resolve this in-progress merge or rebase through both sides' intent."

@@ -2,7 +2,7 @@
 
 **Community skills for better UiPath automation**
 
-UiPath Boost gives you 34 Agent Skills for planning, designing, testing, releasing, operating, and explaining UiPath automations. Install the full catalog once, then use `uipath-project-router` to choose the smallest correct workflow for each job.
+UiPath Boost v0.2 gives you 34 Agent Skills for planning, designing, testing, releasing, operating, and explaining UiPath automations. Install the full catalog once, then use `uipath-project-router` to choose the smallest correct workflow for each job.
 
 > [!IMPORTANT]
 > UiPath Boost is an independent community project maintained by [1aifanatic](https://github.com/1aifanatic). It is not an official UiPath product or skill catalog. Official UiPath skills remain the source of truth for product commands, schemas, validation, deployment, tenant operations, and current platform behavior.
@@ -59,6 +59,19 @@ You do not need to memorize all 34 skill names. Describe your goal and let the r
 | Consistent teams | Developers, testers, architects, and support teams can use the same skill set. |
 | No automatic platform changes | Installed skills remain instructions until your agent invokes one for a relevant task. |
 
+## How the skills start
+
+Installing the full catalog makes every skill available; it does not run all 34. UiPath Boost uses two clear invocation modes:
+
+| Mode | What happens | Best for |
+|---|---|---|
+| **User-invoked** | You deliberately name the skill, such as `Use $uipath-project-router`. | Orchestration, durable workspaces, repository setup, and cross-project decisions. |
+| **Model-invoked** | You may name the skill, or the agent may select it when your request precisely matches. | Focused engineering disciplines such as component design, regression evidence, observability, or security assessment. |
+
+The 15 user-invoked skills are `uipath-project-router`, `uipath-architecture-deepening`, `uipath-delivery-control-plane`, `uipath-discovery-with-docs`, `uipath-learning-workspace`, `uipath-program-wayfinder`, `uipath-project-handoff`, `uipath-quality-gates-setup`, `uipath-source-control-guardrails`, `uipath-stakeholder-questionnaire`, `uipath-task-refinement`, `uipath-training-lab-scaffolder`, `uipath-uat-session`, `uipath-work-intake-triage`, and `uipath-workflow-spec-workspace`. The other 19 are model-invoked. Codex enforces the split through each skill's `agents/openai.yaml`; explicit-use wording preserves the same intent in other compatible agents.
+
+Invocation never expands authority. A skill still cannot edit source, operate a tenant, deploy, publish, or perform another consequential action unless your request authorizes it and the correct official UiPath owner performs the product work.
+
 ## Why UiPath Boost exists
 
 Official UiPath skills are responsible for current UiPath product behavior. They author and validate product artifacts, operate the platform, troubleshoot failures, and manage product lifecycles.
@@ -105,6 +118,10 @@ The standard GitHub installation above works now. After the `uipath-boost` packa
 npx uipath-boost list
 npx uipath-boost install --all --agent codex --global --yes
 ```
+
+## Plugin-ready package
+
+UiPath Boost includes Codex and Claude plugin manifests in addition to the Agent Skills catalog. This keeps the repository ready for plugin-based discovery while the GitHub installation command above remains the recommended universal setup. No plugin marketplace installation is required to use the skills.
 
 ## What is included
 
@@ -220,11 +237,13 @@ npm test
 npm pack --dry-run
 ```
 
-The validation suite checks all 34 skill packages, metadata, internal links, and retired conflicting skills. Installer tests cover interactive, selected-skill, starter, and full-catalog installation arguments.
+The validation suite checks all 34 skill packages, invocation policies, behavioral contracts, metadata, internal links, and retired conflicting skills. Installer tests cover interactive, selected-skill, starter, and full-catalog installation arguments.
 
 ## Learn more
 
 - [Strategy and publishing plan](docs/STRATEGY-AND-PUBLISHING-PLAN.md)
+- [Changelog](CHANGELOG.md)
+- [Acknowledgments](ACKNOWLEDGMENTS.md)
 - [Contribution guide](CONTRIBUTING.md)
 - [Security policy](SECURITY.md)
 - [Official UiPath skills](https://github.com/UiPath/skills)
@@ -232,6 +251,6 @@ The validation suite checks all 34 skill packages, metadata, internal links, and
 
 ## Status and license
 
-UiPath Boost is currently a pilot release. Structural validation and installer tests pass, but not every skill has been exercised against every UiPath product, tenant configuration, license, operating system, or future CLI version.
+UiPath Boost v0.2 is a community release. Structural, behavioral-contract, metadata, link, helper-script, and installer checks protect the catalog, but not every skill has been exercised against every UiPath product, tenant configuration, license, operating system, or future CLI version.
 
 Licensed under the MIT License. See [LICENSE](LICENSE).

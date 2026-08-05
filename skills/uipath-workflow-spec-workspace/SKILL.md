@@ -1,6 +1,6 @@
 ---
 name: uipath-workflow-spec-workspace
-description: "Maintain a stateful workspace for discovering and specifying recurring business workflows that may become UiPath automations. Use when a team wants to identify repeatable loops, document triggers, work, evidence, checkpoints, exceptions, ownership, and value over multiple sessions before choosing products or creating an SDD."
+description: "Use only when the user explicitly asks to maintain a durable, planner-ready specification workspace for a recurring business workflow."
 ---
 
 # UiPath Workflow Spec Workspace
@@ -13,7 +13,7 @@ Turn a recurring operational loop into a complete workflow specification an auto
 
 **This custom skill owns:** Turn a recurring operational loop into a complete workflow specification an automation architect can evaluate without forcing AI, RPA, Maestro, or a schedule where none is justified.
 
-It does not own current UiPath product commands, schemas, artifact validation, live tenant operations, or policy administration unless its instructions explicitly say otherwise.
+Keep current product commands, schemas, artifact validation, live tenant operations, and policy administration with official UiPath skills.
 
 ## Compose With Official UiPath Skills
 
@@ -21,8 +21,6 @@ Use official skills for current product commands and artifact contracts:
 
 - `uipath-automation-discovery`
 - `uipath-planner`
-
-Read [references/official-uipath-skill-map.md](references/official-uipath-skill-map.md) when routing is unclear.
 
 ## Workflow
 
@@ -85,4 +83,4 @@ Continue discovery until an architect can evaluate or design without an unanswer
 
 ## Finish
 
-End with what was completed, the evidence produced, the next official skill or owner, and every unresolved blocker. Never imply that a write, validation, test, deployment, policy change, tenant operation, or runtime action occurred unless it actually ran and its result was observed.
+Report completed work, observed evidence, the next official owner, and every blocker. Mark unobserved actions as pending.

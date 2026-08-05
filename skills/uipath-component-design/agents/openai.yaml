@@ -1,3 +1,4 @@
 interface:
   display_name: "UiPath Component Design"
-  short_description: "Design a deep UiPath component or project contract by exploring several genuinely different shapes before selecting one"
+  short_description: "Design deep, testable UiPath component contracts"
+  default_prompt: "Use $uipath-component-design to compare component contracts and recommend the best seam."

@@ -1,3 +1,4 @@
 interface:
   display_name: "UiPath Regression Harness"
-  short_description: "Create a fast, deterministic, red-capable reproduction and regression harness for a UiPath defect after the incident, sy"
+  short_description: "Build a red-capable UiPath regression harness"
+  default_prompt: "Use $uipath-regression-harness to preserve this confirmed defect as a tight reproducible loop."

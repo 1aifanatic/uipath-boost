@@ -1,3 +1,4 @@
 interface:
   display_name: "UiPath Prototype"
-  short_description: "Build a deliberately throwaway UiPath-oriented prototype to answer one design question"
+  short_description: "Prototype one uncertain UiPath design decision"
+  default_prompt: "Use $uipath-prototype to build the cheapest safe artifact that answers this design question."

@@ -6,13 +6,14 @@
 
 | | |
 |---|---|
+| **Invocation** | User-invoked — start it explicitly. |
 | **Purpose** | Facilitate business-language UAT and turn each observation into a reproducible, correctly routed record. |
 | **Use it when** | Business testers are walking through approved scenarios and need structured evidence capture. |
 | **Do not use it for** | Test Manager administration, Action Center operations, root-cause diagnosis, or submitting product feedback. |
 | **Primary output** | Anchored session record, focused observations/defects, evidence links, reproduction steps, routes, and session summary. |
 | **Maturity** | Pilot |
 
-## Why this skill exists
+## What it does
 
 During UAT, business testers speak in outcomes: “the claim should have gone to review” or “the amount is wrong.” If the session captures only a screenshot or a technical guess, developers cannot reproduce the issue and requirements ambiguities become mislabeled defects. This skill anchors every observation to a version, environment, scenario, data set, time, and acceptance source.
 
@@ -26,7 +27,9 @@ A tester reports “approval did not work” during a shared call. No one record
 
 One UAT record captures the business expectation, actual behavior, steps, environment, build, timestamp, safe correlation IDs, frequency, impact, and acceptance criterion. The observation is classified as a suspected defect, requirement ambiguity, test-data issue, access/environment issue, usability feedback, or accepted behavior. A named official owner receives the next action without a guessed cause.
 
-## When to use
+## When to reach for it
+
+Invoke this skill explicitly as `$uipath-uat-session`. UiPath Boost treats it as a deliberate workflow; Codex enforces that policy in `agents/openai.yaml`.
 
 - Business testers are executing acceptance scenarios live.
 - A Coded App, agent, RPA workflow, Maestro journey, or human-review experience is under UAT.
@@ -34,7 +37,7 @@ One UAT record captures the business expectation, actual behavior, steps, enviro
 - Evidence must be correlated to one exact run.
 - Independent symptoms need separate work records.
 
-## When not to use
+### Use a neighboring skill instead
 
 - You need to create or operate Test Manager projects, cases, sets, executions, or reports.
 - You need to assign or complete Action Center tasks.
@@ -42,7 +45,7 @@ One UAT record captures the business expectation, actual behavior, steps, enviro
 - You want to send UiPath product feedback immediately.
 - The session cannot protect customer, employee, credential, or production data.
 
-## What you need before starting
+## Prerequisites
 
 - Build or package version and environment.
 - Process/solution name, scenario, test data set, tester, and timestamp.
@@ -84,7 +87,13 @@ classify each behavior without guessing cause, and route Test Manager,
 diagnosis, task operations, or feedback to their official owners.
 ```
 
-## How to know it is done
+## Common questions
+
+**Why does the agent not start this automatically?**
+
+This workflow benefits from an intentional human start because it orchestrates a session, changes durable project structure, or makes a cross-work decision. Installation makes it available; it does not run it.
+
+## It's working if
 
 - Every observation belongs to one versioned, timestamped UAT context.
 - Expected and actual behavior are clear enough to verify.
@@ -96,7 +105,11 @@ diagnosis, task operations, or feedback to their official owners.
 - Every reported observation was captured exactly once.
 - Session totals and blockers are summarized.
 
-## Official UiPath handoffs
+## Where it fits
+
+This is a **user-invoked orchestration skill** in UiPath Boost. Use [uipath-project-router](uipath-project-router.md) when you need to decide whether it is the right entry point or what should follow it.
+
+## Official UiPath handoff
 
 - `uipath-test` owns Test Manager resources and reports.
 - `uipath-tasks` owns Action Center task operations.

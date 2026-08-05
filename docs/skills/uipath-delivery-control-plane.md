@@ -6,13 +6,14 @@
 
 | | |
 |---|---|
+| **Invocation** | User-invoked — start it explicitly. |
 | **Purpose** | Establish durable delivery governance around a UiPath repository whose product structure has already been discovered. |
 | **Use it when** | Delivery rules, owners, evidence, decisions, environments, approvals, release gates, or handoffs are missing or scattered. |
 | **Do not use it for** | Rediscovering UiPath artifacts, dependencies, entry points, or coding conventions. |
 | **Primary output** | A concise delivery control-plane document with authoritative locations, owners, gaps, and approval boundaries. |
 | **Maturity** | Core |
 
-## Why this skill exists
+## What it does
 
 An accurate repository inventory does not automatically tell a team how work should move through discovery, development, review, release, and support. Teams also need one place to understand issue states, decision authority, evidence expectations, environment names, approvals, release gates, and ownership.
 
@@ -45,7 +46,9 @@ The repository has one small control-plane document that links to official proje
 - Support and handoff expectations.
 - Missing controls with named next owners.
 
-## When to use
+## When to reach for it
+
+Invoke this skill explicitly as `$uipath-delivery-control-plane`. UiPath Boost treats it as a deliberate workflow; Codex enforces that policy in `agents/openai.yaml`.
 
 - The official project-discovery context exists and is current.
 - The project is moving from initial discovery into repeatable team delivery.
@@ -54,7 +57,7 @@ The repository has one small control-plane document that links to official proje
 - Environment aliases or approval boundaries are ambiguous.
 - A handoff exposed missing ownership or governance conventions.
 
-## When not to use
+### Use a neighboring skill instead
 
 - No current project context exists. Run the official `uipath-project-discovery-agent` first.
 - You need to identify workflow entry points, packages, dependencies, or coding conventions.
@@ -62,7 +65,7 @@ The repository has one small control-plane document that links to official proje
 - You want to deploy governance policies or change identities, roles, tenants, or environments.
 - You want to store passwords, tokens, customer payloads, or production secrets in project documentation.
 
-## What you need before starting
+## Prerequisites
 
 - A current official project-context artifact, such as the project discovery output or an equivalent maintained `AGENTS.md` section.
 - Access to the repository and its existing delivery documentation.
@@ -113,7 +116,13 @@ Reuse existing conventions, link instead of copying, and record every unknown
 as a gap with an owner. Do not inspect tenant state or change deployments.
 ```
 
-## How to know it is done
+## Common questions
+
+**Why does the agent not start this automatically?**
+
+This workflow benefits from an intentional human start because it orchestrates a session, changes durable project structure, or makes a cross-work decision. Installation makes it available; it does not run it.
+
+## It's working if
 
 - The official project context is linked and not duplicated.
 - Every recurring delivery fact has one authoritative location.
@@ -123,7 +132,11 @@ as a gap with an owner. Do not inspect tenant state or change deployments.
 - One handoff and one release-evidence lookup succeed.
 - No cloud, tenant, identity, policy, or deployment state changed.
 
-## Official UiPath handoffs
+## Where it fits
+
+This is a **user-invoked orchestration skill** in UiPath Boost. Use [uipath-project-router](uipath-project-router.md) when you need to decide whether it is the right entry point or what should follow it.
+
+## Official UiPath handoff
 
 - `uipath-project-discovery-agent` owns repository structure and conventions.
 - `uipath-planner` owns SDD creation and the canonical task plan.

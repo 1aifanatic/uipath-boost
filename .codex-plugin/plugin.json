@@ -1,0 +1,41 @@
+{
+  "name": "uipath-boost",
+  "version": "0.2.0",
+  "description": "Community engineering skills for planning, designing, testing, releasing, operating, and explaining UiPath automations.",
+  "author": {
+    "name": "1aifanatic",
+    "url": "https://github.com/1aifanatic"
+  },
+  "homepage": "https://github.com/1aifanatic/uipath-boost",
+  "repository": "https://github.com/1aifanatic/uipath-boost",
+  "license": "MIT",
+  "keywords": [
+    "uipath",
+    "automation",
+    "rpa",
+    "agent-skills",
+    "engineering",
+    "testing",
+    "governance"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "UiPath Boost",
+    "shortDescription": "Community engineering practices for UiPath delivery",
+    "longDescription": "Use 34 complementary skills for UiPath discovery, architecture, delivery continuity, testing discipline, release readiness, operational design, and knowledge transfer while official UiPath skills remain the source of product truth.",
+    "developerName": "1aifanatic",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/1aifanatic/uipath-boost",
+    "defaultPrompt": [
+      "Use the UiPath Project Router to choose the smallest correct skill workflow.",
+      "Run UiPath discovery and preserve the decisions and evidence.",
+      "Assess whether this UiPath release has enough evidence to proceed."
+    ],
+    "brandColor": "#FA4616"
+  }
+}

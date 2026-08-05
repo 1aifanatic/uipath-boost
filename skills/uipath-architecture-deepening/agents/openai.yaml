@@ -1,3 +1,6 @@
 interface:
   display_name: "UiPath Architecture Deepening"
-  short_description: "Turn an existing official uipath-review finding or a user-named architectural hotspot into ranked deepening options and "
+  short_description: "Find high-leverage UiPath architecture improvements"
+  default_prompt: "Use $uipath-architecture-deepening to turn this proven hotspot into ranked design options."
+policy:
+  allow_implicit_invocation: false

@@ -1,6 +1,6 @@
 ---
 name: uipath-stakeholder-questionnaire
-description: "Create a recipient-specific asynchronous UiPath discovery questionnaire that closes defined information gaps. Use when a business owner, application SME, security team, infrastructure team, support group, compliance partner, or data owner cannot join discovery and the project needs precise facts, artifacts, approvals, or decisions from that person."
+description: "Use only when the user explicitly asks to create a focused UiPath questionnaire for the person who owns missing information."
 ---
 
 # UiPath Stakeholder Questionnaire
@@ -13,7 +13,7 @@ Ask the right person for only the knowledge they uniquely hold, in a format that
 
 **This custom skill owns:** Ask the right person for only the knowledge they uniquely hold, in a format that is easy to answer and directly tied to pending project decisions.
 
-It does not own current UiPath product commands, schemas, artifact validation, live tenant operations, or policy administration unless its instructions explicitly say otherwise.
+Keep current product commands, schemas, artifact validation, live tenant operations, and policy administration with official UiPath skills.
 
 ## Workflow
 
@@ -75,4 +75,4 @@ Trace each answer need to a question, remove duplicates and compound questions, 
 
 ## Finish
 
-End with what was completed, the evidence produced, the next official skill or owner, and every unresolved blocker. Never imply that a write, validation, test, deployment, policy change, tenant operation, or runtime action occurred unless it actually ran and its result was observed.
+Report completed work, observed evidence, the next official owner, and every blocker. Mark unobserved actions as pending.

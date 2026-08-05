@@ -6,13 +6,14 @@
 
 | | |
 |---|---|
+| **Invocation** | Model-invoked — start it explicitly or let the agent select it when the request fits. |
 | **Purpose** | Prove how approved requirements connect to implementation, review, tests, execution evidence, UAT, and release evidence. |
 | **Use it when** | A team explicitly needs coverage analysis, auditability, UAT mapping, missing-evidence analysis, or release traceability. |
 | **Do not use it for** | Running `uipath-review`, inventing coverage from filenames, modifying requirements, or replacing Test Manager reports. |
 | **Primary output** | Versioned traceability matrix, gap lists, ownership actions, and coverage statistics with explicit denominators. |
 | **Maturity** | Core |
 
-## Why this skill exists
+## What it does
 
 Having requirements, code, tests, and reports in the same repository does not prove they are connected. Release and audit decisions need observed links: which version of a requirement, what implemented behavior, which review result, which test execution, which UAT evidence, and who accepted the outcome.
 
@@ -26,7 +27,9 @@ The release candidate has an SDD, review report, test suite, Test Manager export
 
 Every source requirement has a stable ID and exact citation. Rows connect to versioned implementation, official review status, automated/manual tests, execution evidence, UAT result, and readiness evidence. Each row has one transparent coverage status, rationale, owner, and next action. Statistics state the denominator and do not masquerade as approval.
 
-## When to use
+## When to reach for it
+
+Invoke this skill as `$uipath-requirement-traceability`, or let the agent select it automatically when the request matches its defined job.
 
 - Preparing audit-ready evidence.
 - Checking requirement coverage before release.
@@ -35,7 +38,7 @@ Every source requirement has a stable ID and exact citation. Rows connect to ver
 - Demonstrating accepted risks and out-of-scope items transparently.
 - Supporting `uipath-release-readiness` with structured coverage evidence.
 
-## When not to use
+### Use a neighboring skill instead
 
 - Requirements or the SDD are not approved and versioned.
 - The official review or test evidence still needs to be produced.
@@ -43,7 +46,7 @@ Every source requirement has a stable ID and exact citation. Rows connect to ver
 - You intend to rewrite source requirements during normalization.
 - The result is being treated as security, legal, or release approval.
 
-## What you need before starting
+## Prerequisites
 
 - Approved requirements or SDD version.
 - Official `uipath-review` report.
@@ -83,7 +86,13 @@ Classify each row using the defined coverage statuses, link only observed
 evidence, identify owners and next actions, and report statistics with denominators.
 ```
 
-## How to know it is done
+## Common questions
+
+**Will this skill make changes simply because it is model-invoked?**
+
+No. Model invocation only lets the agent load the instructions when the request fits. Source writes, tracker changes, tenant operations, deployments, and other consequential actions still require the authority stated by the request and the owning official skill.
+
+## It's working if
 
 - Every row cites versioned authoritative sources.
 - No requirement was silently changed or lost.
@@ -94,7 +103,11 @@ evidence, identify owners and next actions, and report statistics with denominat
 - Statistics state exactly what population they measure.
 - The matrix does not claim to replace review, Test Manager, or approval.
 
-## Official UiPath handoffs
+## Where it fits
+
+This is a **model-invoked complementary discipline** in UiPath Boost. It may be selected directly by the agent or reached from a user-invoked workflow. Use [uipath-project-router](uipath-project-router.md) when the larger route is unclear.
+
+## Official UiPath handoff
 
 `uipath-planner` owns approved design sources, `uipath-review` owns artifact review, `uipath-test` owns Test Manager operations and reports, and `uipath-insights` owns live KPI analytics. Traceability consumes their evidence without rerunning or substituting for it.
 

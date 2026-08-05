@@ -6,13 +6,14 @@
 
 | | |
 |---|---|
+| **Invocation** | User-invoked — start it explicitly. |
 | **Purpose** | Preserve verified, live project context for another session, agent, or team member. |
 | **Use it when** | Work pauses, ownership changes, context is full, or a separate investigation needs a safe starting point. |
 | **Do not use it for** | Copying complete SDDs, issue bodies, logs, diffs, or review reports into another document. |
 | **Primary output** | A concise Markdown handoff with durable pointers, exact next action, success signal, boundaries, and redaction confirmation. |
 | **Maturity** | Core |
 
-## Why this skill exists
+## What it does
 
 UiPath projects often span several sessions, roles, and tools. Without a deliberate handoff, the receiver must reconstruct decisions from chat history or may unknowingly repeat work, use stale evidence, or cross an approval boundary.
 
@@ -37,24 +38,28 @@ The developer receives one handoff containing:
 - A fallback if the first action is blocked.
 - A confirmation that secrets and sensitive data were removed.
 
-## When to use
+## When to reach for it
 
-- A context window or working session is ending.
+Invoke this skill explicitly as `$uipath-project-handoff`. UiPath Boost treats it as a deliberate workflow; Codex enforces that policy in `agents/openai.yaml`.
+
+- Context must travel to another person, harness, directory, paused project, or side investigation.
 - Work transfers between architect, developer, tester, operator, or support owner.
 - A project pauses and must restart safely later.
 - A debugging or prototype branch needs an isolated context.
 - Another agent or person must continue without rereading the full history.
 - You need to preserve next steps before changing focus.
 
-## When not to use
+### Use a neighboring skill instead
 
+- The same session and directory can continue accurately; continue without summarizing the primary source.
+- The same work must continue after a context boundary; compact at the nearest phase boundary and verify the summary.
 - The durable artifacts do not exist yet and must first be created.
 - You want a new SDD, issue, ADR, test report, or runbook rather than a pointer to one.
 - You intend to paste complete logs, source diffs, customer content, or credentials into the handoff.
 - You want to launch another agent without explicit authorization.
 - The “next action” is still an unbounded goal such as “finish the automation.”
 
-## What you need before starting
+## Prerequisites
 
 - The purpose and receiver of the next session.
 - Current objective, state, branch, issue, or work item.
@@ -97,7 +102,13 @@ uipath-rpa. Include the success signal, access blocker fallback, and a full
 redaction check. Save it under docs/handoffs/ without copying the source files.
 ```
 
-## How to know it is done
+## Common questions
+
+**Why does the agent not start this automatically?**
+
+This workflow benefits from an intentional human start because it orchestrates a session, changes durable project structure, or makes a cross-work decision. Installation makes it available; it does not run it.
+
+## It's working if
 
 - The receiver and next purpose are explicit.
 - All context pointers exist or are marked unavailable.
@@ -109,7 +120,11 @@ redaction check. Save it under docs/handoffs/ without copying the source files.
 - The output location is reported.
 - No receiving agent is claimed to have started unless a launch actually succeeded.
 
-## Official UiPath handoffs
+## Where it fits
+
+This is a **user-invoked orchestration skill** in UiPath Boost. Use [uipath-project-router](uipath-project-router.md) when you need to decide whether it is the right entry point or what should follow it.
+
+## Official UiPath handoff
 
 The handoff may point to any official owner required next—for example `uipath-rpa`, `uipath-agents`, `uipath-review`, `uipath-test`, `uipath-troubleshoot`, or `uipath-solution`. It does not perform that owner’s work.
 

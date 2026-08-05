@@ -1,3 +1,6 @@
 interface:
   display_name: "UiPath Training Lab Scaffolder"
-  short_description: "Scaffold a consistent UiPath training lab or exercise repository from a curriculum plan"
+  short_description: "Scaffold consistent, reusable UiPath training labs"
+  default_prompt: "Use $uipath-training-lab-scaffolder to create and validate this UiPath lab repository."
+policy:
+  allow_implicit_invocation: false

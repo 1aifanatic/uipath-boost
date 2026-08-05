@@ -13,7 +13,7 @@ Make it possible to prove which requirements are implemented, tested, evidenced,
 
 **This custom skill owns:** Make it possible to prove which requirements are implemented, tested, evidenced, accepted, or still uncovered without rerunning the official product review.
 
-It does not own current UiPath product commands, schemas, artifact validation, live tenant operations, or policy administration unless its instructions explicitly say otherwise.
+Keep current product commands, schemas, artifact validation, live tenant operations, and policy administration with official UiPath skills.
 
 ## Compose With Official UiPath Skills
 
@@ -23,8 +23,6 @@ Use official skills for current product commands and artifact contracts:
 - `uipath-review`
 - `uipath-test`
 - `uipath-insights`
-
-Read [references/official-uipath-skill-map.md](references/official-uipath-skill-map.md) when routing is unclear.
 
 ## Workflow
 
@@ -81,4 +79,4 @@ Produce the trace matrix, uncovered-requirement list, stale-evidence list, and s
 
 ## Finish
 
-End with what was completed, the evidence produced, the next official skill or owner, and every unresolved blocker. Never imply that a write, validation, test, deployment, policy change, tenant operation, or runtime action occurred unless it actually ran and its result was observed.
+Report completed work, observed evidence, the next official owner, and every blocker. Mark unobserved actions as pending.

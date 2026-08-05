@@ -1,6 +1,6 @@
 ---
 name: uipath-program-wayfinder
-description: "Plan a large, foggy UiPath program that cannot fit in one design session. Use for enterprise automation programs, multi-business-unit transformations, platform migrations, or multi-solution initiatives where the destination is known but key decisions, dependencies, evidence, and sequencing are not yet visible."
+description: "Use only when the user explicitly asks to map the decisions required to make a large, foggy UiPath program plannable."
 ---
 
 # UiPath Program Wayfinder
@@ -13,7 +13,7 @@ Create a shared map of decision tickets, work only the current frontier, and pro
 
 **This custom skill owns:** Create a shared map of decision tickets, work only the current frontier, and produce decisions rather than premature implementation deliverables.
 
-It does not own current UiPath product commands, schemas, artifact validation, live tenant operations, or policy administration unless its instructions explicitly say otherwise.
+Keep current product commands, schemas, artifact validation, live tenant operations, and policy administration with official UiPath skills.
 
 ## Compose With Official UiPath Skills
 
@@ -21,8 +21,6 @@ Use official skills for current product commands and artifact contracts:
 
 - `uipath-automation-discovery`
 - `uipath-planner`
-
-Read [references/official-uipath-skill-map.md](references/official-uipath-skill-map.md) when routing is unclear.
 
 ## Workflow
 
@@ -40,23 +38,31 @@ Create precise decision tickets, keep suspected but unformulated questions in No
 
 ### 3. Type and connect tickets
 
-Use research, prototype, discovery, or enabling-task tickets. Add genuine blocking edges and identify the unblocked frontier.
+Use research, prototype, discovery, or enabling-task tickets. Mark discovery and prototype decisions as human-in-the-loop; mark independent research as agent-runnable. Add genuine blocking edges and identify the unblocked frontier.
 
 **Completion criterion:** Each ticket fits one focused session and has dependencies.
 
-### 4. Resolve one decision
+### 4. Burn down independent research
+
+After the map is visible, delegate independent research tickets when the environment supports safe parallel work. Keep one note or branch per research question and return only cited findings and context pointers to the map. Research tickets are the exception to one ticket per session.
+
+**Completion criterion:** Every runnable research ticket is completed, running, or explicitly blocked without stopping unrelated mapping work.
+
+### 5. Resolve one human decision
 
 Claim one frontier ticket, gather evidence, record a durable resolution, close it, and update the map.
 
 **Completion criterion:** One decision has a resolution and context pointer.
 
-### 5. Advance the frontier
+### 6. Advance the frontier
 
 Create newly visible tickets, graduate clarified fog, and remove invalidated work until no decision blocks the destination.
 
 **Completion criterion:** The route to the destination is visible.
 
-### 6. Hand off instead of building
+If the opening discovery reveals no meaningful fog, stop without creating a map and route the well-scoped work to discovery or planning.
+
+### 7. Hand off instead of building
 
 Collapse decisions into process or solution-design inputs and invoke uipath-planner.
 
@@ -83,4 +89,4 @@ Collapse decisions into process or solution-design inputs and invoke uipath-plan
 
 ## Finish
 
-End with what was completed, the evidence produced, the next official skill or owner, and every unresolved blocker. Never imply that a write, validation, test, deployment, policy change, tenant operation, or runtime action occurred unless it actually ran and its result was observed.
+Report completed work, observed evidence, the next official owner, and every blocker. Mark unobserved actions as pending.

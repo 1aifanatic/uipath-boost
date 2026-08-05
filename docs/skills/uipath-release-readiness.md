@@ -6,13 +6,14 @@
 
 | | |
 |---|---|
+| **Invocation** | Model-invoked — start it explicitly or let the agent select it when the request fits. |
 | **Purpose** | Aggregate authoritative evidence into a reproducible Ready, Conditionally Ready, or Not Ready verdict. |
 | **Use it when** | A specific UiPath package or solution and target have official validation, review, and supporting release evidence. |
 | **Do not use it for** | Product review, Test Manager operations, policy/identity changes, deployment, activation, promotion, or production mutation. |
 | **Primary output** | Release record, evidence matrix, environment/operations checklist, residual-risk register, and verdict. |
 | **Maturity** | Core |
 
-## Why this skill exists
+## What it does
 
 A successful build or test does not prove that an automation is safe to release. Production readiness also depends on exact artifact identity, target dependencies, security, governance, monitoring, runbooks, ownership, rollback, recovery, reconciliation, and accepted residual risk. This skill makes the release decision explicit without confusing the verdict with authorization to deploy.
 
@@ -26,7 +27,9 @@ The team says “tests are green, so we are ready.” The package version and so
 
 One record pins the release unit and target, accounts for every evidence source and skipped rule, identifies environment and operational dependencies, captures security dispositions, and lists residual risks with owners and due dates. The verdict is `Not Ready` until named blockers close, or `Conditionally Ready` with explicit conditions. Deployment remains a separate authorized action.
 
-## When to use
+## When to reach for it
+
+Invoke this skill as `$uipath-release-readiness`, or let the agent select it automatically when the request matches its defined job.
 
 - Preparing a production go/no-go decision.
 - Assessing an upgrade or new package activation.
@@ -34,7 +37,7 @@ One record pins the release unit and target, accounts for every evidence source 
 - Aggregating build, review, test, UAT, security, governance, operations, and support evidence.
 - Producing a decision that business and technical approvers can reproduce.
 
-## When not to use
+### Use a neighboring skill instead
 
 - The release artifact, commit, version, or target is ambiguous.
 - Official review and product validation evidence do not exist.
@@ -42,7 +45,7 @@ One record pins the release unit and target, accounts for every evidence source 
 - Missing or stale evidence would be marked passed.
 - Successful tests are being treated as complete business, security, and operational proof.
 
-## What you need before starting
+## Prerequisites
 
 - Package or solution version, source commit, target alias, scope, change window, owners, deployment method, and rollback target.
 - Official build, validation, review, test, packaging, dependency, acceptance, and known-defect evidence.
@@ -83,7 +86,13 @@ risks with owners and dispositions, and issue Ready, Conditionally Ready, or Not
 Ready with exact blockers and next authorized action. Do not deploy or activate.
 ```
 
-## How to know it is done
+## Common questions
+
+**Will this skill make changes simply because it is model-invoked?**
+
+No. Model invocation only lets the agent load the instructions when the request fits. Source writes, tracker changes, tenant operations, deployments, and other consequential actions still require the authority stated by the request and the owning official skill.
+
+## It's working if
 
 - Artifact, commit, target, scope, owners, and rollback target are unambiguous.
 - Technical and specification readiness have observed evidence.
@@ -94,7 +103,11 @@ Ready with exact blockers and next authorized action. Do not deploy or activate.
 - Every residual risk has a clear release effect.
 - The verdict follows reproducibly from evidence and performs no deployment.
 
-## Official UiPath handoffs
+## Where it fits
+
+This is a **model-invoked complementary discipline** in UiPath Boost. It may be selected directly by the agent or reached from a user-invoked workflow. Use [uipath-project-router](uipath-project-router.md) when the larger route is unclear.
+
+## Official UiPath handoff
 
 `uipath-review`, `uipath-test`, `uipath-platform`, `uipath-admin`, `uipath-governance`, `uipath-insights`, and `uipath-troubleshoot` own their evidence and operations. `uipath-solution` owns packaging, deployment, and activation after explicit authority. Release Readiness only aggregates and decides.
 

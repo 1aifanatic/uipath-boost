@@ -1,6 +1,6 @@
 ---
 name: uipath-quality-gates-setup
-description: "Set up repository and CI quality gates for UiPath projects without inventing unsupported product commands. Use when a team needs fast local checks, comprehensive pull-request validation, packaging checks, boundary rules, secret scanning, or release evidence across XAML, coded automation, agents, Maestro, apps, API workflows, tests, and solutions."
+description: "Use only when the user explicitly asks to install and prove local and CI quality gates for a UiPath repository."
 ---
 
 # UiPath Quality Gates Setup
@@ -13,7 +13,7 @@ Discover the repository, obtain exact validation commands from official UiPath s
 
 **This custom skill owns:** Discover the repository, obtain exact validation commands from official UiPath skills, wire tiered gates into existing developer and CI workflows, and prove each critical gate catches a real violation.
 
-It does not own current UiPath product commands, schemas, artifact validation, live tenant operations, or policy administration unless its instructions explicitly say otherwise.
+Keep current product commands, schemas, artifact validation, live tenant operations, and policy administration with official UiPath skills.
 
 ## Compose With Official UiPath Skills
 
@@ -29,8 +29,6 @@ Use official skills for current product commands and artifact contracts:
 - `uipath-test`
 - `uipath-review`
 - `uipath-solution`
-
-Read [references/official-uipath-skill-map.md](references/official-uipath-skill-map.md) when routing is unclear.
 
 ## Workflow
 
@@ -99,4 +97,4 @@ List unavailable tenants, credentials, runners, licenses, UI dependencies, or pr
 
 ## Finish
 
-End with what was completed, the evidence produced, the next official skill or owner, and every unresolved blocker. Never imply that a write, validation, test, deployment, policy change, tenant operation, or runtime action occurred unless it actually ran and its result was observed.
+Report completed work, observed evidence, the next official owner, and every blocker. Mark unobserved actions as pending.

@@ -13,7 +13,7 @@ Trace every material claim to the source that owns it and leave a reusable, date
 
 **This custom skill owns:** Trace every material claim to the source that owns it and leave a reusable, date-aware decision input in the repository.
 
-It does not own current UiPath product commands, schemas, artifact validation, live tenant operations, or policy administration unless its instructions explicitly say otherwise.
+Keep current product commands, schemas, artifact validation, live tenant operations, and policy administration with official UiPath skills.
 
 ## Workflow
 
@@ -68,4 +68,4 @@ Save question, answer, evidence, constraints, gaps, confidence, and decision imp
 
 ## Finish
 
-End with what was completed, the evidence produced, the next official skill or owner, and every unresolved blocker. Never imply that a write, validation, test, deployment, policy change, tenant operation, or runtime action occurred unless it actually ran and its result was observed.
+Report completed work, observed evidence, the next official owner, and every blocker. Mark unobserved actions as pending.

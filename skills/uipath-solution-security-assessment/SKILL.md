@@ -13,7 +13,7 @@ Identify solution-specific threats and control gaps while delegating policy, ide
 
 **This custom skill owns:** Identify solution-specific threats and control gaps while delegating policy, identity, audit, platform, and artifact-quality operations to the official UiPath owners.
 
-It does not own current UiPath product commands, schemas, artifact validation, live tenant operations, or policy administration unless its instructions explicitly say otherwise.
+Keep current product commands, schemas, artifact validation, live tenant operations, and policy administration with official UiPath skills.
 
 ## Compose With Official UiPath Skills
 
@@ -24,8 +24,6 @@ Use official skills for current product commands and artifact contracts:
 - `uipath-platform`
 - `uipath-review`
 - `uipath-troubleshoot`
-
-Read [references/official-uipath-skill-map.md](references/official-uipath-skill-map.md) when routing is unclear.
 
 ## Workflow
 
@@ -89,4 +87,4 @@ Produce the threat model, control matrix, evidence requests, and remediation rou
 
 ## Finish
 
-End with what was completed, the evidence produced, the next official skill or owner, and every unresolved blocker. Never imply that a write, validation, test, deployment, policy change, tenant operation, or runtime action occurred unless it actually ran and its result was observed.
+Report completed work, observed evidence, the next official owner, and every blocker. Mark unobserved actions as pending.

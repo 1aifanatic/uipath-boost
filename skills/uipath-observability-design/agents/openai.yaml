@@ -1,3 +1,4 @@
 interface:
   display_name: "UiPath Observability Design"
-  short_description: "Design end-to-end observability for a UiPath process, agent, Maestro journey, integration, application, or multi-project"
+  short_description: "Design end-to-end UiPath observability"
+  default_prompt: "Use $uipath-observability-design to define correlation, signals, SLOs, alerts, and ownership."
