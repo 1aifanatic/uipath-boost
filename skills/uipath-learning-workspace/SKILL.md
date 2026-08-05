@@ -1,6 +1,6 @@
 ---
 name: uipath-learning-workspace
-description: "Create a stateful UiPath learning workspace tied to a real professional mission. Use when a learner or team wants a multi-session path for Studio, coded automation, agents, Maestro, IXP, testing, architecture, platform operations, or related skills with trusted resources, short lessons, retrieval practice, labs, and recorded progress."
+description: "Use only when the user explicitly asks to create a stateful, practice-led UiPath learning workspace tied to a real mission."
 ---
 
 # UiPath Learning Workspace
@@ -13,7 +13,7 @@ Build durable capability rather than temporary fluency by connecting current pri
 
 **This custom skill owns:** Build durable capability rather than temporary fluency by connecting current primary-source knowledge to small practical wins, effortful retrieval, spaced review, and real-world demonstration.
 
-It does not own current UiPath product commands, schemas, artifact validation, live tenant operations, or policy administration unless its instructions explicitly say otherwise.
+Keep current product commands, schemas, artifact validation, live tenant operations, and policy administration with official UiPath skills.
 
 ## Workflow
 
@@ -37,7 +37,7 @@ Use official UiPath documentation, official skills and repositories, product rel
 
 ### 4. Create one short lesson
 
-Teach only the knowledge needed for one tangible skill, include a worked example or visual model, and keep the lesson small enough to complete in one focused sitting.
+Inspect existing reusable lesson components, exercises, fixtures, and visual helpers before authoring. Teach only the knowledge needed for one tangible skill, include a worked example or visual model, and keep the lesson small enough to complete in one focused sitting. Extract a genuinely reusable new component instead of inlining it repeatedly.
 
 **Completion criterion:** The learner can demonstrate one new capability at the end.
 
@@ -82,4 +82,4 @@ Select the next lesson from the mission and learning records, and periodically r
 
 ## Finish
 
-End with what was completed, the evidence produced, the next official skill or owner, and every unresolved blocker. Never imply that a write, validation, test, deployment, policy change, tenant operation, or runtime action occurred unless it actually ran and its result was observed.
+Report completed work, observed evidence, the next official owner, and every blocker. Mark unobserved actions as pending.

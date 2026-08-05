@@ -6,13 +6,14 @@
 
 | | |
 |---|---|
+| **Invocation** | Model-invoked — start it explicitly or let the agent select it when the request fits. |
 | **Purpose** | Resolve an active merge or rebase conflict by preserving compatible intent and restoring valid UiPath structure. |
 | **Use it when** | Project files, JSON, XAML, coded automation, Maestro artifacts, tests, docs, solution wrappers, or generated metadata are conflicted. |
 | **Do not use it for** | Blind “ours/theirs” resolution, inventing business behavior, or rewriting shared history without explicit authority. |
 | **Primary output** | Intent summary, resolved artifacts, official validation evidence, and completed or precisely paused merge/rebase. |
 | **Maturity** | Pilot |
 
-## Why this skill exists
+## What it does
 
 UiPath project artifacts often contain structure and generated relationships that are unsafe to resolve as ordinary text. Two branches may both be correct in different ways. This skill recovers the purpose of each side, chooses a strategy before editing, and validates every affected artifact through its official owner.
 
@@ -26,7 +27,9 @@ Two branches changed `Main.xaml` and `project.json`. Conflict markers show overl
 
 Each conflict has an evidence-backed intent summary from commits, issues, tests, SDD sections, and surrounding structure. Compatible intent is preserved, incompatible intent follows the approved merge goal, generated artifacts are regenerated where possible, and official build/validation/tests pass. The merge or rebase is continued only within source-control authority.
 
-## When to use
+## When to reach for it
+
+Invoke this skill as `$uipath-source-control-conflicts`, or let the agent select it automatically when the request matches its defined job.
 
 - Git reports an in-progress merge or rebase conflict.
 - Structured UiPath or solution artifacts are involved.
@@ -34,7 +37,7 @@ Each conflict has an evidence-backed intent summary from commits, issues, tests,
 - Generated metadata may need regeneration.
 - Product validations must be rerun after resolution.
 
-## When not to use
+### Use a neighboring skill instead
 
 - There is no active merge or rebase conflict.
 - You want to discard a branch without understanding it.
@@ -42,7 +45,7 @@ Each conflict has an evidence-backed intent summary from commits, issues, tests,
 - Business intent cannot be recovered and no accountable owner is available.
 - You intend to modernize unrelated code while resolving the conflict.
 
-## What you need before starting
+## Prerequisites
 
 - Current merge/rebase mode, base, ours, theirs, and conflict list.
 - Relevant commits, messages, issues, SDD sections, ADRs, and tests.
@@ -79,7 +82,13 @@ intent, avoid unrelated changes, and use the official RPA validations afterward.
 Continue the merge only; do not force-push or rewrite shared history.
 ```
 
-## How to know it is done
+## Common questions
+
+**Will this skill make changes simply because it is model-invoked?**
+
+No. Model invocation only lets the agent load the instructions when the request fits. Source writes, tracker changes, tenant operations, deployments, and other consequential actions still require the authority stated by the request and the owning official skill.
+
+## It's working if
 
 - Merge/rebase mode, refs, conflicts, and continuation command are known.
 - Every conflict has two understood intents or a documented unknown.
@@ -90,7 +99,11 @@ Continue the merge only; do not force-push or rewrite shared history.
 - Source-control state confirms completion or reports the exact blocker.
 - No unauthorized force push or history rewrite occurred.
 
-## Official UiPath handoffs
+## Where it fits
+
+This is a **model-invoked complementary discipline** in UiPath Boost. It may be selected directly by the agent or reached from a user-invoked workflow. Use [uipath-project-router](uipath-project-router.md) when the larger route is unclear.
+
+## Official UiPath handoff
 
 Affected artifacts must be validated by official owners such as `uipath-rpa`, `uipath-agents`, Maestro skills, `uipath-coded-apps`, `uipath-api-workflow`, `uipath-solution`, and `uipath-review`. This skill coordinates intent recovery and conflict resolution; product validity stays with them.
 

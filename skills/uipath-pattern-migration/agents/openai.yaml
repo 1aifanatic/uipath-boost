@@ -1,3 +1,4 @@
 interface:
   display_name: "UiPath Pattern Migration"
-  short_description: "Plan and execute a bounded, reversible migration from one repeated UiPath project pattern to another"
+  short_description: "Run bounded, reversible UiPath pattern migrations"
+  default_prompt: "Use $uipath-pattern-migration to inventory, migrate, verify, and retire this repeated pattern."

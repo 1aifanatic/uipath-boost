@@ -6,13 +6,14 @@
 
 | | |
 |---|---|
+| **Invocation** | Model-invoked — start it explicitly or let the agent select it when the request fits. |
 | **Purpose** | Define small public entry points and enforce allowed dependency directions across a UiPath solution or repository. |
 | **Use it when** | Projects have deep imports, cycles, duplicated contracts, test backdoors, or unclear ownership. |
 | **Do not use it for** | Arbitrary folder restrictions, breaking every existing consumer at once, or confusing deployed resources with source dependencies. |
 | **Primary output** | Dependency inventory, public-surface policy, automated checks with pass-fail-pass evidence, migration plan, and discovery links. |
 | **Maturity** | Pilot |
 
-## Why this skill exists
+## What it does
 
 Multi-project UiPath solutions become difficult to change when consumers reach into library internals, tests use private seams, and dependency direction is implicit. Humans and agents then need a large mental model before making a small edit. Explicit boundaries create a smaller safe surface and make violations detectable before release.
 
@@ -26,7 +27,9 @@ An orchestration project imports internal classes from two coded packages, tests
 
 Every executable and reusable unit has an owner, public entry points, private internals, and permitted dependency directions. A repository-native check detects forbidden deep imports. Evidence shows a clean pass, a temporary representative violation failing, and a clean pass after reverting. Existing violations have an expand-contract migration path.
 
-## When to use
+## When to reach for it
+
+Invoke this skill as `$uipath-project-boundaries`, or let the agent select it automatically when the request matches its defined job.
 
 - Reusable libraries or coded packages expose internals accidentally.
 - Several projects contain duplicated copies of the same contract.
@@ -35,7 +38,7 @@ Every executable and reusable unit has an owner, public entry points, private in
 - Agent navigation requires opening many implementation folders.
 - CI should block new boundary violations while existing ones migrate safely.
 
-## When not to use
+### Use a neighboring skill instead
 
 - A shared contract is genuinely necessary and being blocked only by a stylistic folder rule.
 - There is one implementation with no isolation or reuse need.
@@ -43,7 +46,7 @@ Every executable and reusable unit has an owner, public entry points, private in
 - Runtime queues, assets, or deployed resources are being treated as if they were source imports.
 - No command can demonstrate that the boundary check actually fails on a violation.
 
-## What you need before starting
+## Prerequisites
 
 - The solution’s projects, packages, libraries, test projects, and source references.
 - Runtime resource dependencies kept separate from source dependencies.
@@ -85,7 +88,13 @@ pass-fail-pass evidence with one temporary forbidden deep import. Plan existing
 violations through expand-contract migration instead of breaking consumers.
 ```
 
-## How to know it is done
+## Common questions
+
+**Will this skill make changes simply because it is model-invoked?**
+
+No. Model invocation only lets the agent load the instructions when the request fits. Source writes, tracker changes, tenant operations, deployments, and other consequential actions still require the authority stated by the request and the owning official skill.
+
+## It's working if
 
 - Every unit has an owner and dependency set.
 - Public and private surfaces are explicit.
@@ -96,7 +105,11 @@ violations through expand-contract migration instead of breaking consumers.
 - The policy is linked at the point of change.
 - Official product validation remains with official skills.
 
-## Official UiPath handoffs
+## Where it fits
+
+This is a **model-invoked complementary discipline** in UiPath Boost. It may be selected directly by the agent or reached from a user-invoked workflow. Use [uipath-project-router](uipath-project-router.md) when the larger route is unclear.
+
+## Official UiPath handoff
 
 Use official product owners such as `uipath-rpa` and `uipath-agents` for artifact changes and validation, `uipath-review` for read-only assessment, and `uipath-solution` for solution packaging and deployment. Use `uipath-safe-refactor-plan` and `uipath-pattern-migration` for existing dependency violations.
 

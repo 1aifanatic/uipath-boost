@@ -2,6 +2,7 @@ import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadCatalog } from "../src/catalog.mjs";
+import { SKILL_CONTRACTS } from "../src/skill-contracts.mjs";
 
 const packageRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const guidesRoot = join(packageRoot, "docs", "skills");
@@ -10,18 +11,20 @@ const guideIndexPath = join(guidesRoot, "README.md");
 
 const requiredSections = [
   "## At a glance",
-  "## Why this skill exists",
+  "## What it does",
   "## Before and after",
   "### Before",
   "### After",
-  "## When to use",
-  "## When not to use",
-  "## What you need before starting",
+  "## When to reach for it",
+  "### Use a neighboring skill instead",
+  "## Prerequisites",
   "## What it produces",
   "## How it works",
   "## Example prompt",
-  "## How to know it is done",
-  "## Official UiPath handoffs",
+  "## Common questions",
+  "## It's working if",
+  "## Where it fits",
+  "## Official UiPath handoff",
   "## Related resources"
 ];
 
@@ -66,6 +69,15 @@ for (const skill of catalog) {
   }
 
   const guide = readFileSync(guidePath, "utf8");
+  const invocation = SKILL_CONTRACTS[skill.name]?.invocation;
+  const expectedInvocation =
+    invocation === "user"
+      ? "| **Invocation** | User-invoked — start it explicitly. |"
+      : "| **Invocation** | Model-invoked — start it explicitly or let the agent select it when the request fits. |";
+  if (!guide.includes(expectedInvocation)) {
+    errors.push(`${skill.name}: guide invocation is inconsistent`);
+  }
+
   for (const section of requiredSections) {
     if (!guide.includes(section)) {
       errors.push(`${skill.name}: missing section ${section}`);

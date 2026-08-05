@@ -1,3 +1,4 @@
 interface:
   display_name: "UiPath Discovery Interview"
-  short_description: "Run a rigorous UiPath requirements and process discovery interview"
+  short_description: "Resolve UiPath decisions through frontier rounds"
+  default_prompt: "Use $uipath-discovery-interview to run evidence-based discovery in frontier rounds."

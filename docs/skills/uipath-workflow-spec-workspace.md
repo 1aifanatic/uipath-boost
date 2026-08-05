@@ -6,13 +6,14 @@
 
 | | |
 |---|---|
+| **Invocation** | User-invoked — start it explicitly. |
 | **Purpose** | Maintain a stateful specification for one recurring business workflow before selecting a UiPath product or architecture. |
 | **Use it when** | A team needs to discover triggers, steps, rules, evidence, checkpoints, exceptions, ownership, and value over several sessions. |
 | **Do not use it for** | Assuming a repeating task must be automated or prematurely mandating AI, RPA, queues, schedules, or Maestro. |
 | **Primary output** | One workflow specification, shared organizational notes, checkpoint and exception model, automation-shape observations, and planning handoff. |
 | **Maturity** | Core |
 
-## Why this skill exists
+## What it does
 
 Teams often jump from “this happens every month” to a product choice. Repetition alone does not prove value, feasibility, or the need for automation. A complete workflow specification exposes the operational loop, its evidence, judgment points, exceptions, and ownership so an architect can evaluate the right shape—including the possibility that part of the work should remain manual.
 
@@ -26,7 +27,9 @@ A manager describes a monthly reconciliation through emails and spreadsheets. Th
 
 One source-of-truth specification traces a run from trigger to outcome, documents rules and exception paths, places human checkpoints only where judgment or authority is required, and separates deterministic work, extraction, reasoning, orchestration, and manual work. The architect receives a complete process input without a forced product decision.
 
-## When to use
+## When to reach for it
+
+Invoke this skill explicitly as `$uipath-workflow-spec-workspace`. UiPath Boost treats it as a deliberate workflow; Codex enforces that policy in `agents/openai.yaml`.
 
 - A recurring workflow is observed but not yet fully specified.
 - Discovery will span several sessions.
@@ -35,7 +38,7 @@ One source-of-truth specification traces a run from trigger to outcome, document
 - The team needs a neutral specification before opportunity sizing or SDD design.
 - Several candidate workflows need separate sources of truth.
 
-## When not to use
+### Use a neighboring skill instead
 
 - The workflow does not repeat or has no demonstrated value to study.
 - A complete, approved specification already exists.
@@ -43,7 +46,7 @@ One source-of-truth specification traces a run from trigger to outcome, document
 - You want to hide unresolved ownership behind technical terms.
 - Multiple competing specifications would be created for the same workflow.
 
-## What you need before starting
+## Prerequisites
 
 - Observed triggers, frequency, participants, artifacts, systems, delays, rework, and consequences.
 - Representative normal and exception examples.
@@ -82,7 +85,13 @@ judgment or authority is required. Describe possible work shapes without
 choosing AI, RPA, Maestro, queues, or schedules yet.
 ```
 
-## How to know it is done
+## Common questions
+
+**Why does the agent not start this automatically?**
+
+This workflow benefits from an intentional human start because it orchestrates a session, changes durable project structure, or makes a cross-work decision. Installation makes it available; it does not run it.
+
+## It's working if
 
 - The workflow is evidenced as recurring and valuable enough to study.
 - One run can be traced from trigger to outcome.
@@ -92,7 +101,11 @@ choosing AI, RPA, Maestro, queues, or schedules yet.
 - No product is assumed before the need profile is clear.
 - No silent process assumption blocks an architect or planner.
 
-## Official UiPath handoffs
+## Where it fits
+
+This is a **user-invoked orchestration skill** in UiPath Boost. Use [uipath-project-router](uipath-project-router.md) when you need to decide whether it is the right entry point or what should follow it.
+
+## Official UiPath handoff
 
 - `uipath-automation-discovery` owns opportunity sizing and portfolio evidence.
 - `uipath-planner` owns SDD creation and the canonical task plan once the workflow is ready.

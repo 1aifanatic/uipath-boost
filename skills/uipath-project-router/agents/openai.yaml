@@ -1,3 +1,6 @@
 interface:
   display_name: "UiPath Project Router"
-  short_description: "Route UiPath work only when the user explicitly asks which skill, workflow, or starting point to use"
+  short_description: "Choose the smallest correct UiPath skill route"
+  default_prompt: "Use $uipath-project-router to choose the smallest official and UiPath Boost workflow for this outcome."
+policy:
+  allow_implicit_invocation: false

@@ -6,13 +6,14 @@
 
 | | |
 |---|---|
+| **Invocation** | User-invoked — start it explicitly. |
 | **Purpose** | Make a large, uncertain UiPath program navigable through a map of focused decision tickets. |
 | **Use it when** | The destination is known, but key decisions, dependencies, evidence, and sequencing cannot fit in one design session. |
 | **Do not use it for** | Pretending uncertain work is implementation-ready or producing a detailed build plan before decisions are resolved. |
 | **Primary output** | Program map, decision tickets with evidence and dependencies, and a final planner-ready handoff. |
 | **Maturity** | Core |
 
-## Why this skill exists
+## What it does
 
 Enterprise automation programs contain genuine uncertainty: platform choices, security models, operating ownership, migration paths, process priorities, and dependencies. A conventional task breakdown often hides that uncertainty by creating precise-looking implementation tasks with unproven assumptions.
 
@@ -28,7 +29,11 @@ A Finance transformation wants to automate thirty processes across several busin
 
 The program has a shared destination, explicit exclusions, a “Not Yet Specified” fog area, focused decision tickets, genuine blocking relationships, and a visible unblocked frontier. Each resolved ticket points to its evidence and decision record. When no decision blocks the destination, the map is collapsed into planner-ready solution inputs.
 
-## When to use
+Independent research tickets may run in parallel. Human-in-the-loop discovery and prototype decisions remain with accountable people. If the opening discovery reveals no meaningful fog, stop without creating a map and route the well-scoped effort to discovery or planning.
+
+## When to reach for it
+
+Invoke this skill explicitly as `$uipath-program-wayfinder`. UiPath Boost treats it as a deliberate workflow; Codex enforces that policy in `agents/openai.yaml`.
 
 - Enterprise or multi-business-unit automation programs.
 - Platform migrations or operating-model changes.
@@ -37,7 +42,7 @@ The program has a shared destination, explicit exclusions, a “Not Yet Specifie
 - Programs that keep generating premature project plans from assumptions.
 - Work that needs research, prototypes, discovery, and enabling decisions sequenced together.
 
-## When not to use
+### Use a neighboring skill instead
 
 - One solution has a clear process and can go directly to discovery or planning.
 - The request is to mine systems for automation opportunities.
@@ -45,7 +50,7 @@ The program has a shared destination, explicit exclusions, a “Not Yet Specifie
 - You want to create dozens of speculative tasks merely to look complete.
 - You want to resolve several major non-research decisions in one session.
 
-## What you need before starting
+## Prerequisites
 
 - A one- or two-sentence destination such as an approved architecture, portfolio roadmap, migration decision, or set of planner-ready designs.
 - Known stakeholders, constraints, evidence sources, and exclusions.
@@ -68,9 +73,10 @@ The program has a shared destination, explicit exclusions, a “Not Yet Specifie
 1. **Name the destination.** Fix what the map must make possible.
 2. **Separate tickets, fog, and exclusions.** Do not force vague uncertainty into fake precision.
 3. **Type and connect tickets.** Keep each ticket achievable in one focused session and add only genuine blockers.
-4. **Resolve one decision.** Gather evidence, record the resolution, and update the map.
-5. **Advance the frontier.** Add newly visible questions and remove invalidated work.
-6. **Hand off instead of building.** When decisions no longer block the destination, route solution planning to `uipath-planner`.
+4. **Burn down independent research.** Run agent-runnable research tickets in parallel when safe, leaving one cited note and context pointer per question.
+5. **Resolve one human decision.** Gather evidence, record the accountable resolution, and update the map.
+6. **Advance the frontier.** Add newly visible questions and remove invalidated work.
+7. **Hand off instead of building.** When decisions no longer block the destination, route solution planning to `uipath-planner`.
 
 ## Example scenario
 
@@ -88,7 +94,13 @@ non-research decision this session. Record evidence and context pointers, then
 show how the resolved map will hand off to uipath-planner. Do not create build tasks yet.
 ```
 
-## How to know it is done
+## Common questions
+
+**Why does the agent not start this automatically?**
+
+This workflow benefits from an intentional human start because it orchestrates a session, changes durable project structure, or makes a cross-work decision. Installation makes it available; it does not run it.
+
+## It's working if
 
 - The destination is concise and fixed.
 - Tickets, fog, and exclusions are visibly different.
@@ -99,7 +111,11 @@ show how the resolved map will hand off to uipath-planner. Do not create build t
 - No unanswered decision was converted into an implementation task.
 - A planner-ready handoff exists when the destination is unblocked.
 
-## Official UiPath handoffs
+## Where it fits
+
+This is a **user-invoked orchestration skill** in UiPath Boost. Use [uipath-project-router](uipath-project-router.md) when you need to decide whether it is the right entry point or what should follow it.
+
+## Official UiPath handoff
 
 - `uipath-automation-discovery` owns enterprise opportunity discovery and sizing.
 - `uipath-planner` owns solution designs and canonical task plans after program decisions are resolved.

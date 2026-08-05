@@ -13,7 +13,7 @@ Build one observable business behavior at a time so tests remain useful through 
 
 **This custom skill owns:** Build one observable business behavior at a time so tests remain useful through refactoring and verify the same seam production callers use.
 
-It does not own current UiPath product commands, schemas, artifact validation, live tenant operations, or policy administration unless its instructions explicitly say otherwise.
+Keep current product commands, schemas, artifact validation, live tenant operations, and policy administration with official UiPath skills.
 
 ## Compose With Official UiPath Skills
 
@@ -27,8 +27,6 @@ Use official skills for current product commands and artifact contracts:
 - `uipath-maestro-case`
 - `uipath-coded-apps`
 - `uipath-api-workflow`
-
-Read [references/official-uipath-skill-map.md](references/official-uipath-skill-map.md) when routing is unclear.
 
 ## Workflow
 
@@ -90,4 +88,4 @@ Run project validation, build, focused suites, relevant integrations, and the ag
 
 ## Finish
 
-End with what was completed, the evidence produced, the next official skill or owner, and every unresolved blocker. Never imply that a write, validation, test, deployment, policy change, tenant operation, or runtime action occurred unless it actually ran and its result was observed.
+Report completed work, observed evidence, the next official owner, and every blocker. Mark unobserved actions as pending.

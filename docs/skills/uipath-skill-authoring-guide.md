@@ -6,15 +6,16 @@
 
 | | |
 |---|---|
+| **Invocation** | Model-invoked — start it explicitly or let the agent select it when the request fits. |
 | **Purpose** | Design or improve a reusable Agent Skill with one earned job, precise triggers, gates, safety, composition, and tests. |
 | **Use it when** | Creating a UiPath skill, deciding official versus community ownership, or fixing an inconsistent, broad, bloated, or untestable skill. |
 | **Do not use it for** | Copying current product truth, adding generic advice that changes no behavior, or claiming untested runtime coverage. |
 | **Primary output** | Skill definition, `SKILL.md`, supporting resources, evaluation scenarios, validation evidence, and package. |
 | **Maturity** | Pilot |
 
-## Why this skill exists
+## What it does
 
-An Agent Skill must make a stochastic agent follow a repeatable process. A long prompt with broad triggers, hidden authority assumptions, and no completion gates will activate unpredictably and finish prematurely. This guide gives each skill one defensible job and puts current UiPath product behavior back with official owners.
+An Agent Skill must make a stochastic agent follow a repeatable process. A long prompt with broad triggers, hidden authority assumptions, and no completion gates will activate unpredictably and finish prematurely. This guide gives each skill one defensible job, an intentional invocation mode, a small context footprint, and clear ownership boundaries with official UiPath skills.
 
 ## Before and after
 
@@ -26,7 +27,9 @@ A proposed “UiPath project expert” skill handles discovery, planning, implem
 
 The repeatable job is narrowed to one outcome with concrete inputs and outputs. Official product commands are delegated. The description contains clear triggers and anti-triggers. Steps are imperative and end with observable gates. Branch details move to references, deterministic work to tested scripts, and reusable output shapes to assets. Safety and evaluation scenarios prove the intended behavior and limits.
 
-## When to use
+## When to reach for it
+
+Invoke this skill as `$uipath-skill-authoring-guide`, or let the agent select it automatically when the request matches its defined job.
 
 - Creating a community or organization-specific UiPath skill.
 - Reviewing a skill with unreliable activation.
@@ -35,7 +38,7 @@ The repeatable job is narrowed to one outcome with concrete inputs and outputs. 
 - Adding gates, evidence, safety, official composition, or evaluations.
 - Packaging a skill with references, scripts, and assets.
 
-## When not to use
+### Use a neighboring skill instead
 
 - A one-off prompt does not represent recurring work.
 - The skill’s only purpose is to repeat official product commands.
@@ -43,7 +46,7 @@ The repeatable job is narrowed to one outcome with concrete inputs and outputs. 
 - Scripts cannot be tested in the claimed environment.
 - Runtime or product coverage would be stated beyond observed evidence.
 
-## What you need before starting
+## Prerequisites
 
 - Concrete input and output examples.
 - Recurring failure modes.
@@ -68,11 +71,11 @@ The repeatable job is narrowed to one outcome with concrete inputs and outputs. 
 
 1. **Prove the recurring job.** Reject one-off prompts disguised as skills.
 2. **Check official ownership.** Keep product truth with official UiPath skills.
-3. **Design precise invocation.** Trigger only where the skill adds a distinct outcome.
+3. **Design precise invocation.** Choose user invocation for deliberate orchestrators and model invocation for focused disciplines; write triggers and anti-triggers that keep neighboring work separate.
 4. **Write ordered steps with gates.** Make partial completion observable.
-5. **Move detail to the right resource.** Keep the control plane readable.
+5. **Control context load.** Keep `SKILL.md` as the control plane, point directly to branch-specific references, and cache only facts that are expensive to rediscover.
 6. **Add composition and safety.** Make authority and evidence boundaries explicit.
-7. **Test, validate, and package.** Claim only observed coverage.
+7. **Test behavior, validate structure, and package.** Use trigger, anti-trigger, safety, and completion scenarios; claim only observed coverage.
 
 ## Example prompt
 
@@ -86,7 +89,13 @@ references, define approval and data boundaries, and create happy, failure, and
 adversarial evaluation scenarios. Do not copy current product commands.
 ```
 
-## How to know it is done
+## Common questions
+
+**Will this skill make changes simply because it is model-invoked?**
+
+No. Model invocation only lets the agent load the instructions when the request fits. Source writes, tracker changes, tenant operations, deployments, and other consequential actions still require the authority stated by the request and the owning official skill.
+
+## It's working if
 
 - The skill solves one recurring task.
 - No official product capability is forked.
@@ -97,7 +106,11 @@ adversarial evaluation scenarios. Do not copy current product commands.
 - Scripts were actually tested.
 - Evaluation and packaging evidence supports every critical claim.
 
-## Official UiPath handoffs
+## Where it fits
+
+This is a **model-invoked complementary discipline** in UiPath Boost. It may be selected directly by the agent or reached from a user-invoked workflow. Use [uipath-project-router](uipath-project-router.md) when the larger route is unclear.
+
+## Official UiPath handoff
 
 Current product commands, schemas, validation, deployment, tenant operations, and policy administration belong to official skills. A community skill should create a distinct engineering artifact or organization-specific discipline and hand official work back explicitly.
 
@@ -105,4 +118,5 @@ Current product commands, schemas, validation, deployment, tenant operations, an
 
 - [Project Router guide](uipath-project-router.md)
 - [Training Lab Scaffolder guide](uipath-training-lab-scaffolder.md)
+- [Skill mechanics reference](../../skills/uipath-skill-authoring-guide/references/skill-mechanics.md)
 - [Skill source](../../skills/uipath-skill-authoring-guide/SKILL.md)

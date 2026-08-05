@@ -4,7 +4,7 @@
 
 This library explains every UiPath Boost skill in practical language. Each guide includes:
 
-- What the skill owns and why it exists.
+- What the skill owns and its invocation mode.
 - A realistic before-and-after scenario.
 - When to use it and when not to use it.
 - Inputs, outputs, and a step-by-step workflow.
@@ -18,6 +18,13 @@ If you are unsure where to begin, start with the [UiPath Project Router](uipath-
 ```bash
 npx skills add 1aifanatic/uipath-boost --skill '*' --agent codex --global --yes
 ```
+
+## Invocation key
+
+- **User-invoked (15):** start these deliberate workflows yourself with `Use $skill-name`. They include Project Router, Architecture Deepening, Delivery Control Plane, Discovery With Docs, Learning Workspace, Program Wayfinder, Project Handoff, Quality Gates Setup, Source Control Guardrails, Stakeholder Questionnaire, Task Refinement, Training Lab Scaffolder, UAT Session, Work Intake Triage, and Workflow Spec Workspace.
+- **Model-invoked (19):** name them directly or let the agent choose them when your request precisely matches. Every individual guide shows its mode in the **At a glance** table.
+
+Installing a skill only makes its instructions available. Invocation does not authorize file changes, tenant operations, deployment, publishing, or other consequential actions.
 
 ## Routing and project continuity
 
@@ -86,11 +93,11 @@ npx skills add 1aifanatic/uipath-boost --skill '*' --agent codex --global --yes
 ## A simple way to use the library
 
 1. Open the guide for your situation.
-2. Read **When to use** and **When not to use** first.
+2. Read **When to reach for it** and **Use a neighboring skill instead** first.
 3. Compare your current state with the **Before and after** scenario.
 4. Gather the listed inputs.
 5. Copy and adapt the example prompt.
-6. Use **How to know it is done** as your completion checklist.
+6. Use **It's working if** as your completion checklist.
 7. Follow the official UiPath handoff before any product or platform operation.
 
 [Return to the main README](../../README.md)

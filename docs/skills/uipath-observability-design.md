@@ -6,13 +6,14 @@
 
 | | |
 |---|---|
+| **Invocation** | Model-invoked — start it explicitly or let the agent select it when the request fits. |
 | **Purpose** | Design end-to-end correlation, events, metrics, SLOs, dashboards, alerts, retention, and support ownership. |
 | **Use it when** | A process, agent, Maestro journey, integration, app, or solution must be observable before release or improvement. |
 | **Do not use it for** | Querying live analytics, creating dashboards, operating tasks/resources, querying audit events, or diagnosing root cause. |
 | **Primary output** | Journey map, correlation/event schema, signal catalog, alert/dashboard requirements, privacy/cost decisions, and incident walkthrough. |
 | **Maturity** | Core |
 
-## Why this skill exists
+## What it does
 
 Job counts and exception totals rarely explain whether the business outcome completed or where a multi-system journey failed. Observability must connect the business case across documents, queues, jobs, agents, tasks, APIs, and outputs, while protecting sensitive data and keeping alerts actionable.
 
@@ -26,7 +27,9 @@ A claims journey uses email, an agent, a queue, RPA, and Action Center. Each sys
 
 A correlation model propagates business case, execution, queue, agent, task, integration, and release IDs with redaction rules. Structured events show lifecycle points and error evidence. Metrics answer business and operational decisions, alerts include deduplication, context, owner, runbook, escalation, and recovery signals, and incident walkthroughs expose remaining gaps.
 
-## When to use
+## When to reach for it
+
+Invoke this skill as `$uipath-observability-design`, or let the agent select it automatically when the request matches its defined job.
 
 - Designing monitoring before production release.
 - Correlating several UiPath products and external systems.
@@ -35,7 +38,7 @@ A correlation model propagates business case, execution, queue, agent, task, int
 - Setting SLOs where measurement and ownership exist.
 - Evaluating privacy, retention, cardinality, and AI data concerns.
 
-## When not to use
+### Use a neighboring skill instead
 
 - You want a live Insights query or dashboard change.
 - You need to operate Action Center tasks or platform resources.
@@ -43,7 +46,7 @@ A correlation model propagates business case, execution, queue, agent, task, int
 - You are diagnosing a specific incident’s root cause.
 - A proposed metric has no user, decision, source, or owner.
 
-## What you need before starting
+## Prerequisites
 
 - End-to-end process/solution design and business completion meaning.
 - Trigger, artifacts, jobs, queues, agents, tasks, APIs, data stores, and outputs.
@@ -83,7 +86,13 @@ SLOs, dashboards, alerts, runbooks, retention, and ownership. Walk one technical
 fault, one silent business failure, and one aging path. Do not query or change live systems.
 ```
 
-## How to know it is done
+## Common questions
+
+**Will this skill make changes simply because it is model-invoked?**
+
+No. Model invocation only lets the agent load the instructions when the request fits. Source writes, tracker changes, tenant operations, deployments, and other consequential actions still require the authority stated by the request and the owning official skill.
+
+## It's working if
 
 - Every critical handoff and completion state appears on one map.
 - An incident can be followed end to end without free-text searches.
@@ -94,9 +103,13 @@ fault, one silent business failure, and one aging path. Do not query or change l
 - Technical, silent-business, and aging incidents can be narrated or expose named gaps.
 - No live analytics or platform operation was performed.
 
-## Official UiPath handoffs
+## Where it fits
 
-`uipath-insights` owns live KPI analytics, `uipath-tasks` owns Action Center task operations, `uipath-admin` owns audit/identity evidence, `uipath-platform` owns resources, `uipath-governance` owns policies, and `uipath-troubleshoot` owns causal diagnosis. This skill defines what should be observable.
+This is a **model-invoked complementary discipline** in UiPath Boost. It may be selected directly by the agent or reached from a user-invoked workflow. Use [uipath-project-router](uipath-project-router.md) when the larger route is unclear.
+
+## Official UiPath handoff
+
+`uipath-insights` owns live KPI analytics, `uipath-process-mining` owns Process Mining app analysis, `uipath-tasks` owns Action Center task operations, `uipath-admin` owns audit/identity evidence, `uipath-platform` owns resources, `uipath-governance` owns policies, and `uipath-troubleshoot` owns causal diagnosis. This skill defines what should be observable.
 
 ## Related resources
 

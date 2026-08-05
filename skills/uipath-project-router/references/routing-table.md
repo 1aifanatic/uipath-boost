@@ -11,6 +11,7 @@
 | Test Manager operations and reports | `uipath-test` | `uipath-uat-session` only for facilitated business-language UAT observation capture |
 | Action Center task operations | `uipath-tasks` | `uipath-observability-design` only for task-aging metrics and correlation design |
 | Job KPI and failure trend analytics | `uipath-insights` | `uipath-observability-design` for future measurement design |
+| Process Mining app, data model, transformations, or queries | `uipath-process-mining` | `uipath-process-domain-modeling` only when business terminology is inconsistent |
 | Governance policies and compliance settings | `uipath-governance` | `uipath-solution-security-assessment` for project-level threats and evidence gaps |
 | Identities, roles, tenants, IP restrictions, or audit events | `uipath-admin` | `uipath-solution-security-assessment` only to request evidence and record risk |
 | Raw request or backlog item | Official owner after classification | `uipath-work-intake-triage` before official work begins |

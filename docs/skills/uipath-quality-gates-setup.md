@@ -6,13 +6,14 @@
 
 | | |
 |---|---|
+| **Invocation** | User-invoked — start it explicitly. |
 | **Purpose** | Add tiered local and CI quality gates using current commands supplied by official UiPath product skills. |
 | **Use it when** | A repository needs fast developer checks, PR validation, security/boundary checks, packaging evidence, or release gates. |
 | **Do not use it for** | Guessing UiPath CLI commands, replacing pipelines wholesale, exposing secrets, or forcing slow environment tests on every commit. |
 | **Primary output** | Project inventory, gate design, local/CI configuration, pass-fail-pass evidence, operations guide, and limitations. |
 | **Maturity** | Pilot |
 
-## Why this skill exists
+## What it does
 
 Quality checks often exist as tribal knowledge or one long release checklist. Developers discover problems late because fast checks are not local, while CI either misses product-specific validation or runs expensive environment tests too often. This skill assembles official commands into risk-based tiers and proves critical checks detect representative violations.
 
@@ -26,7 +27,9 @@ A repository contains XAML, coded automation, an agent, tests, and a solution wr
 
 Project types are inventoried. Official owners provide current validate, build, test, review, and packaging commands. Fast checks run locally, comprehensive gates run on PRs, environment-dependent checks run at appropriate times, and release gates retain evidence. Critical checks have clean-pass, controlled-failure, and restored-pass proof.
 
-## When to use
+## When to reach for it
+
+Invoke this skill explicitly as `$uipath-quality-gates-setup`. UiPath Boost treats it as a deliberate workflow; Codex enforces that policy in `agents/openai.yaml`.
 
 - A multi-project repository lacks consistent validation.
 - Pull requests need product-specific checks.
@@ -35,7 +38,7 @@ Project types are inventoried. Official owners provide current validate, build, 
 - Existing pipeline jobs should be extended without being replaced.
 - A team needs documented ownership and update rules for changing CLI contracts.
 
-## When not to use
+### Use a neighboring skill instead
 
 - The repository and project types have not been inventoried.
 - Product commands would be invented from memory.
@@ -43,7 +46,7 @@ Project types are inventoried. Official owners provide current validate, build, 
 - Required credentials would be committed or logged.
 - Slow tenant/UI tests would become mandatory locally without agreement.
 
-## What you need before starting
+## Prerequisites
 
 - Repository access and current pipelines, hooks, package managers, build files, branch policy, tests, and generated-artifact conventions.
 - Official product owners for every project type.
@@ -91,7 +94,13 @@ Merge the gates into existing automation without exposing secrets. Prove each
 critical static gate with pass-fail-pass evidence and document all limitations.
 ```
 
-## How to know it is done
+## Common questions
+
+**Why does the agent not start this automatically?**
+
+This workflow benefits from an intentional human start because it orchestrates a session, changes durable project structure, or makes a cross-work decision. Installation makes it available; it does not run it.
+
+## It's working if
 
 - All project types and existing gates are inventoried.
 - Every product command has an official owner and current assumptions.
@@ -101,7 +110,11 @@ critical static gate with pass-fail-pass evidence and document all limitations.
 - Developers and maintainers can run and update the gates from documentation.
 - Unavailable environments, credentials, licenses, runners, and preview limitations are explicit.
 
-## Official UiPath handoffs
+## Where it fits
+
+This is a **user-invoked orchestration skill** in UiPath Boost. Use [uipath-project-router](uipath-project-router.md) when you need to decide whether it is the right entry point or what should follow it.
+
+## Official UiPath handoff
 
 Official RPA, agent, Maestro, coded-app, API-workflow, test, review, and solution skills own the commands and product validity. This skill composes them into repository and CI workflow; it does not define their contracts.
 

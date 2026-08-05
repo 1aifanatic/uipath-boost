@@ -1,3 +1,4 @@
 interface:
   display_name: "UiPath Solution Storytelling"
-  short_description: "Develop clear UiPath solution narratives from raw notes, evidence, design artifacts, demos, and implementation outcomes"
+  short_description: "Turn UiPath evidence into a clear solution narrative"
+  default_prompt: "Use $uipath-solution-storytelling to shape these UiPath artifacts into an audience-ready story."

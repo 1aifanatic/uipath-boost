@@ -1,3 +1,4 @@
 interface:
   display_name: "UiPath Process Domain Modeling"
-  short_description: "Build and sharpen the business language used by a UiPath project"
+  short_description: "Sharpen the business language of a UiPath project"
+  default_prompt: "Use $uipath-process-domain-modeling to resolve ambiguous process terms and update the domain model."

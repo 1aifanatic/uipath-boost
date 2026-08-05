@@ -6,13 +6,14 @@
 
 | | |
 |---|---|
+| **Invocation** | User-invoked — start it explicitly. |
 | **Purpose** | Run rigorous discovery while updating durable project knowledge as decisions are made. |
 | **Use it when** | Discovery spans multiple sessions or must leave a reusable glossary, evidence index, decision log, ADRs, and planning handoff. |
 | **Do not use it for** | Writing implementation code, duplicating existing documents, or storing secrets and raw production data. |
 | **Primary output** | `CONTEXT.md`, decision log, evidence index, justified ADRs, and a planner-ready handoff. |
 | **Maturity** | Core |
 
-## Why this skill exists
+## What it does
 
 A good interview can still fail the project if its decisions disappear into meeting notes or chat history. Later agents may use different business terms, reopen settled questions, or design from stale evidence. This skill pairs each discovery decision with an immediate update to the correct durable document.
 
@@ -28,7 +29,9 @@ Discovery has occurred across several workshops. Terms such as “case,” “ex
 
 The project has one current business-language context, an evidence index, a decision log, a small set of justified ADRs, and a concise planner handoff. Resolved questions are not asked again, evidence sensitivity and freshness are visible, and the next agent can design from the documents.
 
-## When to use
+## When to reach for it
+
+Invoke this skill explicitly as `$uipath-discovery-with-docs`. UiPath Boost treats it as a deliberate workflow; Codex enforces that policy in `agents/openai.yaml`.
 
 - Discovery will continue across more than one session.
 - A repository-backed project needs durable context for future agents.
@@ -37,7 +40,7 @@ The project has one current business-language context, an evidence index, a deci
 - Hard-to-reverse trade-offs need ADRs.
 - The final output must be ready for `uipath-planner` without replaying the interview.
 
-## When not to use
+### Use a neighboring skill instead
 
 - You only need a short, disposable interview with no repository documentation.
 - The project already has current, approved discovery documents and is ready for planning.
@@ -45,7 +48,7 @@ The project has one current business-language context, an evidence index, a deci
 - You intend to overwrite user-authored structure or duplicate a complete PDD, SDD, or source artifact.
 - Sensitive evidence cannot be safely referenced or redacted.
 
-## What you need before starting
+## Prerequisites
 
 - Existing project context, `CONTEXT.md`, PDD, SDD, ADRs, decision log, and evidence index when present.
 - Workshop notes, source documents, samples, screenshots, logs, and policies.
@@ -86,7 +89,13 @@ hard-to-reverse trade-off, and link evidence with owner, freshness, and
 sensitivity. Finish with a planner-ready handoff. Do not write implementation code.
 ```
 
-## How to know it is done
+## Common questions
+
+**Why does the agent not start this automatically?**
+
+This workflow benefits from an intentional human start because it orchestrates a session, changes durable project structure, or makes a cross-work decision. Installation makes it available; it does not run it.
+
+## It's working if
 
 - Existing context was read and preserved.
 - Resolved questions were not repeated.
@@ -97,7 +106,11 @@ sensitivity. Finish with a planner-ready handoff. Do not write implementation co
 - The planner handoff names settled decisions, sources, blockers, and next owner.
 - No implementation code or product operation was performed.
 
-## Official UiPath handoffs
+## Where it fits
+
+This is a **user-invoked orchestration skill** in UiPath Boost. Use [uipath-project-router](uipath-project-router.md) when you need to decide whether it is the right entry point or what should follow it.
+
+## Official UiPath handoff
 
 - `uipath-automation-discovery` owns enterprise opportunity mining.
 - `uipath-planner` owns PDD/SDD transformation and the canonical task plan after discovery readiness.

@@ -1,3 +1,4 @@
 interface:
   display_name: "UiPath Solution Security Assessment"
-  short_description: "Perform project-level threat modeling and evidence-backed security, privacy, AI, integration, and operational control as"
+  short_description: "Assess UiPath solution security with evidence"
+  default_prompt: "Use $uipath-solution-security-assessment to map threats, controls, evidence gaps, and residual risk."

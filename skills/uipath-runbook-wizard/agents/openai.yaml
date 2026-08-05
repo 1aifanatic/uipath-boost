@@ -1,3 +1,4 @@
 interface:
   display_name: "UiPath Runbook Wizard"
-  short_description: "Create an interactive or document-based wizard for a UiPath setup, access, migration, deployment-preparation, or operati"
+  short_description: "Generate a safe wizard for human-only UiPath steps"
+  default_prompt: "Use $uipath-runbook-wizard to turn these human-only UiPath steps into a verified staged wizard."

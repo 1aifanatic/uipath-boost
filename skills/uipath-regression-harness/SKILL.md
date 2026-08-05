@@ -13,7 +13,7 @@ Convert a known failure into one command or bounded test that fails on the exact
 
 **This custom skill owns:** Convert a known failure into one command or bounded test that fails on the exact symptom, passes after correction, and remains as durable regression evidence.
 
-It does not own current UiPath product commands, schemas, artifact validation, live tenant operations, or policy administration unless its instructions explicitly say otherwise.
+Keep current product commands, schemas, artifact validation, live tenant operations, and policy administration with official UiPath skills.
 
 ## Compose With Official UiPath Skills
 
@@ -30,8 +30,6 @@ Use official skills for current product commands and artifact contracts:
 - `uipath-api-workflow`
 - `uipath-functions`
 - `uipath-connector-builder`
-
-Read [references/official-uipath-skill-map.md](references/official-uipath-skill-map.md) when routing is unclear.
 
 ## Workflow
 
@@ -88,4 +86,4 @@ Provide the command, fixture, observed output, ownership, and expected green con
 
 ## Finish
 
-End with what was completed, the evidence produced, the next official skill or owner, and every unresolved blocker. Never imply that a write, validation, test, deployment, policy change, tenant operation, or runtime action occurred unless it actually ran and its result was observed.
+Report completed work, observed evidence, the next official owner, and every blocker. Mark unobserved actions as pending.

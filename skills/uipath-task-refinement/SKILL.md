@@ -1,11 +1,11 @@
 ---
 name: uipath-task-refinement
-description: "Refine an existing uipath-planner task list or an explicitly supplied backlog into session-sized, verifiable work items with clear dependencies and ownership. Use only after the canonical SDD and initial task plan already exist, when items are too large, too horizontal, ambiguously blocked, or difficult to assign. Do not author the initial SDD, choose the product architecture, or replace planner task derivation."
+description: "Use only when the user explicitly asks to refine an approved UiPath plan into session-sized tracer-bullet tasks with blocking edges."
 ---
 
 # UiPath Task Refinement
 
-Improve the execution quality of an approved plan without creating a competing plan or duplicating architecture content.
+Improve an approved plan through tracer-bullet tasks: thin end-to-end slices that produce observable behavior and declare genuine blocking edges.
 
 **Maturity:** core.
 
@@ -13,15 +13,13 @@ Improve the execution quality of an approved plan without creating a competing p
 
 **This custom skill owns:** Improve the execution quality of an approved plan without creating a competing plan or duplicating architecture content.
 
-It does not own current UiPath product commands, schemas, artifact validation, live tenant operations, or policy administration unless its instructions explicitly say otherwise.
+Keep current product commands, schemas, artifact validation, live tenant operations, and policy administration with official UiPath skills.
 
 ## Compose With Official UiPath Skills
 
 Use official skills for current product commands and artifact contracts:
 
 - `uipath-planner`
-
-Read [references/official-uipath-skill-map.md](references/official-uipath-skill-map.md) when routing is unclear.
 
 ## Workflow
 
@@ -39,7 +37,7 @@ Check outcome, owner, input, acceptance evidence, product owner, estimated conte
 
 ### 3. Split or merge vertically
 
-Create the smallest end-to-end slices that can be validated independently. Use expand-contract for wide migrations and preserve the planner architecture by reference rather than copying it.
+Create the smallest end-to-end tracer bullets that can be validated independently. Represent each task as one tracker item or one Markdown file rather than a combined backlog body. Use expand-contract for wide migrations and preserve planner architecture by reference rather than copying it.
 
 **Completion criterion:** Each refined item fits one focused execution session and produces observable behavior.
 
@@ -69,6 +67,7 @@ Present the proposed delta. Update the task file or tracker only with explicit a
 - Never create a second SDD or initial implementation plan.
 - Do not copy architecture sections into every task.
 - Do not create or modify tracker items without authority.
+- Do not place multiple independently executable tasks in one local Markdown file.
 
 ## Example Requests
 
@@ -78,4 +77,4 @@ Present the proposed delta. Update the task file or tracker only with explicit a
 
 ## Finish
 
-End with what was completed, the evidence produced, the next official skill or owner, and every unresolved blocker. Never imply that a write, validation, test, deployment, policy change, tenant operation, or runtime action occurred unless it actually ran and its result was observed.
+Report completed work, observed evidence, the next official owner, and every blocker. Mark unobserved actions as pending.

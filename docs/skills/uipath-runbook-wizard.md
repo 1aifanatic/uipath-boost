@@ -6,13 +6,14 @@
 
 | | |
 |---|---|
+| **Invocation** | Model-invoked — start it explicitly or let the agent select it when the request fits. |
 | **Purpose** | Turn a repeatable human setup or operational procedure into verified, staged, recoverable instructions. |
 | **Use it when** | A procedure spans portals, approvals, values, environment setup, credentials, tenant resources, migration, or irreversible checkpoints. |
 | **Do not use it for** | Inventing portal labels/commands, exposing secrets, or executing browser, approval, deployment, or production-changing steps during authoring. |
 | **Primary output** | Procedure map, shell wizard or Markdown runbook, value-destination map, checks, recovery, permissions, and retention guidance. |
 | **Maturity** | Pilot |
 
-## Why this skill exists
+## What it does
 
 Manual setup and cutover procedures are repeatedly explained in meetings, where steps, values, owners, and safety boundaries are easily lost. A good wizard makes each stage explicit, captures outputs only to approved destinations, supports interruption and reruns, and pauses before irreversible action.
 
@@ -24,9 +25,11 @@ Tenant onboarding is documented as a loose checklist: create resources, copy IDs
 
 ### After
 
-Every stage has inputs, outputs, owner, sensitivity, destination, prerequisite, completion check, retry path, and stop condition. Current commands and portal paths are verified through official sources. Low-risk local setup may use a shell wizard; cross-team approvals and production cutover use a Markdown runbook. Irreversible stages require explicit human confirmation.
+Every human-only stage has inputs, outputs, owner, sensitivity, destination, prerequisite, completion check, retry path, and stop condition. Current commands and portal paths are verified through official sources. Native Windows work may use PowerShell, Unix-like or WSL work may use Bash, and cross-team approvals may use Markdown. The user confirms the stage list before authoring, and irreversible stages require explicit human confirmation.
 
-## When to use
+## When to reach for it
+
+Invoke this skill as `$uipath-runbook-wizard`, or let the agent select it automatically when the request matches its defined job.
 
 - Developer or tenant onboarding repeats.
 - Environment values must be captured and routed safely.
@@ -35,15 +38,16 @@ Every stage has inputs, outputs, owner, sensitivity, destination, prerequisite, 
 - Operators need repeatable recovery and verification instructions.
 - A one-off explanation should become a maintained procedure.
 
-## When not to use
+### Use a neighboring skill instead
 
 - The procedure is truly one-time and no maintained artifact is wanted.
 - Exact commands or UI paths cannot be verified and would be invented.
 - The authoring session would execute irreversible or production-changing stages.
 - Secrets would be echoed or stored in plaintext.
-- A shell wizard is chosen for a cross-team approval process that needs a document.
+- A Bash or PowerShell wizard is chosen for a cross-team approval process that needs a document.
+- The proposed stage is something the agent can safely perform directly with available tools.
 
-## What you need before starting
+## Prerequisites
 
 - Existing configuration, docs, environment files, pipelines, project context, and official guidance.
 - Every manual stage and the value/state it produces.
@@ -54,7 +58,7 @@ Every stage has inputs, outputs, owner, sensitivity, destination, prerequisite, 
 ## What it produces
 
 - Ordered procedure map with stage inputs, outputs, destinations, sensitivity, and owners.
-- A shell wizard for local repeatable low-risk setup, or Markdown runbook for cross-team/approval work.
+- A Bash or PowerShell wizard for local repeatable human steps, or a Markdown runbook for cross-team approval work.
 - Confirmation gates before irreversible actions.
 - Hidden secret input and approved storage behavior.
 - Idempotent rerun design.
@@ -84,7 +88,13 @@ sensitivity, destination, completion check, recovery, and stop condition.
 Require explicit human confirmation before deployment or activation and do not execute any stage.
 ```
 
-## How to know it is done
+## Common questions
+
+**Will this skill make changes simply because it is model-invoked?**
+
+No. Model invocation only lets the agent load the instructions when the request fits. Source writes, tracker changes, tenant operations, deployments, and other consequential actions still require the authority stated by the request and the owning official skill.
+
+## It's working if
 
 - Every stage has a name, input, output, destination, sensitivity, and owner.
 - Commands and portal paths are verified or marked unknown.
@@ -95,12 +105,17 @@ Require explicit human confirmation before deployment or activation and do not e
 - Static checks account for every captured value.
 - An authorized human knows how to run, retain, or delete the artifact.
 
-## Official UiPath handoffs
+## Where it fits
+
+This is a **model-invoked complementary discipline** in UiPath Boost. It may be selected directly by the agent or reached from a user-invoked workflow. Use [uipath-project-router](uipath-project-router.md) when the larger route is unclear.
+
+## Official UiPath handoff
 
 `uipath-platform`, `uipath-admin`, and `uipath-solution` own current commands and live operations. The wizard prepares an authorized human procedure; it does not execute those operations during authoring.
 
 ## Related resources
 
 - [Shell wizard template](../../skills/uipath-runbook-wizard/assets/wizard-template.sh)
+- [PowerShell wizard template](../../skills/uipath-runbook-wizard/assets/wizard-template.ps1)
 - [Release Readiness guide](uipath-release-readiness.md)
 - [Skill source](../../skills/uipath-runbook-wizard/SKILL.md)

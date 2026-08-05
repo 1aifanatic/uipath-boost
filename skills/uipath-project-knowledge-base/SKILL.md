@@ -13,13 +13,13 @@ Make project knowledge easy to discover and update without copying the same fact
 
 **This custom skill owns:** Make project knowledge easy to discover and update without copying the same fact into many documents or tying the workflow to one proprietary note-taking application.
 
-It does not own current UiPath product commands, schemas, artifact validation, live tenant operations, or policy administration unless its instructions explicitly say otherwise.
+Keep current product commands, schemas, artifact validation, live tenant operations, and policy administration with official UiPath skills.
 
 ## Workflow
 
 ### 1. Discover existing knowledge
 
-Inventory current Markdown, SDDs, ADRs, research notes, runbooks, reviews, post-mortems, diagrams, issue links, and external sources. Respect existing naming and folder conventions.
+Inventory current Markdown, SDDs, ADRs, research notes, runbooks, reviews, post-mortems, diagrams, issue links, configuration, scripts, and external sources. Treat the environment as a source of truth and identify cached facts that can be rediscovered cheaply instead of copied.
 
 **Completion criterion:** The knowledge sources and duplicates are known.
 
@@ -31,7 +31,7 @@ Choose title, filename, index, link, metadata, sensitivity, ownership, and archi
 
 ### 3. Create topic and index notes
 
-Write focused notes for durable knowledge and index notes that group related concepts, artifacts, and workflows. Link to source-of-truth documents instead of restating them.
+Write focused notes for knowledge the environment cannot explain: decision reasons, unwritten conventions, ownership, known traps, lessons, and evidence context. Use index notes to group related concepts, artifacts, and workflows. Link to source-of-truth documents instead of restating them.
 
 **Completion criterion:** Every new note is reachable from at least one relevant index.
 
@@ -70,6 +70,7 @@ Check broken links, orphan notes, duplicate titles, missing indexes, and referen
 ## Guardrails
 
 - Do not duplicate full SDD, issue, log, or report content into notes.
+- Do not cache a fact that a contributor can recover reliably from one file or command.
 - Do not create application-specific links as the only navigation mechanism.
 - Do not put credentials, personal data, or unrestricted production records in the knowledge base.
 - Do not treat a recently modified old document as current without reading its content.
@@ -82,4 +83,4 @@ Check broken links, orphan notes, duplicate titles, missing indexes, and referen
 
 ## Finish
 
-End with what was completed, the evidence produced, the next official skill or owner, and every unresolved blocker. Never imply that a write, validation, test, deployment, policy change, tenant operation, or runtime action occurred unless it actually ran and its result was observed.
+Report completed work, observed evidence, the next official owner, and every blocker. Mark unobserved actions as pending.

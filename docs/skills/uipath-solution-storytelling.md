@@ -6,13 +6,14 @@
 
 | | |
 |---|---|
+| **Invocation** | Model-invoked — start it explicitly or let the agent select it when the request fits. |
 | **Purpose** | Turn verified UiPath notes, evidence, designs, demos, and outcomes into an audience-ready narrative. |
 | **Use it when** | Creating proposals, architecture explanations, demos, talks, case studies, articles, or release communications. |
 | **Do not use it for** | Inventing outcomes, capabilities, metrics, quotations, or exposing confidential/customer material. |
 | **Primary output** | Source pile, audience brief, incremental narrative, fact-check record, and final story/script. |
 | **Maturity** | Pilot |
 
-## Why this skill exists
+## What it does
 
 Accurate technical content can still fail if the audience meets concepts in the wrong order, cannot see why they matter, or encounters unsupported claims. This skill separates raw exploration from shaping, introduces each load-bearing concept before using it, and builds the narrative in reviewable blocks.
 
@@ -26,7 +27,9 @@ An executive proposal combines SDD excerpts, screenshots, metrics, product names
 
 The audience, desired decision, format, length, prerequisites, and evidence standard are explicit. Claims are supported, inferred, or removed. The story introduces the business problem before the relevant products, shows verified evidence in the right form, and ends with a clear action. Unused fragments remain in the source pile rather than being forced into the final piece.
 
-## When to use
+## When to reach for it
+
+Invoke this skill as `$uipath-solution-storytelling`, or let the agent select it automatically when the request matches its defined job.
 
 - Turning an SDD and demo results into an executive explanation.
 - Writing a community article or talk.
@@ -35,7 +38,7 @@ The audience, desired decision, format, length, prerequisites, and evidence stan
 - Editing a release communication for clarity and evidence.
 - Preserving user edits while shaping a story incrementally.
 
-## When not to use
+### Use a neighboring skill instead
 
 - Claims, metrics, quotations, or product behavior cannot be verified.
 - Confidential architecture or customer data cannot be safely removed.
@@ -43,7 +46,7 @@ The audience, desired decision, format, length, prerequisites, and evidence stan
 - Raw fragments would be overwritten while drafting.
 - Every fact must be included even when it does not serve the audience outcome.
 
-## What you need before starting
+## Prerequisites
 
 - One writing mode: fragment, shape, beat, or edit.
 - One source document or source pile.
@@ -84,7 +87,13 @@ introduce every concept before depending on it, propose two opening shapes, and
 write only the selected structure. End with a fact-check and clear call to action.
 ```
 
-## How to know it is done
+## Common questions
+
+**Will this skill make changes simply because it is model-invoked?**
+
+No. Model invocation only lets the agent load the instructions when the request fits. Source writes, tracker changes, tenant operations, deployments, and other consequential actions still require the authority stated by the request and the owning official skill.
+
+## It's working if
 
 - Mode, audience, outcome, channel, and source document are explicit.
 - Every major claim is supported, labeled inference, or removed.
@@ -95,7 +104,11 @@ write only the selected structure. End with a fact-check and clear call to actio
 - User edits and raw fragments are preserved.
 - Opening promise, logic, examples, citations, and call to action survive final fact-check.
 
-## Official UiPath handoffs
+## Where it fits
+
+This is a **model-invoked complementary discipline** in UiPath Boost. It may be selected directly by the agent or reached from a user-invoked workflow. Use [uipath-project-router](uipath-project-router.md) when the larger route is unclear.
+
+## Official UiPath handoff
 
 Official skills remain the authority for current capabilities, commands, schemas, validation, and operations. Use `uipath-research-note` when a claim needs current primary-source verification before storytelling.
 

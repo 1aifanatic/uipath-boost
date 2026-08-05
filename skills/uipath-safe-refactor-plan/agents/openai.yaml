@@ -1,3 +1,4 @@
 interface:
   display_name: "UiPath Safe Refactor Plan"
-  short_description: "Plan a behavior-preserving UiPath refactor as small, verifiable steps with safety nets and rollback points"
+  short_description: "Plan a behavior-preserving UiPath refactor"
+  default_prompt: "Use $uipath-safe-refactor-plan to turn the selected architecture direction into reversible implementation steps."

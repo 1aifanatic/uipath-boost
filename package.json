@@ -1,6 +1,6 @@
 {
   "name": "uipath-boost",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Community skills for better UiPath automation.",
   "type": "module",
   "bin": {
@@ -11,7 +11,11 @@
     "src/",
     "skills/",
     "docs/",
+    ".codex-plugin/",
+    ".claude-plugin/",
     "README.md",
+    "ACKNOWLEDGMENTS.md",
+    "CHANGELOG.md",
     "LICENSE",
     "SECURITY.md"
   ],
@@ -21,7 +25,7 @@
     "prepack": "npm run validate && npm test"
   },
   "dependencies": {
-    "skills": "1.5.21"
+    "skills": "1.5.22"
   },
   "engines": {
     "node": ">=22.20.0"

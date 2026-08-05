@@ -6,13 +6,14 @@
 
 | | |
 |---|---|
+| **Invocation** | Model-invoked — start it explicitly or let the agent select it when the request fits. |
 | **Purpose** | Plan and execute a wide repeated change through an explicit contract, full inventory, dry run, bounded batches, backups, and validation. |
 | **Use it when** | Names, configuration keys, queue fields, package references, arguments, fixtures, or documentation conventions must change across many locations. |
 | **Do not use it for** | Blind text replacement in structured artifacts or applying a migration before inventory and dry-run review. |
 | **Primary output** | Migration contract, classified inventory, dry-run report, backups, manifest, batch evidence, completeness report, and compatibility cleanup. |
 | **Maturity** | Pilot |
 
-## Why this skill exists
+## What it does
 
 Repeated changes appear mechanical but hide false positives, structured formats, generated files, compatibility windows, and consumers outside the initial search. One global replacement can corrupt artifacts or leave half-migrated contracts. This skill makes the transformation reviewable and independently reversible by project or transformation class.
 
@@ -26,7 +27,9 @@ A queue field must change from `InvoiceNo` to `InvoiceNumber` across projects, t
 
 The migration contract defines exact forms, scope, exclusions, assumptions, compatibility, and rollback. Every occurrence is classified. Plain text changes have a reviewed dry run, structured artifacts go to official owners, batches have backups and manifests, and validation confirms expected counts. The old alias is removed only after all consumers and environments are verified.
 
-## When to use
+## When to reach for it
+
+Invoke this skill as `$uipath-pattern-migration`, or let the agent select it automatically when the request matches its defined job.
 
 - A repeated pattern changes across many files or projects.
 - Configuration keys, queue fields, arguments, packages, tests, or docs migrate together.
@@ -34,7 +37,7 @@ The migration contract defines exact forms, scope, exclusions, assumptions, comp
 - Compatibility must remain during an expand-contract period.
 - Completeness and rollback evidence are required.
 
-## When not to use
+### Use a neighboring skill instead
 
 - The change occurs in one location and can be reviewed directly.
 - Structured XAML, BPMN, JSON, or generated artifacts would be modified by blind replacement.
@@ -42,7 +45,7 @@ The migration contract defines exact forms, scope, exclusions, assumptions, comp
 - Backups and manifest evidence would be omitted.
 - Temporary aliases would be removed before all consumers migrate.
 
-## What you need before starting
+## Prerequisites
 
 - Exact old and new forms.
 - Scope, exclusions, semantic assumptions, generated files, and structured-artifact owners.
@@ -97,7 +100,13 @@ run a no-write dry transformation only for approved plain-text classes, and
 present counts and samples for approval before applying any batch.
 ```
 
-## How to know it is done
+## Common questions
+
+**Will this skill make changes simply because it is model-invoked?**
+
+No. Model invocation only lets the agent load the instructions when the request fits. Source writes, tracker changes, tenant operations, deployments, and other consequential actions still require the authority stated by the request and the owning official skill.
+
+## It's working if
 
 - Reviewers can distinguish safe matches from false positives.
 - Every in-scope occurrence is classified before modification.
@@ -108,7 +117,11 @@ present counts and samples for approval before applying any batch.
 - Out-of-scope forms did not change.
 - Compatibility is retired only after consumers and environments are verified.
 
-## Official UiPath handoffs
+## Where it fits
+
+This is a **model-invoked complementary discipline** in UiPath Boost. It may be selected directly by the agent or reached from a user-invoked workflow. Use [uipath-project-router](uipath-project-router.md) when the larger route is unclear.
+
+## Official UiPath handoff
 
 Structured RPA, agent, Maestro, app, API-workflow, test, and solution artifacts go to their official product skills for safe modification and validation. Pattern Migration coordinates the wide contract and evidence; it does not make plain-text replacement a substitute for product ownership.
 

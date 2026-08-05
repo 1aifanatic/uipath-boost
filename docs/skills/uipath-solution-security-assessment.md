@@ -6,13 +6,14 @@
 
 | | |
 |---|---|
+| **Invocation** | Model-invoked — start it explicitly or let the agent select it when the request fits. |
 | **Purpose** | Threat-model one defined UiPath solution design or release and map controls to evidence. |
 | **Use it when** | The team needs data-flow threats, trust boundaries, misuse cases, control gaps, evidence requests, residual risks, and approvals. |
 | **Do not use it for** | Claiming compliance/approval, deploying policies, managing identities, querying audit logs, operating tenant resources, or replacing review. |
 | **Primary output** | Scope/data-flow map, threat register, control-evidence matrix, residual-risk register, and official-owner handoffs. |
 | **Maturity** | Core |
 
-## Why this skill exists
+## What it does
 
 Generic security checklists miss solution-specific paths: prompt and tool misuse, poisoned documents, over-privileged unattended identities, insecure connectors, cross-tenant data, replay, tampering, silent business failures, or abuse of recovery mechanisms. This skill ties each threat to a concrete asset, actor, precondition, path, impact, and evidenced control.
 
@@ -26,7 +27,9 @@ An agentic claims solution has queues, prompts, connectors, human tasks, logs, p
 
 The approved design/release and environments are pinned. Assets and trust boundaries are mapped without collecting secrets. Concrete misuse scenarios link to preventive, detective, and recovery controls. Every control is proven, unproven, not applicable, or requested from its official owner. Residual risks have likelihood, impact, owner, disposition, approval, and evidence needs.
 
-## When to use
+## When to reach for it
+
+Invoke this skill as `$uipath-solution-security-assessment`, or let the agent select it automatically when the request matches its defined job.
 
 - Threat-modeling before production.
 - Reviewing agent, prompt, tool, connector, integration, or AI data risks.
@@ -35,7 +38,7 @@ The approved design/release and environments are pinned. Assets and trust bounda
 - Distinguishing design blockers from accepted residual risk.
 - Supporting a release-readiness decision.
 
-## When not to use
+### Use a neighboring skill instead
 
 - The solution boundary, design, or release is undefined.
 - You want governance policies authored or deployed.
@@ -43,7 +46,7 @@ The approved design/release and environments are pinned. Assets and trust bounda
 - You want artifact quality grading.
 - You need legal, compliance, privacy, or security approval rather than an assessment.
 
-## What you need before starting
+## Prerequisites
 
 - Approved design or pinned release and environment/tenant/folder aliases.
 - Actors, business criticality, data classifications, jurisdictions, AI use, integrations, external parties, and accountable owners.
@@ -82,7 +85,13 @@ Create concrete misuse cases and a control-evidence matrix, rate residual risk
 using our method, and route missing evidence to official owners. Do not change policies or access.
 ```
 
-## How to know it is done
+## Common questions
+
+**Will this skill make changes simply because it is model-invoked?**
+
+No. Model invocation only lets the agent load the instructions when the request fits. Source writes, tracker changes, tenant operations, deployments, and other consequential actions still require the authority stated by the request and the owning official skill.
+
+## It's working if
 
 - The assessed release/design and environment boundary are exact.
 - Critical assets and trust crossings are visible.
@@ -93,7 +102,11 @@ using our method, and route missing evidence to official owners. Do not change p
 - The report does not claim approval or compliance.
 - No policy, identity, audit, platform, or source mutation occurred.
 
-## Official UiPath handoffs
+## Where it fits
+
+This is a **model-invoked complementary discipline** in UiPath Boost. It may be selected directly by the agent or reached from a user-invoked workflow. Use [uipath-project-router](uipath-project-router.md) when the larger route is unclear.
+
+## Official UiPath handoff
 
 `uipath-governance` owns policy evidence and changes, `uipath-admin` owns identity and audit evidence, `uipath-platform` owns resources, `uipath-review` owns artifact assessment, and `uipath-troubleshoot` owns causal diagnosis. The security assessment frames precise questions for each owner.
 

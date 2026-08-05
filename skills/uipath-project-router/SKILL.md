@@ -1,6 +1,6 @@
 ---
 name: uipath-project-router
-description: "Route UiPath work only when the user explicitly asks which skill, workflow, or starting point to use. Compare the current official UiPath catalog with the complementary project-engineering skills, return the smallest correct route, and stop before specialist work. Do not auto-invoke for ordinary product authoring, planning, review, testing, governance, operations, or troubleshooting requests."
+description: "Use only when the user explicitly asks which skill, workflow, or starting point to use; choose the smallest correct official UiPath and UiPath Boost route."
 ---
 
 # UiPath Project Router
@@ -13,7 +13,7 @@ Provide a human-invoked index over the official UiPath product skills and the co
 
 **This custom skill owns:** Provide a human-invoked index over the official UiPath product skills and the complementary delivery disciplines without competing with the official router behavior in uipath-planner.
 
-It does not own current UiPath product commands, schemas, artifact validation, live tenant operations, or policy administration unless its instructions explicitly say otherwise.
+Keep current product commands, schemas, artifact validation, live tenant operations, and policy administration with official UiPath skills.
 
 ## Compose With Official UiPath Skills
 
@@ -37,6 +37,7 @@ Use official skills for current product commands and artifact contracts:
 - `uipath-mcp-servers`
 - `uipath-planner`
 - `uipath-platform`
+- `uipath-process-mining`
 - `uipath-review`
 - `uipath-rpa`
 - `uipath-solution`
@@ -46,6 +47,7 @@ Use official skills for current product commands and artifact contracts:
 - `uipath-project-discovery-agent`
 
 Read [references/official-uipath-skill-map.md](references/official-uipath-skill-map.md) when routing is unclear.
+Read [references/phase-boundaries.md](references/phase-boundaries.md) when the question is whether to continue, clear, hand off, delegate, or compact.
 
 ## Workflow
 
@@ -61,13 +63,19 @@ Use the bundled ownership table. Route PDD/SDD and multi-project planning to uip
 
 **Completion criterion:** No official capability is shadowed by a custom skill.
 
-### 3. Add one complementary extension only when needed
+### 3. Choose the route shape
+
+Classify the request as a lifecycle route, an on-ramp, a standalone discipline, or a phase-boundary decision. Use the smallest route that reaches an authoritative owner; avoid drawing the whole catalog when one or two steps are sufficient.
+
+**Completion criterion:** The route shape matches the user's immediate outcome and context.
+
+### 4. Add one complementary extension only when needed
 
 Add a custom skill for discovery discipline, durable project controls, architecture deepening, task refinement, regression evidence, traceability, release evidence, observability design, security assessment, continuity, or enablement only when that outcome is explicitly needed.
 
 **Completion criterion:** Every custom skill adds a distinct artifact not produced by the official owner.
 
-### 4. Return the route card
+### 5. Return the route card
 
 Name the primary skill, optional next skill, required input, expected artifact, approval boundary, and stop condition. Do not perform the specialist task in the router.
 
@@ -95,4 +103,4 @@ Name the primary skill, optional next skill, required input, expected artifact, 
 
 ## Finish
 
-End with what was completed, the evidence produced, the next official skill or owner, and every unresolved blocker. Never imply that a write, validation, test, deployment, policy change, tenant operation, or runtime action occurred unless it actually ran and its result was observed.
+Report completed work, observed evidence, the next official owner, and every blocker. Mark unobserved actions as pending.

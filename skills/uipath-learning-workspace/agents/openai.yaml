@@ -1,3 +1,6 @@
 interface:
   display_name: "UiPath Learning Workspace"
-  short_description: "Create a stateful UiPath learning workspace tied to a real professional mission"
+  short_description: "Build a stateful, practice-led UiPath learning path"
+  default_prompt: "Use $uipath-learning-workspace to create a mission-based UiPath learning workspace."
+policy:
+  allow_implicit_invocation: false

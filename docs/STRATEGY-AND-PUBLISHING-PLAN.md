@@ -7,6 +7,8 @@
 - **CLI command:** `uipath-boost`
 **Prepared:** July 31, 2026
 
+**Updated for v0.2.0:** August 5, 2026
+
 ## 1. Executive recommendation
 
 Use a hybrid ownership strategy:
@@ -347,7 +349,7 @@ Track outcomes rather than only install counts:
 - [ ] Confirm license ownership and contributor policy.
 - [ ] Configure GitHub security advisories.
 - [ ] Run `npm run validate` and `npm test`.
-- [ ] Push and tag `v0.1.0`.
+- [ ] Push and tag `v0.2.0`.
 
 ### npm
 

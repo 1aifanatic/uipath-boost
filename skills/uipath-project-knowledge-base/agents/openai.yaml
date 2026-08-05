@@ -1,3 +1,4 @@
 interface:
   display_name: "UiPath Project Knowledge Base"
-  short_description: "Create and maintain a portable linked Markdown knowledge base for a UiPath program or project"
+  short_description: "Maintain a linked UiPath project knowledge base"
+  default_prompt: "Use $uipath-project-knowledge-base to organize durable UiPath knowledge without duplicating discoverable facts."

@@ -13,7 +13,7 @@ Preserve compatible intent, choose explicitly when intent conflicts, and finish 
 
 **This custom skill owns:** Preserve compatible intent, choose explicitly when intent conflicts, and finish with a structurally valid project instead of treating UiPath artifacts as undifferentiated text.
 
-It does not own current UiPath product commands, schemas, artifact validation, live tenant operations, or policy administration unless its instructions explicitly say otherwise.
+Keep current product commands, schemas, artifact validation, live tenant operations, and policy administration with official UiPath skills.
 
 ## Compose With Official UiPath Skills
 
@@ -28,8 +28,6 @@ Use official skills for current product commands and artifact contracts:
 - `uipath-api-workflow`
 - `uipath-solution`
 - `uipath-review`
-
-Read [references/official-uipath-skill-map.md](references/official-uipath-skill-map.md) when routing is unclear.
 
 ## Workflow
 
@@ -91,4 +89,4 @@ Stage resolved files and continue the merge or rebase. Commit, push, force-updat
 
 ## Finish
 
-End with what was completed, the evidence produced, the next official skill or owner, and every unresolved blocker. Never imply that a write, validation, test, deployment, policy change, tenant operation, or runtime action occurred unless it actually ran and its result was observed.
+Report completed work, observed evidence, the next official owner, and every blocker. Mark unobserved actions as pending.

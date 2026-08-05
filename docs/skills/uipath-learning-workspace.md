@@ -6,13 +6,14 @@
 
 | | |
 |---|---|
+| **Invocation** | User-invoked — start it explicitly. |
 | **Purpose** | Build durable UiPath capability through a mission, baseline, current sources, short lessons, active practice, and spaced review. |
 | **Use it when** | A learner or team needs a multi-session path tied to real professional work. |
 | **Do not use it for** | Broad passive courses, memory-based current product facts, or fixed curricula that ignore demonstrated performance. |
 | **Primary output** | Mission, curated resources, lessons, practice/feedback, learning records, and review plan. |
 | **Maturity** | Pilot |
 
-## Why this skill exists
+## What it does
 
 Watching content can create familiarity without the ability to build, diagnose, review, or explain real UiPath work. This skill starts with a professional mission, measures the current ability, teaches one small capability, requires active retrieval or performance, and records what should be reviewed next.
 
@@ -26,7 +27,9 @@ A solution architect says, “I need to learn Maestro.” They receive a long li
 
 `MISSION.md` defines a real demonstration such as “design and explain a Maestro journey with human review and recovery.” A baseline identifies existing strengths and misconceptions. Each short lesson cites current sources and ends with a lab, prediction, debugging exercise, or explanation. Learning records capture errors, corrections, confidence, and spaced review dates. The curriculum adapts to demonstrated performance.
 
-## When to use
+## When to reach for it
+
+Invoke this skill explicitly as `$uipath-learning-workspace`. UiPath Boost treats it as a deliberate workflow; Codex enforces that policy in `agents/openai.yaml`.
 
 - Building capability in Studio, coded automation, agents, Maestro, IXP, testing, architecture, or platform work.
 - Training a team over several sessions.
@@ -34,7 +37,7 @@ A solution architect says, “I need to learn Maestro.” They receive a long li
 - Turning a real project into a guided learning path.
 - Requiring evidence of capability rather than course completion.
 
-## When not to use
+### Use a neighboring skill instead
 
 - A single factual answer or research note is sufficient.
 - The learner has no real outcome or work situation in mind.
@@ -42,7 +45,7 @@ A solution architect says, “I need to learn Maestro.” They receive a long li
 - One lesson attempts to cover an entire product.
 - A fixed curriculum would continue despite evidence that prerequisites are missing.
 
-## What you need before starting
+## Prerequisites
 
 - Why the learner needs the capability.
 - Target work situations and a real demonstration of success.
@@ -65,8 +68,8 @@ A solution architect says, “I need to learn Maestro.” They receive a long li
 
 1. **Define a professional mission.** Avoid broad topic goals.
 2. **Measure the starting point.** Keep the baseline short and evidence-based.
-3. **Curate current sources.** Every lesson should trace to high-trust material.
-4. **Teach one small capability.** End each session with a tangible demonstration.
+3. **Curate current sources and reusable materials.** Every lesson should trace to high-trust material; reuse existing labs, examples, and assets when they already teach the mission well.
+4. **Teach one small capability.** Author new material only for a real gap and end each session with a tangible demonstration.
 5. **Require retrieval and feedback.** Learning must involve effortful performance.
 6. **Record and space.** Preserve errors, corrections, confidence, and review dates.
 7. **Advance through real work.** Adapt the next lesson to observed performance.
@@ -83,18 +86,29 @@ only the first focused lesson with active retrieval and a small lab. Record
 feedback, misconceptions, confidence, and the next spaced-review date.
 ```
 
-## How to know it is done
+## Common questions
+
+**Why does the agent not start this automatically?**
+
+This workflow benefits from an intentional human start because it orchestrates a session, changes durable project structure, or makes a cross-work decision. Installation makes it available; it does not run it.
+
+## It's working if
 
 - The mission describes a real professional outcome.
 - Baseline evidence determines the next lesson.
 - Every current product claim has a trusted source.
+- Existing suitable learning components are reused before new ones are created.
 - Each lesson teaches one demonstrable capability.
 - Practice requires retrieval or performance, not rereading.
 - Feedback corrects observed errors.
 - Progress and future review survive across sessions.
 - Later lessons adapt to demonstrated ability and include real-work transfer.
 
-## Official UiPath handoffs
+## Where it fits
+
+This is a **user-invoked orchestration skill** in UiPath Boost. Use [uipath-project-router](uipath-project-router.md) when you need to decide whether it is the right entry point or what should follow it.
+
+## Official UiPath handoff
 
 Official product skills and documentation supply current technical facts, commands, and artifact contracts. Learning Workspace organizes practice around them; it does not replace official validation or claim competence without evidence.
 

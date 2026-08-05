@@ -13,7 +13,9 @@ Make a stochastic agent follow a predictable process by giving each skill one ea
 
 **This custom skill owns:** Make a stochastic agent follow a predictable process by giving each skill one earned job, precise invocation, checkable completion gates, progressive references, official-skill ownership, and executable tests where determinism matters.
 
-It does not own current UiPath product commands, schemas, artifact validation, live tenant operations, or policy administration unless its instructions explicitly say otherwise.
+Keep current product commands, schemas, artifact validation, live tenant operations, and policy administration with official UiPath skills.
+
+Read [references/skill-mechanics.md](references/skill-mechanics.md) when choosing invocation, pruning context, splitting references, or designing evaluations.
 
 ## Workflow
 
@@ -31,7 +33,7 @@ Inspect current UiPath official skills and route product commands, artifact cont
 
 ### 3. Design invocation
 
-Choose a short lowercase name and a description that states the job plus genuinely distinct trigger branches. Use a router when many user-invoked skills would be difficult to remember.
+Choose user invocation when only a human should start the workflow; choose model invocation when the agent or another skill must reach it automatically. For a model-invoked skill, write a description with one distinct trigger branch per case. For a user-invoked skill, use an explicit-use description and supported agent metadata, then validate every target package. Use a router when user-invoked skills become difficult to remember.
 
 **Completion criterion:** The skill fires for its intended tasks without broadly capturing neighboring work.
 
@@ -43,7 +45,7 @@ Use imperative steps in execution order and end each important step with a check
 
 ### 5. Move detail to the right place
 
-Keep the control plane concise. Put branch-specific rules in references, fragile deterministic operations in scripts, and output templates or reusable files in assets.
+Keep the control plane concise. Spend context load only on instructions every matching run needs. Put branch-specific rules in references, fragile deterministic operations in scripts, and output templates or reusable files in assets. Treat configuration, directory structure, scripts, and command help as source truth; cache only conventions, reasons, or traps that are expensive to rediscover.
 
 **Completion criterion:** SKILL.md remains readable and supporting resources have clear context pointers.
 
@@ -55,7 +57,7 @@ Name official skills, approval boundaries, data handling, environment assumption
 
 ### 7. Test, validate, and package
 
-Run structural validation, deterministic script tests, adversarial trigger scenarios, happy and failure routes, and package validation. Record limitations and iterate from observed use.
+Run structural validation, deterministic script tests, trigger and non-trigger scenarios, safety and completion scenarios, happy and failure routes, and package validation. Forward-test complex skills on raw realistic artifacts without leaking the expected answer. Record limitations and iterate from observed use.
 
 **Completion criterion:** The packaged skill passes validation and has evidence for its critical behaviors.
 
@@ -82,4 +84,4 @@ Run structural validation, deterministic script tests, adversarial trigger scena
 
 ## Finish
 
-End with what was completed, the evidence produced, the next official skill or owner, and every unresolved blocker. Never imply that a write, validation, test, deployment, policy change, tenant operation, or runtime action occurred unless it actually ran and its result was observed.
+Report completed work, observed evidence, the next official owner, and every blocker. Mark unobserved actions as pending.

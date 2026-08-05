@@ -1,6 +1,6 @@
 ---
 name: uipath-work-intake-triage
-description: "Triage raw UiPath defects, enhancement requests, automation ideas, access blockers, technical debt, and external changes into evidence-backed work states. Use when an item is unverified or needs a durable brief before entering an official UiPath workflow. Route product bug submission to uipath-feedback, causal diagnosis to uipath-troubleshoot, opportunity mining to uipath-automation-discovery, planning to uipath-planner, and access work to uipath-admin or uipath-platform."
+description: "Use only when the user explicitly asks to classify, verify, and route incoming UiPath work before it enters an official workflow."
 ---
 
 # UiPath Work Intake Triage
@@ -13,7 +13,7 @@ Move incoming work through a small state machine, verify claims before planning,
 
 **This custom skill owns:** Move incoming work through a small state machine, verify claims before planning, and create durable briefs for a human or agent.
 
-It does not own current UiPath product commands, schemas, artifact validation, live tenant operations, or policy administration unless its instructions explicitly say otherwise.
+Keep current product commands, schemas, artifact validation, live tenant operations, and policy administration with official UiPath skills.
 
 ## Compose With Official UiPath Skills
 
@@ -26,8 +26,6 @@ Use official skills for current product commands and artifact contracts:
 - `uipath-admin`
 - `uipath-platform`
 - `uipath-test`
-
-Read [references/official-uipath-skill-map.md](references/official-uipath-skill-map.md) when routing is unclear.
 
 ## Workflow
 
@@ -84,4 +82,4 @@ Create an agent-ready brief, evidence request, rejection rationale, or discovery
 
 ## Finish
 
-End with what was completed, the evidence produced, the next official skill or owner, and every unresolved blocker. Never imply that a write, validation, test, deployment, policy change, tenant operation, or runtime action occurred unless it actually ran and its result was observed.
+Report completed work, observed evidence, the next official owner, and every blocker. Mark unobserved actions as pending.

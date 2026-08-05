@@ -6,13 +6,14 @@
 
 | | |
 |---|---|
+| **Invocation** | User-invoked — start it explicitly. |
 | **Purpose** | Turn raw UiPath requests into evidence-backed work states and durable next-owner briefs. |
 | **Use it when** | A defect, idea, enhancement, access blocker, technical-debt item, or external change is vague or unverified. |
 | **Do not use it for** | Implementing work, diagnosing root cause, submitting feedback, changing access, or operating platform resources. |
 | **Primary output** | Categorized attention queue, agent-ready brief, specific evidence request, or parked/rejected rationale. |
 | **Maturity** | Core |
 
-## Why this skill exists
+## What it does
 
 Backlogs often mix confirmed defects, observations, ideas, access problems, duplicates, and already planned work. Treating every item as build-ready wastes effort and causes agents to elaborate claims that have never been verified. Triage creates a small, explicit state machine and sends each item to the correct official owner with the evidence needed to act.
 
@@ -26,7 +27,9 @@ An issue says, “Robot sometimes skips invoices—please fix ASAP.” It has no
 
 The item is classified as a defect in `needs-evidence` state. The brief preserves known history, requests one example transaction, execution time, expected result, and relevant logs, and identifies `uipath-troubleshoot` as the next owner after the symptom is anchored. No build task or root cause is invented.
 
-## When to use
+## When to reach for it
+
+Invoke this skill explicitly as `$uipath-work-intake-triage`. UiPath Boost treats it as a deliberate workflow; Codex enforces that policy in `agents/openai.yaml`.
 
 - New backlog items arrive from several channels.
 - An issue is too vague for discovery, design, build, or diagnosis.
@@ -35,7 +38,7 @@ The item is classified as a defect in `needs-evidence` state. The brief preserve
 - Access requests need the exact resource and owner identified.
 - A team needs an attention queue by state and age.
 
-## When not to use
+### Use a neighboring skill instead
 
 - The item is already a canonical implementation task from `uipath-planner`.
 - You are ready to diagnose a confirmed runtime symptom.
@@ -43,7 +46,7 @@ The item is classified as a defect in `needs-evidence` state. The brief preserve
 - You want to change access, close issues, or relabel tracker items without authority.
 - You want to implement the requested enhancement.
 
-## What you need before starting
+## Prerequisites
 
 - Request title, body, comments, attachments, labels, and history.
 - Relevant project context and prior decisions.
@@ -80,7 +83,13 @@ specific evidence request or next-owner brief. Do not relabel, close, diagnose,
 submit feedback, or change access.
 ```
 
-## How to know it is done
+## Common questions
+
+**Why does the agent not start this automatically?**
+
+This workflow benefits from an intentional human start because it orchestrates a session, changes durable project structure, or makes a cross-work decision. Installation makes it available; it does not run it.
+
+## It's working if
 
 - The full item and its history were read.
 - Each item has one category and one state.
@@ -91,7 +100,11 @@ submit feedback, or change access.
 - Tracker mutations occurred only with authority.
 - Customer and employee data is redacted.
 
-## Official UiPath handoffs
+## Where it fits
+
+This is a **user-invoked orchestration skill** in UiPath Boost. Use [uipath-project-router](uipath-project-router.md) when you need to decide whether it is the right entry point or what should follow it.
+
+## Official UiPath handoff
 
 - `uipath-automation-discovery` for opportunity mining and value sizing.
 - `uipath-feedback` for confirmed product or skill feedback.

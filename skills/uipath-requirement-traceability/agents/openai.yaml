@@ -1,3 +1,4 @@
 interface:
   display_name: "UiPath Requirement Traceability"
-  short_description: "Build a requirement-to-implementation-to-test-to-evidence traceability matrix from an approved SDD, official uipath-revi"
+  short_description: "Trace UiPath requirements through implementation evidence"
+  default_prompt: "Use $uipath-requirement-traceability to build the requirement-to-evidence matrix for this release."

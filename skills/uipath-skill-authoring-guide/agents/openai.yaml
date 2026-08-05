@@ -1,3 +1,4 @@
 interface:
   display_name: "UiPath Skill Authoring Guide"
-  short_description: "Design, review, and improve reusable AI skills for UiPath work"
+  short_description: "Design predictable, complementary UiPath skills"
+  default_prompt: "Use $uipath-skill-authoring-guide to design or improve this reusable UiPath skill."

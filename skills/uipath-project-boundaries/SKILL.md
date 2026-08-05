@@ -13,7 +13,7 @@ Make each project or package a deep module with a small public surface, hidden i
 
 **This custom skill owns:** Make each project or package a deep module with a small public surface, hidden implementation, explicit allowed dependencies, and tests that use the same public entry points as consumers.
 
-It does not own current UiPath product commands, schemas, artifact validation, live tenant operations, or policy administration unless its instructions explicitly say otherwise.
+Keep current product commands, schemas, artifact validation, live tenant operations, and policy administration with official UiPath skills.
 
 ## Compose With Official UiPath Skills
 
@@ -23,8 +23,6 @@ Use official skills for current product commands and artifact contracts:
 - `uipath-agents`
 - `uipath-solution`
 - `uipath-review`
-
-Read [references/official-uipath-skill-map.md](references/official-uipath-skill-map.md) when routing is unclear.
 
 ## Workflow
 
@@ -93,4 +91,4 @@ Link the boundary rules from repository agent instructions and project README fi
 
 ## Finish
 
-End with what was completed, the evidence produced, the next official skill or owner, and every unresolved blocker. Never imply that a write, validation, test, deployment, policy change, tenant operation, or runtime action occurred unless it actually ran and its result was observed.
+Report completed work, observed evidence, the next official owner, and every blocker. Mark unobserved actions as pending.

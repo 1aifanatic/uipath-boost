@@ -13,7 +13,7 @@ Turn a wide repetitive change into an explicit contract, complete inventory, rev
 
 **This custom skill owns:** Turn a wide repetitive change into an explicit contract, complete inventory, reviewed dry run, bounded batches, backups, verification, and a searchable manifest.
 
-It does not own current UiPath product commands, schemas, artifact validation, live tenant operations, or policy administration unless its instructions explicitly say otherwise.
+Keep current product commands, schemas, artifact validation, live tenant operations, and policy administration with official UiPath skills.
 
 ## Workflow
 
@@ -82,4 +82,4 @@ Remove temporary dual-write, aliases, or old contracts only after all consumers 
 
 ## Finish
 
-End with what was completed, the evidence produced, the next official skill or owner, and every unresolved blocker. Never imply that a write, validation, test, deployment, policy change, tenant operation, or runtime action occurred unless it actually ran and its result was observed.
+Report completed work, observed evidence, the next official owner, and every blocker. Mark unobserved actions as pending.

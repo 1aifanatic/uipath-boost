@@ -1,3 +1,4 @@
 interface:
   display_name: "UiPath Test Driven Automation"
-  short_description: "Apply behavior-first red-green development to UiPath automation work"
+  short_description: "Build UiPath behavior through red-green slices"
+  default_prompt: "Use $uipath-test-driven-automation to implement this behavior through confirmed red-green slices."

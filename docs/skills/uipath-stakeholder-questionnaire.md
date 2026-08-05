@@ -6,13 +6,14 @@
 
 | | |
 |---|---|
+| **Invocation** | User-invoked — start it explicitly. |
 | **Purpose** | Create a short, recipient-specific questionnaire that closes named discovery gaps asynchronously. |
 | **Use it when** | A stakeholder cannot join discovery and uniquely owns required facts, evidence, access, approvals, or decisions. |
 | **Do not use it for** | Generic fifty-question checklists, compound questions, or requesting secrets through insecure channels. |
 | **Primary output** | Markdown questionnaire, outcome-to-question coverage map, safe evidence request, and answer-intake plan. |
 | **Maturity** | Core |
 
-## Why this skill exists
+## What it does
 
 Discovery often stalls because the right application SME, security reviewer, infrastructure owner, compliance partner, or business decision-maker cannot attend a workshop. A generic questionnaire creates more work and still misses the actual decision. This skill asks only for knowledge the recipient uniquely holds and connects every question to a pending project outcome.
 
@@ -26,7 +27,9 @@ The automation team needs SAP field definitions, error behavior, and a test-syst
 
 The SME receives a short questionnaire with clear context, estimated effort, prioritized single-topic questions, answer stubs, and a safe request for representative evidence. Each answer maps to a named design decision, and the project knows how responses will be added back into discovery.
 
-## When to use
+## When to reach for it
+
+Invoke this skill explicitly as `$uipath-stakeholder-questionnaire`. UiPath Boost treats it as a deliberate workflow; Codex enforces that policy in `agents/openai.yaml`.
 
 - A key stakeholder cannot join a workshop.
 - One recipient uniquely owns application, security, infrastructure, support, compliance, data, or business-rule knowledge.
@@ -34,7 +37,7 @@ The SME receives a short questionnaire with clear context, estimated effort, pri
 - Evidence or approvals must be requested asynchronously.
 - A decision is blocked by facts that cannot be read from existing artifacts.
 
-## When not to use
+### Use a neighboring skill instead
 
 - The answer is already available in provided documents or systems.
 - Several recipients with different expertise would receive the same generic form.
@@ -42,7 +45,7 @@ The SME receives a short questionnaire with clear context, estimated effort, pri
 - Questions combine several decisions and cannot be answered clearly.
 - Secrets or raw sensitive data would be transferred insecurely.
 
-## What you need before starting
+## Prerequisites
 
 - Recipient role, expertise, authority, project relationship, and likely context.
 - The exact facts, decisions, evidence, access, owners, or approvals needed.
@@ -82,7 +85,13 @@ request only redacted samples through the approved secure channel, and explain
 how answers will update the evidence index and discovery decision log.
 ```
 
-## How to know it is done
+## Common questions
+
+**Why does the agent not start this automatically?**
+
+This workflow benefits from an intentional human start because it orchestrates a session, changes durable project structure, or makes a cross-work decision. Installation makes it available; it does not run it.
+
+## It's working if
 
 - Tone and assumed knowledge match one recipient.
 - Every requested outcome is concrete and usable.
@@ -93,7 +102,11 @@ how answers will update the evidence index and discovery decision log.
 - Duplicates and compound questions are absent.
 - The project has a clear answer-intake plan.
 
-## Official UiPath handoffs
+## Where it fits
+
+This is a **user-invoked orchestration skill** in UiPath Boost. Use [uipath-project-router](uipath-project-router.md) when you need to decide whether it is the right entry point or what should follow it.
+
+## Official UiPath handoff
 
 Answers may inform `uipath-planner`, an official product skill, `uipath-admin`, `uipath-governance`, or another owner, but this skill does not make those decisions or operations. Feed responses back into `uipath-discovery-with-docs` or the relevant discovery artifact before planning.
 

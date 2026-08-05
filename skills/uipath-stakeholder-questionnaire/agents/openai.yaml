@@ -1,3 +1,6 @@
 interface:
   display_name: "UiPath Stakeholder Questionnaire"
-  short_description: "Create a recipient-specific asynchronous UiPath discovery questionnaire that closes defined information gaps"
+  short_description: "Create a focused UiPath stakeholder questionnaire"
+  default_prompt: "Use $uipath-stakeholder-questionnaire to ask the right person for the exact missing evidence."
+policy:
+  allow_implicit_invocation: false

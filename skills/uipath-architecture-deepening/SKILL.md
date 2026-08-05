@@ -1,6 +1,6 @@
 ---
 name: uipath-architecture-deepening
-description: "Turn an existing official uipath-review finding or a user-named architectural hotspot into ranked deepening options and a safe design handoff. Use when validated project structure is hard to change, test, understand, or reuse and the team needs alternative seams, interfaces, ownership, or refactor shapes. Do not use for the initial artifact audit, validation, quality grading, or generic best-practice review."
+description: "Use only when the user explicitly asks to deepen a proven UiPath architecture hotspot into ranked design options and a safe handoff."
 ---
 
 # UiPath Architecture Deepening
@@ -13,7 +13,7 @@ Transform a proven architecture friction point into a focused design decision th
 
 **This custom skill owns:** Transform a proven architecture friction point into a focused design decision that increases locality, leverage, testability, and agent navigability.
 
-It does not own current UiPath product commands, schemas, artifact validation, live tenant operations, or policy administration unless its instructions explicitly say otherwise.
+Keep current product commands, schemas, artifact validation, live tenant operations, and policy administration with official UiPath skills.
 
 ## Compose With Official UiPath Skills
 
@@ -21,15 +21,15 @@ Use official skills for current product commands and artifact contracts:
 
 - `uipath-review`
 
-Read [references/official-uipath-skill-map.md](references/official-uipath-skill-map.md) when routing is unclear.
-
 ## Workflow
 
 ### 1. Load the proven hotspot
 
-Start from an official review finding, incident post-mortem, change-history hotspot, or a specific user-named pain point. Capture the business behavior affected and the evidence proving the friction.
+Start from an official review finding, incident post-mortem, or a specific user-named pain point. When no direction is supplied, inspect roughly the last 20 commit messages and prioritize proven friction in actively changing paths. Capture the business behavior affected and the evidence proving the friction.
 
 **Completion criterion:** One concrete architecture hotspot and its evidence are pinned.
+
+Apply a YAGNI filter: an improvement in dormant code must show a near-term change, reliability, or ownership payoff before it competes with an active hotspot.
 
 ### 2. Map the current change surface
 
@@ -78,4 +78,4 @@ Create a decision record or safe-refactor-plan with acceptance evidence. Route s
 
 ## Finish
 
-End with what was completed, the evidence produced, the next official skill or owner, and every unresolved blocker. Never imply that a write, validation, test, deployment, policy change, tenant operation, or runtime action occurred unless it actually ran and its result was observed.
+Report completed work, observed evidence, the next official owner, and every blocker. Mark unobserved actions as pending.
