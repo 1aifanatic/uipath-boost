@@ -17,6 +17,7 @@
   and completion.
 - Added Codex and Claude Code plugin manifests.
 - Updated the bundled `skills` CLI dependency to 1.5.22.
+- Updated the validation workflow to the Node 24-based GitHub Actions v6 runtimes.
 
 ### Removed
 
