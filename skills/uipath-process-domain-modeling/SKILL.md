@@ -1,6 +1,7 @@
 ---
 name: uipath-process-domain-modeling
 description: "Build and sharpen the business language used by a UiPath project. Use when process terms are vague, overloaded, inconsistent across business and technical teams, or when discovery, design, testing, and support need one canonical glossary and a small set of durable architectural decisions."
+category: "Discovery and decision-making"
 ---
 
 # UiPath Process Domain Modeling

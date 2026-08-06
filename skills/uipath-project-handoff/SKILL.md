@@ -1,6 +1,7 @@
 ---
 name: uipath-project-handoff
 description: "Use only when the user explicitly asks to create a portable, redacted UiPath project handoff for another person, harness, or directory."
+category: "Routing and project continuity"
 ---
 
 # UiPath Project Handoff

@@ -1,6 +1,7 @@
 ---
 name: uipath-release-readiness
 description: "Aggregate authoritative build, review, test, security, operational, governance, deployment, and support evidence into a Ready, Conditionally Ready, or Not Ready verdict for a specific UiPath release unit and target. Use after official product validation and review evidence exists. Do not run product review, Test Manager operations, policy changes, deployment, activation, or production mutation."
+category: "Release, operations, and governance"
 ---
 
 # UiPath Release Readiness

@@ -1,6 +1,7 @@
 ---
 name: uipath-research-note
 description: "Research a UiPath technical, product, platform, API, compatibility, or governance question using primary sources and capture the result as a cited Markdown note. Use when a project decision depends on current UiPath documentation, official repositories, release notes, specifications, or first-party APIs."
+category: "Discovery and decision-making"
 ---
 
 # UiPath Research Note

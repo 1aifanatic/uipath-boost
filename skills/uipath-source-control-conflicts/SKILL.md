@@ -1,6 +1,7 @@
 ---
 name: uipath-source-control-conflicts
 description: "Resolve an in-progress source-control merge or rebase conflict involving UiPath project artifacts by recovering the intent of both sides, using structure-aware edits, and rerunning the owning product validations. Use for conflicts in project files, JSON manifests, coded automation, XAML, Maestro artifacts, solution wrappers, tests, documentation, and generated metadata."
+category: "Build, test, and change quality"
 ---
 
 # UiPath Source Control Conflicts

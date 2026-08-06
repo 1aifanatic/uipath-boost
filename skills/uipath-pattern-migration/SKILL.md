@@ -1,6 +1,7 @@
 ---
 name: uipath-pattern-migration
 description: "Plan and execute a bounded, reversible migration from one repeated UiPath project pattern to another. Use for naming changes, configuration key changes, queue field migrations, package references, argument conventions, test fixture updates, documentation conventions, or other mechanically discoverable transformations across many files or projects."
+category: "Build, test, and change quality"
 ---
 
 # UiPath Pattern Migration

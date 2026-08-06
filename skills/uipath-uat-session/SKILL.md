@@ -1,6 +1,7 @@
 ---
 name: uipath-uat-session
 description: "Use only when the user explicitly asks to facilitate UiPath UAT and capture reproducible business acceptance evidence."
+category: "Build, test, and change quality"
 ---
 
 # UiPath UAT Session

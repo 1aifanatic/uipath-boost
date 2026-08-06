@@ -1,6 +1,7 @@
 ---
 name: uipath-component-design
 description: "Design a deep UiPath component or project contract by exploring several genuinely different shapes before selecting one. Use for reusable libraries, workflow interfaces, coded automation modules, agents, Maestro processes, API workflows, human tasks, queue contracts, and integration adapters that need clear seams and testable behavior."
+category: "Design and architecture"
 ---
 
 # UiPath Component Design

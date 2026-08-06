@@ -1,6 +1,7 @@
 ---
 name: uipath-discovery-interview
 description: "Run evidence-based UiPath discovery in frontier rounds. Use to sharpen an automation idea, stress-test a proposed solution, clarify a process before a PDD or SDD, or resolve business, data, exception, security, volume, SLA, access, and acceptance decisions."
+category: "Discovery and decision-making"
 ---
 
 # UiPath Discovery Interview

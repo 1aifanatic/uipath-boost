@@ -1,6 +1,7 @@
 ---
 name: uipath-safe-refactor-plan
 description: "Plan a behavior-preserving UiPath refactor after an architecture direction is selected. Use when a proven hotspot needs small implementation steps, safety nets, compatibility rules, stop conditions, and rollback points across workflows, packages, queues, selectors, or orchestration artifacts."
+category: "Design and architecture"
 ---
 
 # UiPath Safe Refactor Plan

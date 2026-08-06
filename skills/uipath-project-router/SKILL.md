@@ -1,6 +1,7 @@
 ---
 name: uipath-project-router
 description: "Use only when the user explicitly asks which skill, workflow, or starting point to use; choose the smallest correct official UiPath and UiPath Boost route."
+category: "Routing and project continuity"
 ---
 
 # UiPath Project Router

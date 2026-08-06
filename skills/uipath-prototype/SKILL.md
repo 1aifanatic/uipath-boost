@@ -1,6 +1,7 @@
 ---
 name: uipath-prototype
 description: "Build a deliberately throwaway UiPath-oriented prototype to answer one design question. Use when a team must validate a selector strategy, extraction result shape, state model, human-review experience, queue contract, API interaction, agent behavior, or orchestration flow before committing to production architecture."
+category: "Design and architecture"
 ---
 
 # UiPath Prototype

@@ -1,6 +1,7 @@
 ---
 name: uipath-work-intake-triage
 description: "Use only when the user explicitly asks to classify, verify, and route incoming UiPath work before it enters an official workflow."
+category: "Discovery and decision-making"
 ---
 
 # UiPath Work Intake Triage

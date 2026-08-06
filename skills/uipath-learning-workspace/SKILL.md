@@ -1,6 +1,7 @@
 ---
 name: uipath-learning-workspace
 description: "Use only when the user explicitly asks to create a stateful, practice-led UiPath learning workspace tied to a real mission."
+category: "Learning and communication"
 ---
 
 # UiPath Learning Workspace

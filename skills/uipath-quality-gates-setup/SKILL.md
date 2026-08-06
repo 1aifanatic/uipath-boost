@@ -1,6 +1,7 @@
 ---
 name: uipath-quality-gates-setup
 description: "Use only when the user explicitly asks to install and prove local and CI quality gates for a UiPath repository."
+category: "Build, test, and change quality"
 ---
 
 # UiPath Quality Gates Setup

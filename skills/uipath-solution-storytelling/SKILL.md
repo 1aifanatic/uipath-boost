@@ -1,6 +1,7 @@
 ---
 name: uipath-solution-storytelling
 description: "Develop clear UiPath solution narratives from raw notes, evidence, design artifacts, demos, and implementation outcomes. Use when preparing executive proposals, architecture explanations, demo scripts, community talks, case studies, articles, release communications, or customer-facing stories that must introduce concepts in a logical order and preserve source truth."
+category: "Learning and communication"
 ---
 
 # UiPath Solution Storytelling

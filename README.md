@@ -241,6 +241,8 @@ The validation suite checks all 34 skill packages, invocation policies, behavior
 
 ## Learn more
 
+- [Browse the catalog on the web](https://naveen.aifanatic.pro/skills/uipath-boost) — every skill, rendered, with copy-ready install commands
+- [Catalog listing on skills.sh](https://www.skills.sh/1aifanatic/uipath-boost)
 - [Strategy and publishing plan](docs/STRATEGY-AND-PUBLISHING-PLAN.md)
 - [Changelog](CHANGELOG.md)
 - [Acknowledgments](ACKNOWLEDGMENTS.md)

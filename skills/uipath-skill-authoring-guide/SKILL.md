@@ -1,6 +1,7 @@
 ---
 name: uipath-skill-authoring-guide
 description: "Design, review, and improve reusable AI skills for UiPath work. Use when creating a skill for discovery, architecture, development, testing, operations, governance, training, or project management; when deciding whether a workflow belongs in a custom skill or the official UiPath catalog; or when an existing skill is inconsistent, bloated, poorly triggered, or difficult to evaluate."
+category: "Learning and communication"
 ---
 
 # UiPath Skill Authoring Guide

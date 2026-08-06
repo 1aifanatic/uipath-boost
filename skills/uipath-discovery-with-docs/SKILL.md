@@ -1,6 +1,7 @@
 ---
 name: uipath-discovery-with-docs
 description: "Use only when the user explicitly asks to run UiPath discovery while maintaining durable project documentation."
+category: "Discovery and decision-making"
 ---
 
 # UiPath Discovery With Docs

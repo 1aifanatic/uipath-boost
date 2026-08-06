@@ -1,6 +1,7 @@
 ---
 name: uipath-requirement-traceability
 description: "Build a requirement-to-implementation-to-test-to-evidence traceability matrix from an approved SDD, official uipath-review report, Test Manager evidence, and release artifacts. Use when the user explicitly needs coverage, missing-evidence analysis, auditability, UAT mapping, or release traceability. Do not perform the underlying artifact quality review, invent requirement coverage, or replace Test Manager reporting."
+category: "Build, test, and change quality"
 ---
 
 # UiPath Requirement Traceability

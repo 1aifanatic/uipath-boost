@@ -1,6 +1,7 @@
 ---
 name: uipath-project-boundaries
 description: "Define and enforce public entry points and dependency boundaries across a UiPath solution or repository. Use when reusable libraries, coded components, agents, apps, API workflows, tests, and orchestration projects have deep imports, circular dependencies, duplicated contracts, or unclear ownership that makes agent navigation and safe change difficult."
+category: "Design and architecture"
 ---
 
 # UiPath Project Boundaries

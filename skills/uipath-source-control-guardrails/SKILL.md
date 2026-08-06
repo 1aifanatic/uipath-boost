@@ -1,6 +1,7 @@
 ---
 name: uipath-source-control-guardrails
 description: "Use only when the user explicitly asks to install and test command guardrails around destructive Git and UiPath release operations."
+category: "Build, test, and change quality"
 ---
 
 # UiPath Source Control Guardrails

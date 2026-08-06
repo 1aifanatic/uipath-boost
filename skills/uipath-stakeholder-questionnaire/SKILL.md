@@ -1,6 +1,7 @@
 ---
 name: uipath-stakeholder-questionnaire
 description: "Use only when the user explicitly asks to create a focused UiPath questionnaire for the person who owns missing information."
+category: "Discovery and decision-making"
 ---
 
 # UiPath Stakeholder Questionnaire

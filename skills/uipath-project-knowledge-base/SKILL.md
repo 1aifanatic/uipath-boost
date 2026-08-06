@@ -1,6 +1,7 @@
 ---
 name: uipath-project-knowledge-base
 description: "Create and maintain a portable linked Markdown knowledge base for a UiPath program or project. Use when design decisions, runbooks, research, glossary terms, operational knowledge, reusable patterns, and lessons are scattered across conversations or folders and need searchable index notes, context pointers, ownership, and freshness signals."
+category: "Routing and project continuity"
 ---
 
 # UiPath Project Knowledge Base

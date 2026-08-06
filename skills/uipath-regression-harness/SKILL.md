@@ -1,6 +1,7 @@
 ---
 name: uipath-regression-harness
 description: "Create a fast, deterministic, red-capable reproduction and regression harness for a UiPath defect after the incident, symptom, or cause has been anchored by uipath-troubleshoot or the owning product skill. Use when a confirmed defect needs repeatable evidence before and after a fix. Do not use to perform root-cause diagnosis, investigate live production broadly, or apply the fix."
+category: "Build, test, and change quality"
 ---
 
 # UiPath Regression Harness

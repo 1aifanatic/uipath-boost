@@ -1,6 +1,7 @@
 ---
 name: uipath-runbook-wizard
 description: "Create an interactive or document-based wizard for a UiPath setup, access, migration, deployment-preparation, or operational procedure that requires human actions. Use when a repeatable manual process involves portals, approvals, values to capture, environment configuration, credentials, tenant resources, or irreversible checkpoints that should not be re-explained from scratch."
+category: "Release, operations, and governance"
 ---
 
 # UiPath Runbook Wizard

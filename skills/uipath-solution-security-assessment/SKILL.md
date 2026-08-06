@@ -1,6 +1,7 @@
 ---
 name: uipath-solution-security-assessment
 description: "Perform project-level threat modeling and evidence-backed security, privacy, AI, integration, and operational control assessment for a defined UiPath solution design or release. Use when the team needs data-flow threats, trust boundaries, misuse cases, control gaps, residual risks, or security evidence requests. Do not author or deploy UiPath governance policies, manage identities or roles, query audit logs, operate tenant resources, or replace uipath-review."
+category: "Release, operations, and governance"
 ---
 
 # UiPath Solution Security Assessment

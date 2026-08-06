@@ -1,6 +1,7 @@
 ---
 name: uipath-workflow-spec-workspace
 description: "Use only when the user explicitly asks to maintain a durable, planner-ready specification workspace for a recurring business workflow."
+category: "Discovery and decision-making"
 ---
 
 # UiPath Workflow Spec Workspace

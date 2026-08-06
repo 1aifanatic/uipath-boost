@@ -1,6 +1,7 @@
 ---
 name: uipath-program-wayfinder
 description: "Use only when the user explicitly asks to map the decisions required to make a large, foggy UiPath program plannable."
+category: "Discovery and decision-making"
 ---
 
 # UiPath Program Wayfinder

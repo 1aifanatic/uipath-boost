@@ -1,6 +1,7 @@
 ---
 name: uipath-delivery-control-plane
 description: "Use only when the user explicitly asks to establish durable delivery governance around an already discovered UiPath repository or solution."
+category: "Routing and project continuity"
 ---
 
 # UiPath Delivery Control Plane

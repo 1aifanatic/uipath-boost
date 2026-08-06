@@ -1,6 +1,7 @@
 ---
 name: uipath-training-lab-scaffolder
 description: "Use only when the user explicitly asks to scaffold and validate a consistent UiPath training lab from an approved curriculum."
+category: "Learning and communication"
 ---
 
 # UiPath Training Lab Scaffolder

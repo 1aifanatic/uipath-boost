@@ -1,6 +1,7 @@
 ---
 name: uipath-test-driven-automation
 description: "Apply behavior-first red-green development to UiPath automation work. Use when implementing a feature or defect through tests, when critical business rules need durable regression coverage, or when a team must choose the right public seams across workflows, coded components, queues, APIs, agents, Maestro, and human tasks."
+category: "Build, test, and change quality"
 ---
 
 # UiPath Test Driven Automation

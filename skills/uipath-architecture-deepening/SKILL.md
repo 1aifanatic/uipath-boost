@@ -1,6 +1,7 @@
 ---
 name: uipath-architecture-deepening
 description: "Use only when the user explicitly asks to deepen a proven UiPath architecture hotspot into ranked design options and a safe handoff."
+category: "Design and architecture"
 ---
 
 # UiPath Architecture Deepening

@@ -1,6 +1,7 @@
 ---
 name: uipath-observability-design
 description: "Design end-to-end observability for a UiPath process, agent, Maestro journey, integration, application, or multi-project solution. Use for correlation, structured events, business and technical metrics, SLOs, alert logic, dashboard requirements, runbook links, retention, and support ownership. This skill designs the model only; live job analytics belong to uipath-insights, Action Center task operations to uipath-tasks, audit events to uipath-admin, platform resources to uipath-platform, and causal diagnosis to uipath-troubleshoot."
+category: "Release, operations, and governance"
 ---
 
 # UiPath Observability Design

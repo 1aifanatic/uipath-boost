@@ -1,6 +1,7 @@
 ---
 name: uipath-task-refinement
 description: "Use only when the user explicitly asks to refine an approved UiPath plan into session-sized tracer-bullet tasks with blocking edges."
+category: "Build, test, and change quality"
 ---
 
 # UiPath Task Refinement
